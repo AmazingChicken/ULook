@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/frank/cs/SENG2021/ulook/conf/routes
-// @DATE:Mon Sep 18 22:39:09 AEST 2017
+// @SOURCE:C:/Users/Daniel/ULook/conf/routes
+// @DATE:Thu Sep 21 19:31:15 AEST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -19,6 +19,16 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:9
+    def myItems: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.myItems",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "myItems"})
+        }
+      """
+    )
   
     // @LINE:8
     def signUpPage: JavaScriptReverseRoute = JavaScriptReverseRoute(

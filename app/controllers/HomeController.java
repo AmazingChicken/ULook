@@ -25,5 +25,7 @@ public class HomeController extends Controller {
     public Result signUpPage(){
       	return ok(views.html.signUpPage.render());
     }
-
+    public Result myItems(){
+      	return ok(views.html.myItems.render());
+    }
 }

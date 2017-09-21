@@ -53,7 +53,7 @@ Seq[Any](format.raw/*7.4*/("""
         <a href="javascript:void(0);" data-title="Team">Recommended</a>
       </li>
       <li>
-        <a href="javascript:void(0);" data-title="Diary">My items</a>
+        <a href=""""),_display_(/*25.19*/routes/*25.25*/.HomeController.myItems()),format.raw/*25.50*/("""" data-title="Diary">My items</a>
       </li>
       <li>
         <a href="javascript:void(0);" data-title="Timeline">My Outfits</a>
@@ -103,11 +103,11 @@ Seq[Any](format.raw/*7.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Sep 18 21:39:37 AEST 2017
-                  SOURCE: /home/frank/cs/SENG2021/ulook/app/views/mainPage.scala.html
-                  HASH: 2760ea0ada075bd0d0f2f586d974706732515fad
-                  MATRIX: 1198->260|1294->262|1325->266|1434->348|1449->354|1515->399
-                  LINES: 33->7|38->7|41->10|44->13|44->13|44->13
+                  DATE: Thu Sep 21 19:33:03 AEST 2017
+                  SOURCE: C:/Users/Daniel/ULook/app/views/mainPage.scala.html
+                  HASH: 83d22aa20388085d574ea1355da029e2d810c075
+                  MATRIX: 1203->266|1299->268|1333->275|1445->360|1460->366|1526->411|1826->684|1841->690|1887->715
+                  LINES: 33->7|38->7|41->10|44->13|44->13|44->13|56->25|56->25|56->25
                   -- GENERATED --
               */
           

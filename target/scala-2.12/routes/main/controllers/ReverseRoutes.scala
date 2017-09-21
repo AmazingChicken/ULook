@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/frank/cs/SENG2021/ulook/conf/routes
-// @DATE:Mon Sep 18 22:39:09 AEST 2017
+// @SOURCE:C:/Users/Daniel/ULook/conf/routes
+// @DATE:Thu Sep 21 19:31:15 AEST 2017
 
 import play.api.mvc.Call
 
@@ -18,6 +18,12 @@ package controllers {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:9
+    def myItems(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "myItems")
+    }
   
     // @LINE:8
     def signUpPage(): Call = {
