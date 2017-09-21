@@ -1,22 +1,27 @@
-
+@*
+ * This template is called from the `index` template. This template
+ * handles the rendering of the page header and body tags. It takes
+ * two arguments, a `String` for the title of the page and an `Html`
+ * object to insert into the body of the page.
+ *@
 
 
  <span class="bckg"></span>
 <header>
 
-<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/myItems.css")"">
-
-  <h1>ULook</h1>
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/mainPage.css")">
+  <h1>Ulook</h1>
   <nav>
     <ul>
       <li>
-        <a href="javascript:void(0);">Get inspired</a>
+
+        <a href="javascript:void(0);" data-title="Projects">Get inspire</a>
       </li>
       <li>
         <a href="@routes.HomeController.recommend" data-title="Team">Recommended</a>
       </li>
       <li>
-        <a href="javascript:void(0);" data-title="Diary">My items</a>
+        <a href="@routes.HomeController.myItems()" data-title="Diary">My items</a>
       </li>
       <li>
         <a href="javascript:void(0);" data-title="Timeline">My Outfits</a>
@@ -24,63 +29,61 @@
       <li>
         <a href="javascript:void(0);" data-title="Settings">Search</a>
       </li>
-      <li>
-         <input class = "dummy" type="image" src="@routes.Assets.versioned("images/man.png")" />
-      </li>
 
     </ul>
   </nav>
 </header>
 <main>
 
-
-
-
-
   <div class="title">
-    <h2>My Items</h2>
-    <a href="javascript:void(0);">Sign out</a>
+    <h2>Welcome to ULook!</h2>
+
+    <a href="javascript:void(0);">Sign in</a>
   </div>
-  <select class = "sort">
-  <option  value="volvo">Price</option>
-  <option  value="saab">Alphabetical</option>
-</select>
-<ul>
-   <li class = "items">Boot</li>
-   <li class = "items">Chuck Taylors</li>
-   <li class = "items">Nike Roshe</li>
- </ul>
-<div class>
-      <ul class = "parent">
-         <img class ="shoes" src = "@routes.Assets.versioned("images/boot.jpg")" height ="230" width = "230"></img>
-            <a><img class ="fav" src = "@routes.Assets.versioned("images/star.png")" height ="30" width = "30"></img></a>
-         <img class ="shoes" src = "@routes.Assets.versioned("images/chucks.jpg")" height ="230" width = "230"></img>
-            <a><img class ="fav" src = "@routes.Assets.versioned("images/star.png")" height ="30" width = "30"></img></a>
-         <img class ="shoes" src = "@routes.Assets.versioned("images/roshe.jpg")" height ="230" width = "230"></img>
-            <a> <img class ="fav" src = "@routes.Assets.versioned("images/star.png")" height ="30" width = "30"></img></a>
-      </ul> 
-      <ul class = "container one">
-         <button class = "add" type="button">Add To Outfit</button>
-            <a href ="#" class = "tooltip">
+
+  <article class="larg">
+      <form class="search" action="">
+<input type="search" placeholder="Search here..." required>
+<button type="submit">Search</button>
+</form>
+    <div>
+      <h3> <input type="checkbox"/><img src="@routes.Assets.versioned("images/boot.jpg")"width="140" height="200"><span class="entypo-down-open">Leather Boot<a href ="#" class = "tooltip">
             <img src = "@routes.Assets.versioned("images/info.png")" height="25" >
-            <span><ul><li>Price - $120  </li>
+            <span><ul><li>Price - $200 </li>
             <li>Material - Leather  </li>
-            </ul></span></a>
-      </ul><ul class = "container two">
-         <button class = "add" type="button">Add To Outfit</button>
-            <a href ="#" class = "tooltip">
+            <li>Sizes: 7-9 </li>
+            </ul></span></a></span>
+           
+      </h3>
+      <button class = "add" type="button">Add To Outfit</button>
+
+      <p>xxx.</p>
+
+    </div>
+    <div>
+      <h3> <input type="checkbox"/><img src="@routes.Assets.versioned("images/chucks.jpg")"width="140" height="200"> <span class="entypo-down-open">Chucks<a href ="#" class = "tooltip">
             <img src = "@routes.Assets.versioned("images/info.png")" height="25" >
-            <span><ul><li>Price - $60</li>
-            <li>Material - Cloth</li>
-            </ul></span></a>
-      </ul><ul class = "container three">
-         <button class = "add" type="button">Add To Outfit</button>
-            <a href ="#" class = "tooltip">
+            <span><ul><li>Price - $90 </li>
+            <li>Material - Canvas  </li>
+            <li>Sizes: 6-12 </li>
+            </ul></span></a></span></h3>
+            
+      <button class = "add" type="button">Add To Outfit</button>
+    
+      <p>xxx.</p>
+        
+    </div>
+    <div>
+      <h3> <input type="checkbox"/><img src="@routes.Assets.versioned("images/roshe.jpg")"width="140" height="200"><span class="entypo-down-open">Nike Roshe<a href ="#" class = "tooltip">
             <img src = "@routes.Assets.versioned("images/info.png")" height="25" >
-            <span><ul><li>Price - $70</li>
-            <li>Material - Mesh</li>
-            </ul></span></a>
-      </ul>
-   
-</div>
+            <span><ul><li>Price - $90 </li>
+            <li>Material - Mesh  </li>
+            <li>Sizes: 6-10 </li>
+            </ul></span></a></span></h3>
+            
+      <button class = "add" type="button">Add To Outfit</button>
+      <p>xxx.</p>
+    </div>
+  </article>
+
 </main>
