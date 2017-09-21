@@ -6,6 +6,7 @@
 GET     /                           controllers.HomeController.index
 GET     /mainPage                           controllers.HomeController.goMainPage
 GET     /signUpPage                           controllers.HomeController.signUpPage
-GET     /myItems                          controllers.HomeController.myItems
+GET     /myItems                         	 controllers.HomeController.myItems
+GET     /recommend 							 controllers.HomeController.recommend
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

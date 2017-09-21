@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Daniel/ULook/conf/routes
-// @DATE:Thu Sep 21 19:31:15 AEST 2017
+// @DATE:Thu Sep 21 22:46:18 AEST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -40,6 +40,16 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:10
+    def recommend: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.recommend",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "recommend"})
+        }
+      """
+    )
+  
     // @LINE:7
     def goMainPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.goMainPage",
@@ -62,7 +72,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:11
+  // @LINE:12
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -70,7 +80,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:11
+    // @LINE:12
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

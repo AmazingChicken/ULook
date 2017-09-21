@@ -28,4 +28,8 @@ public class HomeController extends Controller {
     public Result myItems(){
       	return ok(views.html.myItems.render());
     }
+    public Result recommend(){
+      	return ok(views.html.recommend.render());
+    }
+
 }

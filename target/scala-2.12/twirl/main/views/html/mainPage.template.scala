@@ -50,7 +50,7 @@ Seq[Any](format.raw/*7.4*/("""
         <a href="javascript:void(0);" data-title="Projects">Get inspire</a>
       </li>
       <li>
-        <a href="javascript:void(0);" data-title="Team">Recommended</a>
+        <a href=""""),_display_(/*22.19*/routes/*22.25*/.HomeController.recommend),format.raw/*22.50*/("""" data-title="Team">Recommended</a>
       </li>
       <li>
         <a href=""""),_display_(/*25.19*/routes/*25.25*/.HomeController.myItems()),format.raw/*25.50*/("""" data-title="Diary">My items</a>
@@ -103,11 +103,11 @@ Seq[Any](format.raw/*7.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Sep 21 19:33:03 AEST 2017
+                  DATE: Thu Sep 21 22:46:18 AEST 2017
                   SOURCE: C:/Users/Daniel/ULook/app/views/mainPage.scala.html
-                  HASH: 83d22aa20388085d574ea1355da029e2d810c075
-                  MATRIX: 1203->266|1299->268|1333->275|1445->360|1460->366|1526->411|1826->684|1841->690|1887->715
-                  LINES: 33->7|38->7|41->10|44->13|44->13|44->13|56->25|56->25|56->25
+                  HASH: 1d1b7df504bb01b85381771f55245fb3ed3fc992
+                  MATRIX: 1203->266|1299->268|1333->275|1445->360|1460->366|1526->411|1728->586|1743->592|1789->617|1896->697|1911->703|1957->728
+                  LINES: 33->7|38->7|41->10|44->13|44->13|44->13|53->22|53->22|53->22|56->25|56->25|56->25
                   -- GENERATED --
               */
           
