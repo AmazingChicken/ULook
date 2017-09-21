@@ -1,21 +1,451 @@
-2017-09-22 01:08:36,165 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2017-09-22 01:37:34,411 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2017-09-22 01:08:36,200 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev)
-2017-09-22 01:09:56,366 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-3 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2017-09-22 01:37:34,444 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev)
+2017-09-22 01:38:12,382 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-13 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2017-09-22 01:09:56,373 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-3 - Application started (Dev)
-2017-09-22 01:13:23,995 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-14 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2017-09-22 01:38:12,388 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-13 - Application started (Dev)
+2017-09-22 01:38:52,937 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2017-09-22 01:13:23,999 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-14 - Application started (Dev)
+2017-09-22 01:38:52,941 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev)
+2017-09-22 01:44:43,205 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-15 - 
+
+! @75d3in1me - Internal server error, for (GET) [/search] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[value getInspired is not a member of controllers.ReverseHomeController]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
+	at scala.Option.map(Option.scala:145)
+	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49)
+	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44)
+	at scala.Option.map(Option.scala:145)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:44)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:40)
+	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
+	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
+	at scala.util.Either$LeftProjection.map(Either.scala:377)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:17)
+	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:71)
+	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:71)
+	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:413)
+	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:51)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:47)
+	at play.runsupport.Reloader.reload(Reloader.scala:411)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:123)
+	at play.core.server.Server.getHandlerFor(Server.scala:63)
+	at play.core.server.Server.getHandlerFor$(Server.scala:48)
+	at play.core.server.AkkaHttpServer.getHandlerFor(AkkaHttpServer.scala:41)
+	at play.core.server.AkkaHttpServer.getHandler(AkkaHttpServer.scala:214)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:194)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$3(AkkaHttpServer.scala:106)
+	at akka.stream.impl.fusing.MapAsync$$anon$23.onPush(Ops.scala:1172)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:499)
+	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:462)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:368)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:571)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:457)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:546)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:725)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:740)
+	at akka.actor.Actor.aroundReceive(Actor.scala:514)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:512)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:650)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:496)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:224)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+2017-09-22 01:45:28,310 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-16 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 01:45:28,315 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-16 - Application started (Dev)
+2017-09-22 01:46:42,096 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-28 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 01:46:42,111 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-28 - Application started (Dev)
+2017-09-22 01:47:15,060 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-25 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 01:47:15,063 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-25 - Application started (Dev)
+2017-09-22 01:47:36,414 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-29 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 01:47:36,417 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-29 - Application started (Dev)
+2017-09-22 01:47:59,097 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-81 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 01:47:59,101 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-81 - Application started (Dev)
+2017-09-22 01:48:17,043 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-89 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 01:48:17,047 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-89 - Application started (Dev)
+2017-09-22 01:49:57,425 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-26 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 01:49:57,428 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-26 - Application started (Dev)
+2017-09-22 01:51:22,361 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-26 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 01:51:22,371 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-26 - Application started (Dev)
+2017-09-22 01:53:23,558 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-98 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 01:53:23,561 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-98 - Application started (Dev)
+2017-09-22 01:53:29,565 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-89 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 01:53:29,568 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-89 - Application started (Dev)
+2017-09-22 01:56:28,034 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-98 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 01:56:28,043 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-98 - Application started (Dev)
+2017-09-22 01:57:29,272 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-171 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 01:57:29,281 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-171 - Application started (Dev)
+2017-09-22 01:57:41,170 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-149 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 01:57:41,174 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-149 - Application started (Dev)
+2017-09-22 01:58:03,787 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-147 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 01:58:03,790 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-147 - Application started (Dev)
+2017-09-22 01:58:41,846 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-147 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 01:58:41,849 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-147 - Application started (Dev)
+2017-09-22 01:58:54,032 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-171 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 01:58:54,035 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-171 - Application started (Dev)
+2017-09-22 01:59:05,987 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-149 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 01:59:05,990 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-149 - Application started (Dev)
+2017-09-22 01:59:44,763 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-180 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 01:59:44,773 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-180 - Application started (Dev)
+2017-09-22 02:00:14,554 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-180 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:00:14,556 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-180 - Application started (Dev)
+2017-09-22 02:00:50,772 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-98 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:00:50,774 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-98 - Application started (Dev)
+2017-09-22 02:00:58,887 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-123 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:00:58,890 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-123 - Application started (Dev)
+2017-09-22 02:01:22,202 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-188 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:01:22,204 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-188 - Application started (Dev)
+2017-09-22 02:01:35,295 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-180 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:01:35,298 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-180 - Application started (Dev)
+2017-09-22 02:02:01,655 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-149 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:02:01,658 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-149 - Application started (Dev)
+2017-09-22 02:02:11,354 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-187 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:02:11,357 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-187 - Application started (Dev)
+2017-09-22 02:02:18,651 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-190 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:02:18,653 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-190 - Application started (Dev)
+2017-09-22 02:03:33,355 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-187 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:03:33,364 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-187 - Application started (Dev)
+2017-09-22 02:04:10,999 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-187 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:04:11,002 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-187 - Application started (Dev)
+2017-09-22 02:05:20,456 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-124 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:05:20,458 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-124 - Application started (Dev)
+2017-09-22 02:06:08,701 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-124 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:06:08,711 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-124 - Application started (Dev)
+2017-09-22 02:06:13,878 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-198 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:06:13,881 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-198 - Application started (Dev)
+2017-09-22 02:06:22,589 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-197 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:06:22,591 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-197 - Application started (Dev)
+2017-09-22 02:06:29,002 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-149 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:06:29,005 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-149 - Application started (Dev)
+2017-09-22 02:06:35,359 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-198 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:06:35,361 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-198 - Application started (Dev)
+2017-09-22 02:06:49,351 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-90 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:06:49,353 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-90 - Application started (Dev)
+2017-09-22 02:06:54,687 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-214 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:06:54,690 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-214 - Application started (Dev)
+2017-09-22 02:07:00,537 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-149 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:07:00,540 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-149 - Application started (Dev)
+2017-09-22 02:07:07,721 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-149 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:07:07,723 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-149 - Application started (Dev)
+2017-09-22 02:07:18,324 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-188 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:07:18,327 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-188 - Application started (Dev)
+2017-09-22 02:07:32,097 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-90 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:07:32,100 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-90 - Application started (Dev)
+2017-09-22 02:07:49,893 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-149 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:07:49,926 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-149 - Application started (Dev)
+2017-09-22 02:12:03,955 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-218 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:12:03,958 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-218 - Application started (Dev)
+2017-09-22 02:12:30,114 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-233 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:12:30,116 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-233 - Application started (Dev)
+2017-09-22 02:14:07,873 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-319 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:14:07,875 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-319 - Application started (Dev)
+2017-09-22 02:16:39,653 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-323 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:16:39,655 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-323 - Application started (Dev)
+2017-09-22 02:16:53,832 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-346 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:16:53,835 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-346 - Application started (Dev)
+2017-09-22 02:17:01,427 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-346 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:17:01,430 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-346 - Application started (Dev)
+2017-09-22 02:17:10,747 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-256 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:17:10,749 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-256 - Application started (Dev)
+2017-09-22 02:17:16,907 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-355 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:17:16,910 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-355 - Application started (Dev)
+2017-09-22 02:17:44,235 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-346 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:17:44,238 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-346 - Application started (Dev)
+2017-09-22 02:18:12,060 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-355 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:18:12,063 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-355 - Application started (Dev)
+2017-09-22 02:19:40,110 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-355 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:19:40,113 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-355 - Application started (Dev)
+2017-09-22 02:19:53,885 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-397 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:19:53,887 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-397 - Application started (Dev)
+2017-09-22 02:20:09,676 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-256 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-09-22 02:20:09,679 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-256 - Application started (Dev)

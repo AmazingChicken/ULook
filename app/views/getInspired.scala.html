@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<span class="bckg"></span>
+<header>
+
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/mainPage.css")">
+
+
+  <h1>ULook</h1>
+  <nav>
+      <ul>
+        <li>
+      <a href="@routes.HomeController.getInspired()" data-title="Projects">Get inspired</a>
+      </li>
+      <li>
+        <a href="@routes.HomeController.recommend()" data-title="Team">Recommended</a>
+      </li>
+      <li>
+        <a href="@routes.HomeController.myItems()" data-title="Diary">My items</a>
+      </li>
+      <li>
+        <a href="javascript:void(0);" data-title="Timeline">My Outfits</a>
+      </li>
+      <li>
+        <a href="@routes.HomeController.search()" data-title="Settings">Search</a>
+      </li>
+
+      </ul>
+  </nav>
+</header>
+<main>
+
+  <div class="title">
+    <h2>Get Inspired!</h2>
+    <a href="javascript:void(0);">Sign in</a>
+  </div>
+
+  <head>
+    <h2><img src="@routes.Assets.versioned("images/insta.png")"width="60" height="60">  #OOTD</h2>
+  </head>
+
+  <article class="larg">
+    <div>
+      <h3>xenia <br><img src="@routes.Assets.versioned("images/xenia.png")"width="140" height="200"><span class="entypo-down-open"></span></h3>
+
+    </div>
+    <div>
+      <h3>andreialbu_ <br><img src="@routes.Assets.versioned("images/andreialbu_.png")"width="140" height="200"><span class="entypo-down-open"></span></h3>
+
+    </div>
+    <div>
+      <h3>blogjuniorestevam <br><img src="@routes.Assets.versioned("images/blogjuniorestevam.png")"width="140" height="200"><span class="entypo-down-open"></span></h3>
+
+    </div>
+  </article>
+
+</main>
+
+
+
+</html>

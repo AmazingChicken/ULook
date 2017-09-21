@@ -1,0 +1,83 @@
+@*
+ * This template is called from the index template. This template
+ * handles the rendering of the page header and body tags. It takes
+ * two arguments, a String for the title of the page and an Html
+ * object to insert into the body of the page.
+ *@
+@()
+
+
+ <span class="bckg"></span>
+<header>
+
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/search.css")">
+  <h1>Ulook</h1>
+  <nav>
+    <ul>
+      <li>
+
+        <a href="@routes.HomeController.getInspired()" data-title="Projects">Get inspired</a>
+      </li>
+      <li>
+        <a href="@routes.HomeController.recommend()" data-title="Team">Recommended</a>
+      </li>
+      <li>
+        <a href="@routes.HomeController.myItems()" data-title="Diary">My items</a>
+      </li>
+      <li>
+        <a href="javascript:void(0);" data-title="Timeline">My Outfits</a>
+      </li>
+      <li>
+        <a href="@routes.HomeController.search()" data-title="Settings">Search</a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+<main>
+
+  <div class="title">
+    <h2>Search</h2>
+    <a href="javascript:void(0);">Sign out</a>
+  </div>
+
+  <article class="larg">
+      <form class="search" action=""><div id="slidecontainer">Price
+  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+</div>Shoe Type 
+<div>
+<form class = "form"  action="">
+<input  type="checkbox" name="vehicle" value="Bike"><span class = "check">Boots</span>
+<input  type="checkbox" name="vehicle" value="Shoe"><span class = "check">Sneakers</span><br>
+<input  type="checkbox" name="vehicle" value="Shoe"><span class = "check">Casual</span>
+<input  type="checkbox" name="vehicle" value="Shoe"><span class = "check">Runners</span><br>
+</form>
+</div>Brand<div> 
+<form class= "form"  action="">
+<input  type="checkbox" name="vehicle" value="Bike"><span class = "check">Adidas</span>
+<input  type="checkbox" name="vehicle" value="Shoe"><span class = "check">Nike</span><br>
+<input  type="checkbox" name="vehicle" value="Shoe"><span class = "check">Sketchers</span>
+<input  type="checkbox" name="vehicle" value="Shoe"><span class = "check">New Balance</span><br>
+</form>
+</div>
+
+<input type="search" placeholder="Search here..." required>
+<button type="submit">Search</button>
+</form>
+    <div>
+      <h3><img src="@routes.Assets.versioned("images/2.png")"width="200" height="160">Nike Air Max Price - $90<span class="entypo-down-open"></span></h3>
+      <button class = "add" type="button">Add To Outfit</button>
+      <p>xxx.</p>
+    </div>
+    <div>
+      <h3><img src="@routes.Assets.versioned("images/3.png")"width="200" height="160">Nike Shoe Price - $190<span class="entypo-down-open"></span></h3>
+      <button class = "add" type="button">Add To Outfit</button>
+      <p>xxx.</p>
+    </div>
+    <div>
+      <h3><img src="@routes.Assets.versioned("images/4.png")"width="200" height="160">Nike Shoe 2 Price - $75<span class="entypo-down-open"></span></h3>
+      <button class = "add" type="button">Add To Outfit</button>
+      <p>xxx.</p>
+    </div>
+  </article>
+</main>

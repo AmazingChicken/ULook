@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Daniel/ULook/conf/routes
-// @DATE:Thu Sep 21 22:46:18 AEST 2017
+// @DATE:Fri Sep 22 01:45:24 AEST 2017
 
 import play.api.mvc.Call
 
@@ -37,10 +37,22 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "recommend")
     }
   
+    // @LINE:11
+    def search(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "search")
+    }
+  
     // @LINE:7
     def goMainPage(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "mainPage")
+    }
+  
+    // @LINE:12
+    def getInspired(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "getInspired")
     }
   
     // @LINE:6
@@ -51,14 +63,14 @@ package controllers {
   
   }
 
-  // @LINE:12
+  // @LINE:14
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:12
+    // @LINE:14
     def versioned(file:Asset): Call = {
       implicit val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))

@@ -31,5 +31,10 @@ public class HomeController extends Controller {
     public Result recommend(){
       	return ok(views.html.recommend.render());
     }
-
+    public Result search(){
+      	return ok(views.html.search.render());
+    }
+    public Result getInspired(){
+      	return ok(views.html.getInspired.render());
+    }
 }

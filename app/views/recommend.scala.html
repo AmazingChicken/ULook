@@ -15,10 +15,10 @@
     <ul>
       <li>
 
-        <a href="javascript:void(0);" data-title="Projects">Get inspire</a>
+      <a href="@routes.HomeController.getInspired()" data-title="Projects">Get inspired</a>
       </li>
       <li>
-        <a href="@routes.HomeController.recommend" data-title="Team">Recommended</a>
+        <a href="@routes.HomeController.recommend()" data-title="Team">Recommended</a>
       </li>
       <li>
         <a href="@routes.HomeController.myItems()" data-title="Diary">My items</a>
@@ -27,7 +27,7 @@
         <a href="javascript:void(0);" data-title="Timeline">My Outfits</a>
       </li>
       <li>
-        <a href="javascript:void(0);" data-title="Settings">Search</a>
+        <a href="@routes.HomeController.search()" data-title="Settings">Search</a>
       </li>
 
     </ul>
@@ -36,7 +36,7 @@
 <main>
 
   <div class="title">
-    <h2>Welcome to ULook!</h2>
+    <h2>Recommended</h2>
 
     <a href="javascript:void(0);">Sign in</a>
   </div>

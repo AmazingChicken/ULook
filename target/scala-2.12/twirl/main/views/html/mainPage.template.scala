@@ -47,19 +47,19 @@ Seq[Any](format.raw/*7.4*/("""
     <ul>
       <li>
 
-        <a href="javascript:void(0);" data-title="Projects">Get inspire</a>
+        <a href=""""),_display_(/*19.19*/routes/*19.25*/.HomeController.getInspired()),format.raw/*19.54*/("""" data-title="Projects">Get inspired</a>
       </li>
       <li>
-        <a href="javascript:void(0);"""),_display_(/*22.38*/routes/*22.44*/.HomeController.recommend()),format.raw/*22.71*/(""";" data-title="Team">Recommended</a>
+        <a href=""""),_display_(/*22.19*/routes/*22.25*/.HomeController.recommend()),format.raw/*22.52*/("""" data-title="Team">Recommended</a>
       </li>
       <li>
-        <a href="javascript:void(0);"""),_display_(/*25.38*/routes/*25.44*/.HomeController.myItems()),format.raw/*25.69*/(""";" data-title="Diary">My items</a>
+        <a href=""""),_display_(/*25.19*/routes/*25.25*/.HomeController.myItems()),format.raw/*25.50*/("""" data-title="Diary">My items</a>
       </li>
       <li>
         <a href="javascript:void(0);" data-title="Timeline">My Outfits</a>
       </li>
       <li>
-        <a href="javascript:void(0);" data-title="Settings">Search</a>
+        <a href"""""),_display_(/*31.19*/routes/*31.25*/.HomeController.search()),format.raw/*31.49*/("""" data-title="Settings">Search</a>
       </li>
 
     </ul>
@@ -106,11 +106,11 @@ Seq[Any](format.raw/*7.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Sep 22 01:13:20 AEST 2017
+                  DATE: Fri Sep 22 01:46:40 AEST 2017
                   SOURCE: C:/Users/Daniel/ULook/app/views/mainPage.scala.html
-                  HASH: 94f744f057c9f71cf00d9a75770080c98afac6e6
-                  MATRIX: 1197->260|1293->262|1327->269|1439->354|1454->360|1520->405|1741->599|1756->605|1804->632|1931->732|1946->738|1992->763|2631->1375|2646->1381|2700->1414|2866->1553|2881->1559|2935->1592|3096->1726|3111->1732|3165->1765
-                  LINES: 33->7|38->7|41->10|44->13|44->13|44->13|53->22|53->22|53->22|56->25|56->25|56->25|81->50|81->50|81->50|85->54|85->54|85->54|89->58|89->58|89->58
+                  HASH: 43ebb7c87d576ac30cfd580ea7d798a3a3a8cca2
+                  MATRIX: 1197->260|1293->262|1327->269|1439->354|1454->360|1520->405|1620->478|1635->484|1685->513|1797->598|1812->604|1860->631|1967->711|1982->717|2028->742|2234->921|2249->927|2294->951|2735->1365|2750->1371|2804->1404|2970->1543|2985->1549|3039->1582|3200->1716|3215->1722|3269->1755
+                  LINES: 33->7|38->7|41->10|44->13|44->13|44->13|50->19|50->19|50->19|53->22|53->22|53->22|56->25|56->25|56->25|62->31|62->31|62->31|81->50|81->50|81->50|85->54|85->54|85->54|89->58|89->58|89->58
                   -- GENERATED --
               */
           
