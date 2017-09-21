@@ -4,25 +4,25 @@
  * two arguments, a `String` for the title of the page and an `Html`
  * object to insert into the body of the page.
  *@
-@()
+@(title: String)(content: Html)
 
 
  <span class="bckg"></span>
 <header>
 
 <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/mainPage.css")">
-
-  <h1>ULook</h1>
+  <h1>Ulook</h1>
   <nav>
     <ul>
       <li>
+
         <a href="javascript:void(0);" data-title="Projects">Get inspire</a>
       </li>
       <li>
         <a href="javascript:void(0);" data-title="Team">Recommended</a>
       </li>
       <li>
-        <a href="@routes.HomeController.myItems()" data-title="Diary">My items</a>
+        <a href="javascript:void(0);" data-title="Diary">My items</a>
       </li>
       <li>
         <a href="javascript:void(0);" data-title="Timeline">My Outfits</a>
@@ -38,20 +38,25 @@
 
   <div class="title">
     <h2>Welcome to ULook!</h2>
+        <input type="text" name="search" placeholder="Search..">
     <a href="javascript:void(0);">Sign in</a>
   </div>
 
   <article class="larg">
+      <form class="search" action="">
+<input type="search" placeholder="Search here..." required>
+<button type="submit">Search</button>
+</form>
     <div>
-      <h3>Image 1 <span class="entypo-down-open"></span></h3>
+      <h3><img src="@routes.Assets.versioned("images/2.png")"width="200" height="160">price<span class="entypo-down-open"></span></h3>
       <p>xxx.</p>
     </div>
     <div>
-      <h3>Image 2 <span class="entypo-down-open"></span></h3>
+      <h3><img src="@routes.Assets.versioned("images/3.png")"width="200" height="160"><span class="entypo-down-open"></span></h3>
       <p>xxx.</p>
     </div>
     <div>
-      <h3>Image 3 <span class="entypo-down-open"></span></h3>
+      <h3><img src="@routes.Assets.versioned("images/4.png")"width="200" height="160"><span class="entypo-down-open"></span></h3>
       <p>xxx.</p>
     </div>
   </article>
