@@ -25,9 +25,9 @@ import play.core.j.PlayFormsMagicForJava._
 object mainPage extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
 
   /*
- * This template is called from the `index` template. This template
+ * This template is called from the index template. This template
  * handles the rendering of the page header and body tags. It takes
- * two arguments, a `String` for the title of the page and an `Html`
+ * two arguments, a String for the title of the page and an Html
  * object to insert into the body of the page.
  */
   def apply/*7.2*/():play.twirl.api.HtmlFormat.Appendable = {
@@ -42,18 +42,18 @@ Seq[Any](format.raw/*7.4*/("""
 <header>
 
 <link rel="stylesheet" media="screen" href=""""),_display_(/*13.46*/routes/*13.52*/.Assets.versioned("stylesheets/mainPage.css")),format.raw/*13.97*/("""">
-
-  <h1>ULook</h1>
+  <h1>Ulook</h1>
   <nav>
     <ul>
       <li>
+
         <a href="javascript:void(0);" data-title="Projects">Get inspire</a>
       </li>
       <li>
-        <a href=""""),_display_(/*22.19*/routes/*22.25*/.HomeController.recommend),format.raw/*22.50*/("""" data-title="Team">Recommended</a>
+        <a href="javascript:void(0);"""),_display_(/*22.38*/routes/*22.44*/.HomeController.recommend()),format.raw/*22.71*/(""";" data-title="Team">Recommended</a>
       </li>
       <li>
-        <a href=""""),_display_(/*25.19*/routes/*25.25*/.HomeController.myItems()),format.raw/*25.50*/("""" data-title="Diary">My items</a>
+        <a href="javascript:void(0);"""),_display_(/*25.38*/routes/*25.44*/.HomeController.myItems()),format.raw/*25.69*/(""";" data-title="Diary">My items</a>
       </li>
       <li>
         <a href="javascript:void(0);" data-title="Timeline">My Outfits</a>
@@ -69,25 +69,28 @@ Seq[Any](format.raw/*7.4*/("""
 
   <div class="title">
     <h2>Welcome to ULook!</h2>
-    <a href="javascript:void(0);">Sign in</a>
+    <a href="javascript:void(0);">Sign out</a>
   </div>
 
   <article class="larg">
+      <form class="search" action="">
+<input type="search" placeholder="Search here..." required>
+<button type="submit">Search</button>
+</form>
     <div>
-      <h3>Image 1 <span class="entypo-down-open"></span></h3>
+      <h3><img src=""""),_display_(/*50.22*/routes/*50.28*/.Assets.versioned("images/2.png")),format.raw/*50.61*/(""""width="200" height="160">price<span class="entypo-down-open"></span></h3>
       <p>xxx.</p>
     </div>
     <div>
-      <h3>Image 2 <span class="entypo-down-open"></span></h3>
+      <h3><img src=""""),_display_(/*54.22*/routes/*54.28*/.Assets.versioned("images/3.png")),format.raw/*54.61*/(""""width="200" height="160"><span class="entypo-down-open"></span></h3>
       <p>xxx.</p>
     </div>
     <div>
-      <h3>Image 3 <span class="entypo-down-open"></span></h3>
+      <h3><img src=""""),_display_(/*58.22*/routes/*58.28*/.Assets.versioned("images/4.png")),format.raw/*58.61*/(""""width="200" height="160"><span class="entypo-down-open"></span></h3>
       <p>xxx.</p>
     </div>
   </article>
-</main>
-"""))
+</main>"""))
       }
     }
   }
@@ -103,11 +106,11 @@ Seq[Any](format.raw/*7.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Sep 21 22:46:18 AEST 2017
+                  DATE: Fri Sep 22 01:13:20 AEST 2017
                   SOURCE: C:/Users/Daniel/ULook/app/views/mainPage.scala.html
-                  HASH: 1d1b7df504bb01b85381771f55245fb3ed3fc992
-                  MATRIX: 1203->266|1299->268|1333->275|1445->360|1460->366|1526->411|1728->586|1743->592|1789->617|1896->697|1911->703|1957->728
-                  LINES: 33->7|38->7|41->10|44->13|44->13|44->13|53->22|53->22|53->22|56->25|56->25|56->25
+                  HASH: 94f744f057c9f71cf00d9a75770080c98afac6e6
+                  MATRIX: 1197->260|1293->262|1327->269|1439->354|1454->360|1520->405|1741->599|1756->605|1804->632|1931->732|1946->738|1992->763|2631->1375|2646->1381|2700->1414|2866->1553|2881->1559|2935->1592|3096->1726|3111->1732|3165->1765
+                  LINES: 33->7|38->7|41->10|44->13|44->13|44->13|53->22|53->22|53->22|56->25|56->25|56->25|81->50|81->50|81->50|85->54|85->54|85->54|89->58|89->58|89->58
                   -- GENERATED --
               */
           

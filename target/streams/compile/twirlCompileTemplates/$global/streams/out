@@ -1,4 +1,4 @@
-[0m[[31merror[0m] [0m/home/frank/cs/SENG2021/ulook/app/views/index2.scala.html:25: Expected '*@' but found 'EOF'[0m
-[0m[[31merror[0m] [0m</html>[0m
-[0m[[31merror[0m] [0m       ^[0m
+[0m[[31merror[0m] [0mC:\Users\Daniel\ULook\app\views\mainPage.scala.html:3: Invalid '@' symbol[0m
+[0m[[31merror[0m] [0m   *@[0m
+[0m[[31merror[0m] [0m    ^[0m
 [0m[[31merror[0m] [0m(compile:[31mtwirlCompileTemplates[0m) Twirl compilation failed[0m
