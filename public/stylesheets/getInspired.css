@@ -172,7 +172,7 @@ a:hover {
   transition: all .6s;
 }
 .larg div h3 span.close {
-  -webkit-transform: rotate(180deg);
+
   transition: all .5s;
 }
 .larg div p {
