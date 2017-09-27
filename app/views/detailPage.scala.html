@@ -1,0 +1,63 @@
+@*
+ * This template is called from the index template. This template
+ * handles the rendering of the page header and body tags. It takes
+ * two arguments, a String for the title of the page and an Html
+ * object to insert into the body of the page.
+ *@
+@()
+
+
+ <span class="bckg"></span>
+<header>
+
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/mainPage.css")">
+
+  <h1>Ulook</h1>
+  <nav>
+    <ul>
+      <li>
+
+        <a href="@routes.HomeController.getInspired()" data-title="Projects">Get inspired</a>
+      </li>
+      <li>
+        <a href="@routes.HomeController.recommend()" data-title="Team">Recommended</a>
+      </li>
+      <li>
+        <a href="@routes.HomeController.myItems()" data-title="Diary">My items</a>
+      </li>
+      <li>
+        <a href="javascript:void(0);" data-title="Timeline">My Outfits</a>
+      </li>
+      <li>
+        <a href="@routes.HomeController.search()" data-title="Settings">Search</a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+<main>
+
+  <div class="title">
+    <h2>Welcome to ULook!</h2>
+    <a href="javascript:void(0);">Sign out</a>
+  </div>
+
+  <article class="larg">
+
+</form>
+    <div>
+      <h3><img src="@routes.Assets.versioned("images/2.png")"width="500" height="260">details here</span></h3>
+      <p>xxx.</p>
+      </h3>
+    </div>
+
+  <div id="login_click">  
+        <a id="btlogin" href="#">Buy</a>  
+    </div>
+    <div id="login_click">  
+        <a id="btlogin" href="#">Add to outfit</a>  
+    </div>
+      <div id="login_click">  
+        <a id="btlogin" href="#">Cancel</a>  
+    </div>
+</main>
