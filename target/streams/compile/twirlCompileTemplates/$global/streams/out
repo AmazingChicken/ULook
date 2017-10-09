@@ -1,4 +1,4 @@
-[0m[[31merror[0m] [0mC:\Users\Daniel\ULook\app\views\mainPage.scala.html:3: Invalid '@' symbol[0m
-[0m[[31merror[0m] [0m   *@[0m
-[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0mC:\Users\Daniel\ULook\app\views\myOutfits.scala.html:113: Invalid '@' symbol[0m
+[0m[[31merror[0m] [0m    <div class="input-group-addon">@</div>[0m
+[0m[[31merror[0m] [0m                                   ^[0m
 [0m[[31merror[0m] [0m(compile:[31mtwirlCompileTemplates[0m) Twirl compilation failed[0m
