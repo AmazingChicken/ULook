@@ -1,63 +1,201 @@
-@*
- * This template is called from the index template. This template
- * handles the rendering of the page header and body tags. It takes
- * two arguments, a String for the title of the page and an Html
- * object to insert into the body of the page.
- *@
-@()
+<!DOCTYPE html>
+<html lang="en">
+<span class="bckg"></span>
+<head>
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("bootstrap/css/bootstrap.css")">
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/mainPage.css")">
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/searchbar.css")">
+<script src="@routes.Assets.versioned("bootstrap/js/bootstrap.js")"></script>
 
-
- <span class="bckg"></span>
+</head>
 <header>
-
-<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/search.css")">
-  <h1>Ulook</h1>
+  <h1>ULook</h1>
   @navigator()
 </header>
+<body>
 <main>
 
   <div class="title">
     <h2>Search</h2>
-    <a href="javascript:void(0);">Sign out</a>
-  </div>
+    <a href="javascript:void(0);">Sign in</a>
+   </div>
+   <div class="container-fluid">
+   <div class="container">
+   
 
-  <article class="larg">
-      <form class="search" action=""><div id="slidecontainer">Price
-  <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-</div>Shoe Type 
-<div>
-<form class = "form"  action="">
-<input  type="checkbox" name="vehicle" value="Bike"><span class = "check">Boots</span>
-<input  type="checkbox" name="vehicle" value="Shoe"><span class = "check">Sneakers</span><br>
-<input  type="checkbox" name="vehicle" value="Shoe"><span class = "check">Casual</span>
-<input  type="checkbox" name="vehicle" value="Shoe"><span class = "check">Runners</span><br>
-</form>
-</div>Brand<div> 
-<form class= "form"  action="">
-<input  type="checkbox" name="vehicle" value="Bike"><span class = "check">Adidas</span>
-<input  type="checkbox" name="vehicle" value="Shoe"><span class = "check">Nike</span><br>
-<input  type="checkbox" name="vehicle" value="Shoe"><span class = "check">Sketchers</span>
-<input  type="checkbox" name="vehicle" value="Shoe"><span class = "check">New Balance</span><br>
-</form>
-</div>
+   
+      <div class="input-group stylish-input-group mt-2">
+        <input type="text" class="form-control"  placeholder="Search by Item Name" >
+        <span class="input-group-addon">
+            <button type="submit">
+                <img src="@routes.Assets.versioned("images/search.png")" height="35" width="35">
+            </button>  
+        </span>
+      </div>
+   </div>
+   <div class="card ml-3 mt-3 mr-2">
+      <strong class="ml-3 mt-2">Category</strong>
+      <select class="form-control mt-1 ml-3 category">
+         <option>Hats</option>
+         <option>Shirts</option>
+         <option>Pants</option>
+         <option>Shoes</option>
+      </select>
+        <div class="row mt-3 ml-3">
+            <div class="col-md-4"><strong>Brand</strong></div>
+            <div class="col-md-4"><strong>Price</strong></div>
+            <div class="col-md-4"><strong>Type</strong></div>
+        </div>
+   <div class="card-deck mt-1 ml-2 mb-2 mr-1">
+         <div class="card ml-3 mt-1 scrollbox">
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option1
+               </label>
+            </div>
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option1
+               </label>
+            </div>
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option1
+               </label>
+            </div>
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option1
+               </label>
+            </div>
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option1
+               </label>
+            </div>
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option1
+               </label>
+            </div>
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option1
+               </label>
+            </div>
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option1
+               </label>
+            </div>
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option1
+               </label>
+            </div>            
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option2
+               </label>
+            </div>   
+         </div>
+         <div class="card ml-3 mt-1">
+            <form class="form-inline-sm mt-3 ml-2">
+               <input type="text" class="form-control-sm" id="inlineFormInput" placeholder="Minimum Price">
+               <label class="sr-only" for="priceFrom">priceFrom</label>
+               <label class="sr-only" for="priceTo">priceTo</label>
+               <input type="text" class="form-control-sm" id="inlineFormInput" placeholder="Maximum Price">
+            </form>
+         </div>
+         <div class="card ml-3 mt-1 scrollbox">
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option2
+               </label>
+            </div> 
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option2
+               </label>
+            </div> 
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option2
+               </label>
+            </div> 
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option2
+               </label>
+            </div> 
+         </div>
+      </div>
+   </div>
+   <select class="form-control mt-3 sort">
+      <option>Price High to Low</option>
+      <option>Price Low to High</option>
+      <option>Newest-Oldest</option>
+      <option>Name A-Z</option>
+      <option>Name Z-A</option>
+   </select>
+   
+   
+      <div class="card-deck mt-4 ml-5 mb-4 mr-1">
+         <div class="card mr-5">
+            <div class="text-center">
+               <a href="#"><img src="@routes.Assets.versioned("images/roshe.jpg")" height="200" width="200"></a>
+            </div> 
+            <div class="card-block">
+               <h4 class="card-title ml-2">Nike Roshe</h4>
+               <div class="mb-2">
+                  <button type="button" class="btn btn-secondary ml-2">Add to Outfit</button>
+                  <button type="button" class="btn btn-success float-right mr-2" >Favourite</button>
+               </div>
+            </div>
+         </div>
+         <div class="card mr-5">
+            <div class="text-center">
+               <a href="#"><img src="@routes.Assets.versioned("images/boot.jpg")" height="200" width="200"></a>
+            </div> 
+            <div class="card-block">
+               <h4 class="card-title ml-2">Cool Boot</h4>
+               <div class="mb-2">
+                  <button type="button" class="btn btn-secondary ml-2">Add to Outfit</button>
+                  <button type="button" class="btn btn-success float-right mr-2" >Favourite</button>
+               </div>
+            </div>
+         </div>
+         <div class="card mr-5">
+            <div class="text-center">
+               <a href="#"><img src="@routes.Assets.versioned("images/chucks.jpg")" height="200" width="200"></a>
+            </div> 
+            <div class="card-block ">
+               <h4 class="card-title ml-2">Chucks</h4>
+               <div class="mb-2">
+                  <button type="button" class="btn btn-secondary ml-2">Add to Outfit</button>
+                  <button type="button" class="btn btn-success float-right mr-2" >Favourite</button>
+               </div>
+            </div>       
+         </div>
+      </div>
+   </div>
 
-<input type="search" placeholder="Search here..." required>
-<button type="submit">Search</button>
-</form>
-    <div>
-      <h3><img src="@routes.Assets.versioned("images/2.png")"width="200" height="160">Nike Air Max Price - $90<span class="entypo-down-open"></span></h3>
-      <button class = "add" type="button">Add To Outfit</button>
-      <p>xxx.</p>
-    </div>
-    <div>
-      <h3><img src="@routes.Assets.versioned("images/3.png")"width="200" height="160">Nike Shoe Price - $190<span class="entypo-down-open"></span></h3>
-      <button class = "add" type="button">Add To Outfit</button>
-      <p>xxx.</p>
-    </div>
-    <div>
-      <h3><img src="@routes.Assets.versioned("images/4.png")"width="200" height="160">Nike Shoe 2 Price - $75<span class="entypo-down-open"></span></h3>
-      <button class = "add" type="button">Add To Outfit</button>
-      <p>xxx.</p>
-    </div>
-  </article>
 </main>
+
+</body>
+
+</html>

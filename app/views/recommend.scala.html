@@ -1,42 +1,170 @@
-@*
- * This template is called from the `index` template. This template
- * handles the rendering of the page header and body tags. It takes
- * two arguments, a `String` for the title of the page and an `Html`
- * object to insert into the body of the page.
- *@
-
-
- <span class="bckg"></span>
-<header>
-
+<!DOCTYPE html>
+<html lang="en">
+<span class="bckg"></span>
+<head>
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("bootstrap/css/bootstrap.css")">
 <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/mainPage.css")">
-  <h1>Ulook</h1>
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/searchbar.css")">
+<script src="@routes.Assets.versioned("bootstrap/js/bootstrap.js")"></script>
+
+</head>
+<header>
+  <h1>ULook</h1>
   @navigator()
 </header>
+<body>
 <main>
 
   <div class="title">
     <h2>Recommended</h2>
-
     <a href="javascript:void(0);">Sign in</a>
-  </div>
+   </div>
+   <div class="container-fluid">
+   <div class="container">
+   
 
-  <article class="larg">
-      <form class="search" action="">
-<input type="search" placeholder="Search here..." required>
-<button type="submit">Search</button>
-</form>
-    <div>
-      <h3><img src="@routes.Assets.versioned("images/man1.png")"width="140" height="200">price:240$ gender:man<span class="entypo-down-open"></span></h3>
-      <p>xxx.</p>
-    </div>
-    <div>
-      <h3><img src="@routes.Assets.versioned("images/man2.png")"width="140" height="200">price:220$ gender:man<span class="entypo-down-open"></span></h3>
-      <p>xxx.</p>
-    </div>
-    <div>
-      <h3><img src="@routes.Assets.versioned("images/women1.png")"width="140" height="200">price:240$ gender:woman<span class="entypo-down-open"></span></h3>
-      <p>xxx.</p>
-    </div>
-  </article>
+   
+      <div class="input-group stylish-input-group mt-2">
+        <input type="text" class="form-control"  placeholder="Search by keywords,names,etc" >
+        <span class="input-group-addon">
+            <button type="submit">
+                <img src="@routes.Assets.versioned("images/search.png")" height="35" width="35">
+            </button>  
+        </span>
+      </div>
+   </div>
+   
+   <div class="card ml-3 mt-3 mr-2">
+      <div class="row mt-3 ml-3">
+         <div class="col-md-4"><strong>Occasion</strong></div>
+         <div class="col-md-4"><strong>Price</strong></div>
+         <div class="col-md-4"><strong>Tags</strong></div>
+      </div>
+      <div class="card-deck mt-1 ml-2 mb-2 mr-1">
+         <div class="card ml-3 mt-1 scrollbox">
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option1
+               </label>
+            </div>
+           <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option1
+               </label>
+            </div>
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option1
+               </label>
+            </div>
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option1
+               </label>
+            </div>
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option1
+               </label>
+            </div>
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option1
+               </label>
+            </div>
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option1
+               </label>
+            </div>
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option1
+               </label>
+            </div>
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option1
+               </label>
+            </div>            
+            <div class="form-check form-inline mt-2 mb-2">
+               <label class="form-check-label">
+               <input class="form-check-input" type="checkbox" value="">
+               Option2
+               </label>
+            </div>   
+         </div>
+         <div class="card ml-3 mt-1">
+            <form class="form-inline-sm mt-3 ml-2">
+               <input type="text" class="form-control-sm" id="inlineFormInput" placeholder="Minimum Price">
+               <label class="sr-only" for="priceFrom">priceFrom</label>
+               <label class="sr-only" for="priceTo">priceTo</label>
+               <input type="text" class="form-control-sm" id="inlineFormInput" placeholder="Maximum Price">
+            </form>
+         </div>
+         <div class="card ml-3 mt-1 scrollbox">
+         </div>
+      </div>
+   </div>
+   <select class="form-control mt-3 sort">
+      <option>Price High to Low</option>
+      <option>Price Low to High</option>
+      <option>Newest-Oldest</option>
+      <option>Name A-Z</option>
+      <option>Name Z-A</option>
+   </select>
+   
+      <div class="card-deck mt-4 ml-5 mb-4 mr-1">
+         <div class="card mr-5">
+            <div class="text-center">
+               <a href="#"><img src="@routes.Assets.versioned("images/hat.jpg")" height="120" width="120"></a>
+               <a href="#"><img src="@routes.Assets.versioned("images/shirt.jpg")" height="120" width="120"></a>
+               <a href="#"><img src="@routes.Assets.versioned("images/pants.jpg")" height="120" width="120"></a>
+               <a href="#"><img src="@routes.Assets.versioned("images/boot.jpg")" height="120" width="120"></a>
+            </div> 
+            <div class="card-block">
+               <h4 class="card-title ml-2">Outfit 1</h4>
+               <button type="button" class="btn btn-secondary ml-3">Edit</button>
+            </div>
+         </div>
+         <div class="card mr-5">
+            <div class="text-center">
+               <a href="#"><img src="@routes.Assets.versioned("images/hat.jpg")" height="120" width="120"></a>
+               <a href="#"><img src="@routes.Assets.versioned("images/shirt.jpg")" height="120" width="120"></a>
+               <a href="#"><img src="@routes.Assets.versioned("images/pants.jpg")" height="120" width="120"></a>
+               <a href="#"><img src="@routes.Assets.versioned("images/boot.jpg")" height="120" width="120"></a>
+            </div> 
+            <div class="card-block">
+               <h4 class="card-title ml-2">Cool Outfit</h4>
+               <button type="button" class="btn btn-secondary ml-3">Edit</button>
+            </div>
+         </div>
+         <div class="card mr-5">
+            <div class="text-center">
+               <a href="#"><img src="@routes.Assets.versioned("images/hat.jpg")" height="120" width="120"></a>
+               <a href="#"><img src="@routes.Assets.versioned("images/shirt.jpg")" height="120" width="120"></a>
+               <a href="#"><img src="@routes.Assets.versioned("images/pants.jpg")" height="120" width="120"></a>
+               <a href="#"><img src="@routes.Assets.versioned("images/boot.jpg")" height="120" width="120"></a>
+            </div> 
+            <div class="card-block ">
+               <h4 class="card-title ml-2">Outfit 3</h4>
+               <button type="button" class="btn btn-secondary ml-3 mb-2">Edit</button>
+            </div>        
+         </div>
+      </div>
+   </div>
+
 </main>
+
+</body>
+
+</html>

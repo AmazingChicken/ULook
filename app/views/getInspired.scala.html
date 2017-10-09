@@ -1,42 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <span class="bckg"></span>
-<header>
-
+<head>
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("bootstrap/css/bootstrap.css")">
 <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/mainPage.css")">
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/searchbar.css")">
+<script src="@routes.Assets.versioned("bootstrap/js/bootstrap.js")"></script>
 
-
+</head>
+<header>
   <h1>ULook</h1>
   @navigator()
 </header>
+<body>
 <main>
 
   <div class="title">
     <h2>Get Inspired!</h2>
     <a href="javascript:void(0);">Sign in</a>
-  </div>
+   </div>
+   <div class="container-fluid">
+   <div class="card mt-2">
+      <div>
+         <img class="img-valign mt-2 mb-2 ml-2" src="@routes.Assets.versioned("images/insta.png")" height="60" width="60">
+         <span><strong>Outfid of the Day! #OOTD</strong></span>
+      </div>
+   </div>
+   
+      <div class="card-deck mt-4 ml-5 mb-4 mr-1">
+         <div class="card mr-5">
+            <div class="text-center mt-4 mb-3">
+               <a href="#"><img src="@routes.Assets.versioned("images/xenia.png")" height="500" width="400"></a>
+            </div> 
+            <div class="card-block">
+               <h4 class="card-title ml-4">Xenia</h4>
+            </div>
+         </div>
+         <div class="card mr-5">
+            <div class="text-center mt-4 mb-3">
+               <a href="#"><img src="@routes.Assets.versioned("images/andreialbu_.png")"  height="500" width="400"></a>
 
-  <head>
-    <h2><img src="@routes.Assets.versioned("images/insta.png")"width="60" height="60">  #OOTD</h2>
-  </head>
-
-  <article class="larg">
-    <div>
-      <h3>xenia <br><img src="@routes.Assets.versioned("images/xenia.png")"width="140" height="200"><span class="entypo-down-open"></span></h3>
-
-    </div>
-    <div>
-      <h3>andreialbu_ <br><img src="@routes.Assets.versioned("images/andreialbu_.png")"width="140" height="200"><span class="entypo-down-open"></span></h3>
-
-    </div>
-    <div>
-      <h3>blogjuniorestevam <br><img src="@routes.Assets.versioned("images/blogjuniorestevam.png")"width="140" height="200"><span class="entypo-down-open"></span></h3>
-
-    </div>
-  </article>
+            </div> 
+            <div class="card-block">
+               <h4 class="card-title ml-4">andreialbu</h4>
+            </div>
+         </div>
+         <div class="card mr-5">
+            <div class="text-center mt-4 mb-3">
+               <a href="#"><img src="@routes.Assets.versioned("images/blogjuniorestevam.png")"  height="500" width="400"></a>
+            </div> 
+            <div class="card-block ">
+               <h4 class="card-title ml-4">blogjuniorestevam</h4>
+            </div>        
+         </div>
+      </div>
+   </div>
 
 </main>
 
-
+</body>
 
 </html>
