@@ -43,28 +43,8 @@ Seq[Any](format.raw/*7.4*/("""
 
 <link rel="stylesheet" media="screen" href=""""),_display_(/*13.46*/routes/*13.52*/.Assets.versioned("stylesheets/mainPage.css")),format.raw/*13.97*/("""">
   <h1>Ulook</h1>
-  <nav>
-    <ul>
-      <li>
-
-        <a href=""""),_display_(/*19.19*/routes/*19.25*/.HomeController.getInspired()),format.raw/*19.54*/("""" data-title="Projects">Get inspired</a>
-      </li>
-      <li>
-        <a href=""""),_display_(/*22.19*/routes/*22.25*/.HomeController.recommend()),format.raw/*22.52*/("""" data-title="Team">Recommended</a>
-      </li>
-      <li>
-        <a href=""""),_display_(/*25.19*/routes/*25.25*/.HomeController.myItems()),format.raw/*25.50*/("""" data-title="Diary">My items</a>
-      </li>
-      <li>
-        <a href="javascript:void(0);" data-title="Timeline">My Outfits</a>
-      </li>
-      <li>
-        <a href=""""),_display_(/*31.19*/routes/*31.25*/.HomeController.search()),format.raw/*31.49*/("""" data-title="Settings">Search</a>
-      </li>
-
-    </ul>
-  </nav>
-</header>
+   """),_display_(/*15.5*/navigator()),format.raw/*15.16*/(""" 
+"""),format.raw/*16.1*/("""</header>
 <main>
 
   <div class="title">
@@ -78,15 +58,15 @@ Seq[Any](format.raw/*7.4*/("""
 <button type="submit">Search</button>
 </form>
     <div>
-      <h3><img src=""""),_display_(/*50.22*/routes/*50.28*/.Assets.versioned("images/2.png")),format.raw/*50.61*/(""""width="200" height="160">price<span class="entypo-down-open"></span></h3>
+      <h3><img src=""""),_display_(/*30.22*/routes/*30.28*/.Assets.versioned("images/2.png")),format.raw/*30.61*/(""""width="200" height="160">price<span class="entypo-down-open"></span></h3>
       <p>xxx.</p>
     </div>
     <div>
-      <h3><img src=""""),_display_(/*54.22*/routes/*54.28*/.Assets.versioned("images/3.png")),format.raw/*54.61*/(""""width="200" height="160"><span class="entypo-down-open"></span></h3>
+      <h3><img src=""""),_display_(/*34.22*/routes/*34.28*/.Assets.versioned("images/3.png")),format.raw/*34.61*/(""""width="200" height="160"><span class="entypo-down-open"></span></h3>
       <p>xxx.</p>
     </div>
     <div>
-      <h3><img src=""""),_display_(/*58.22*/routes/*58.28*/.Assets.versioned("images/4.png")),format.raw/*58.61*/(""""width="200" height="160"><span class="entypo-down-open"></span></h3>
+      <h3><img src=""""),_display_(/*38.22*/routes/*38.28*/.Assets.versioned("images/4.png")),format.raw/*38.61*/(""""width="200" height="160"><span class="entypo-down-open"></span></h3>
       <p>xxx.</p>
     </div>
   </article>
@@ -106,11 +86,11 @@ Seq[Any](format.raw/*7.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Fri Sep 22 10:31:49 AEST 2017
-                  SOURCE: /Users/RyanThai/Desktop/ULook/app/views/mainPage.scala.html
-                  HASH: a6d4ecd1a1f2ce35d3b14e1dd1773c49d84415bb
-                  MATRIX: 1192->254|1288->256|1319->260|1428->342|1443->348|1509->393|1603->460|1618->466|1668->495|1777->577|1792->583|1840->610|1944->687|1959->693|2005->718|2205->891|2220->897|2265->921|2687->1316|2702->1322|2756->1355|2918->1490|2933->1496|2987->1529|3144->1659|3159->1665|3213->1698
-                  LINES: 33->7|38->7|41->10|44->13|44->13|44->13|50->19|50->19|50->19|53->22|53->22|53->22|56->25|56->25|56->25|62->31|62->31|62->31|81->50|81->50|81->50|85->54|85->54|85->54|89->58|89->58|89->58
+                  DATE: Thu Sep 28 17:44:21 AEST 2017
+                  SOURCE: C:/Users/Daniel/ULook/app/views/mainPage.scala.html
+                  HASH: 99137f102d421dc56efc67fff0de768a88bc786a
+                  MATRIX: 1197->260|1293->262|1327->269|1439->354|1454->360|1520->405|1572->431|1604->442|1634->445|2003->787|2018->793|2072->826|2238->965|2253->971|2307->1004|2468->1138|2483->1144|2537->1177
+                  LINES: 33->7|38->7|41->10|44->13|44->13|44->13|46->15|46->15|47->16|61->30|61->30|61->30|65->34|65->34|65->34|69->38|69->38|69->38
                   -- GENERATED --
               */
           

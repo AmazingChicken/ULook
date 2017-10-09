@@ -37,4 +37,7 @@ public class HomeController extends Controller {
     public Result getInspired(){
       	return ok(views.html.getInspired.render());
     }
+    public Result myOutfits(){
+      	return ok(views.html.myOutfits.render());
+    }
 }

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/RyanThai/Desktop/ULook/conf/routes
-// @DATE:Fri Sep 22 10:16:49 AEST 2017
+// @SOURCE:C:/Users/Daniel/ULook/conf/routes
+// @DATE:Sun Oct 08 14:30:31 AEDT 2017
 
 
 package router {
