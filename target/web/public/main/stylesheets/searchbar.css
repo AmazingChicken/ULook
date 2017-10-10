@@ -1,0 +1,41 @@
+
+.stylish-input-group .input-group-addon{
+    background: white !important; 
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+.scrollbox {
+  height:100px;
+  overflow-y: scroll;
+}
+.scrollbox { border:2px solid #ccc; width:300px; height: 100px; overflow-y: scroll; }
+
+button {
+    cursor: pointer;
+    cursor: hand;
+}
+.sort{
+   width:10%;
+   margin-left:89%;
+   font-size:70%;
+}
+.category{
+   width:97%;
+}
+
+img{
+   max-width:100%;
+   height:auto;
+}
+.form-control-sm{
+   width:42%;
+   
+}
