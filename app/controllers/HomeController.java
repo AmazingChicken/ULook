@@ -7,6 +7,10 @@ import java.io.FileReader;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.nio.charset.StandardCharsets;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 /**
  * This controller contains an action to handle HTTP requests
@@ -49,30 +53,35 @@ public class HomeController extends Controller {
 
 
     public Result approach1(String s) {
-      System.out.println(s);
+    //  java.io.File yourFile = new java.io.File("app/controllers/test.txt");
+     // java.io.FileReader fr = new java.io.FileReader(yourFile);
       if(s.equals(" ")){
         return ok("Please enter a not empty string");
       }
-      File file = new File("test.txt");
+      // if(s.equals("Nike")){
+      //  return ok(views.html.recommend.render());
+     // }
+      File file = new File("app/controllers/test.txt");
       String regEx = s+".*";
       Pattern pattern = Pattern.compile(regEx);
     //System.out.println(pattern);
      // String content = Files.toString(new File("test.txt"));
       String content = txt2String(file);
+
      // return ok(content);
   //  System.out.println(content);
       Matcher matcher = pattern.matcher(content);
       boolean rs = matcher.find();
     //boolean isMatch = Pattern.matches(pattern, content);
       if(rs==true){
-        System.out.println(content);
+        return ok(content);
       }
       else{
        // return ok(content);
       }
 
     //if (s == 0) return badRequest("Wrong video ID");
-      return ok("1: Display video no. " + s);
+      return ok();
     }
 
     public static String txt2String(File file){
