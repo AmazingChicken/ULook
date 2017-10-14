@@ -55,12 +55,14 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
    <div class="container">
    
 
-   
+      <form action=""""),_display_(/*26.22*/routes/*26.28*/.HomeController.approach1("a")),format.raw/*26.58*/("""">
       <div class="input-group stylish-input-group mt-2">
-        <input type="text" class="form-control"  placeholder="Search by Item Name" >
+   
+        <input type="search" class="form-control"  placeholder="Search by Item Name" onkeyup="myFunction()" name = "s" required>
         <span class="input-group-addon">
             <button type="submit">
-                <img src=""""),_display_(/*31.28*/routes/*31.34*/.Assets.versioned("images/search.png")),format.raw/*31.72*/("""" height="35" width="35">
+            </form>
+                <img src=""""),_display_(/*33.28*/routes/*33.34*/.Assets.versioned("images/search.png")),format.raw/*33.72*/("""" height="35" width="35">
             </button>  
         </span>
       </div>
@@ -189,7 +191,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
       <div class="card-deck mt-4 ml-5 mb-4 mr-1">
          <div class="card mr-5">
             <div class="text-center">
-               <a href="#"><img src=""""),_display_(/*160.39*/routes/*160.45*/.Assets.versioned("images/roshe.jpg")),format.raw/*160.82*/("""" height="200" width="200"></a>
+               <a href="#"><img src=""""),_display_(/*162.39*/routes/*162.45*/.Assets.versioned("images/roshe.jpg")),format.raw/*162.82*/("""" height="200" width="200"></a>
             </div> 
             <div class="card-block">
                <h4 class="card-title ml-2">Nike Roshe</h4>
@@ -201,7 +203,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
          </div>
          <div class="card mr-5">
             <div class="text-center">
-               <a href="#"><img src=""""),_display_(/*172.39*/routes/*172.45*/.Assets.versioned("images/boot.jpg")),format.raw/*172.81*/("""" height="200" width="200"></a>
+               <a href="#"><img src=""""),_display_(/*174.39*/routes/*174.45*/.Assets.versioned("images/boot.jpg")),format.raw/*174.81*/("""" height="200" width="200"></a>
             </div> 
             <div class="card-block">
                <h4 class="card-title ml-2">Cool Boot</h4>
@@ -213,7 +215,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
          </div>
          <div class="card mr-5">
             <div class="text-center">
-               <a href="#"><img src=""""),_display_(/*184.39*/routes/*184.45*/.Assets.versioned("images/chucks.jpg")),format.raw/*184.83*/("""" height="200" width="200"></a>
+               <a href="#"><img src=""""),_display_(/*186.39*/routes/*186.45*/.Assets.versioned("images/chucks.jpg")),format.raw/*186.83*/("""" height="200" width="200"></a>
             </div> 
             <div class="card-block ">
                <h4 class="card-title ml-2">Chucks</h4>
@@ -227,7 +229,6 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
    </div>
 
 </main>
-
 </body>
 
 </html>"""))
@@ -246,11 +247,11 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 
               /*
                   -- GENERATED --
-                  DATE: Wed Oct 11 20:28:48 AEDT 2017
-                  SOURCE: /Users/RyanThai/Desktop/SENG2021/Project/ULook/app/views/search.scala.html
-                  HASH: 8f6767910af9a2f3764e94cbbf40344d218b9c96
-                  MATRIX: 1031->0|1169->112|1183->118|1252->166|1326->214|1340->220|1405->265|1479->313|1493->319|1559->365|1602->382|1616->388|1682->434|1758->484|1790->495|1818->496|2282->933|2297->939|2356->977|7555->6148|7571->6154|7630->6191|8201->6734|8217->6740|8275->6776|8845->7318|8861->7324|8921->7362
-                  LINES: 33->1|37->5|37->5|37->5|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|45->13|45->13|46->14|63->31|63->31|63->31|192->160|192->160|192->160|204->172|204->172|204->172|216->184|216->184|216->184
+                  DATE: Sat Oct 14 15:22:15 AEDT 2017
+                  SOURCE: C:/Users/Daniel/ULook/app/views/search.scala.html
+                  HASH: 43243bb3c381873e7fe82d53aa8a381ec9cd66d3
+                  MATRIX: 1031->0|1173->116|1187->122|1256->170|1331->219|1345->225|1410->270|1485->319|1499->325|1565->371|1609->389|1623->395|1689->441|1770->496|1802->507|1831->509|2079->730|2094->736|2145->766|2495->1089|2510->1095|2569->1133|7897->6433|7913->6439|7972->6476|8555->7031|8571->7037|8629->7073|9211->7627|9227->7633|9287->7671
+                  LINES: 33->1|37->5|37->5|37->5|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|45->13|45->13|46->14|58->26|58->26|58->26|65->33|65->33|65->33|194->162|194->162|194->162|206->174|206->174|206->174|218->186|218->186|218->186
                   -- GENERATED --
               */
           

@@ -5,3 +5,6 @@ playVersion
 q
 quit
 exit
+eclipse
+sbt run
+run

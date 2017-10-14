@@ -4,6 +4,10 @@ import play.mvc.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -24,6 +28,10 @@ public class HomeController extends Controller {
      * this method will be called when the application receives a
      * <code>GET</code> request with a path of <code>/</code>.
      */
+
+	
+	
+	
     public Result index() {
         return ok(views.html.index.render());
     }
@@ -36,7 +44,7 @@ public class HomeController extends Controller {
       	return ok(views.html.signUpPage.render());
     }
     public Result myItems(){
-      	return ok(views.html.myItems.render());
+      	return ok(views.html.myItems.render(dummyImage(),dummyOptions(),dummyType()));
     }
     public Result recommend(){
       	return ok(views.html.recommend.render());
@@ -99,6 +107,36 @@ public class HomeController extends Controller {
             e.printStackTrace();
         }
         return result.toString();
+    }
+    public Map<String,String> dummyImage(){
+    	Map<String,String> yes = new HashMap<String,String>();
+    	yes.put("roshe","images/roshe.jpg");
+    	yes.put("Nike","images/2.png");
+    	yes.put("Nike 2","images/3.png");
+    	yes.put("Boot","images/boot.jpg");
+    	return yes;
+    }
+    public ArrayList<String> dummyOptions(){
+    	ArrayList<String> yes = new ArrayList<String>();
+    	yes.add("Nike");
+    	yes.add("Adidas");
+    	yes.add("New balance");
+    	yes.add("Puma");
+    	yes.add("Sketchers");
+    	yes.add("Timberland");
+    	
+    	return yes;
+    }
+    public ArrayList<String> dummyType(){
+    	ArrayList<String> yes = new ArrayList<String>();
+    	yes.add("Trainers");
+    	yes.add("Casual");
+    	yes.add("Boots");
+    	yes.add("Sandals");
+    	yes.add("Basketball");
+    	yes.add("Sports");
+    	
+    	return yes;
     }
 }
 

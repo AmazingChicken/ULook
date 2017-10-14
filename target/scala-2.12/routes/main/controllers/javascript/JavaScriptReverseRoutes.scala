@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/RyanThai/Desktop/SENG2021/Project/ULook/conf/routes
-// @DATE:Wed Oct 11 20:28:48 AEDT 2017
+// @SOURCE:C:/Users/Daniel/ULook/conf/routes
+// @DATE:Sat Oct 14 15:22:15 AEDT 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -26,6 +26,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "myItems"})
+        }
+      """
+    )
+  
+    // @LINE:15
+    def approach2: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.approach2",
+      """
+        function(s0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "approach2" + _qS([(s0 == null ? null : (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("s", s0))])})
         }
       """
     )
@@ -90,6 +100,16 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:14
+    def approach1: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.approach1",
+      """
+        function(s0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "approach1" + _qS([(s0 == null ? null : (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("s", s0))])})
+        }
+      """
+    )
+  
     // @LINE:13
     def myOutfits: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.myOutfits",
@@ -102,7 +122,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:15
+  // @LINE:17
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -110,7 +130,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:15
+    // @LINE:17
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/RyanThai/Desktop/SENG2021/Project/ULook/conf/routes
-// @DATE:Wed Oct 11 20:28:48 AEDT 2017
+// @SOURCE:C:/Users/Daniel/ULook/conf/routes
+// @DATE:Sat Oct 14 15:22:15 AEDT 2017
 
 import play.api.mvc.Call
 
@@ -23,6 +23,12 @@ package controllers {
     def myItems(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "myItems")
+    }
+  
+    // @LINE:15
+    def approach2(s:String = "a"): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "approach2" + play.core.routing.queryString(List(if(s == "a") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("s", s)))))
     }
   
     // @LINE:8
@@ -61,6 +67,12 @@ package controllers {
       Call("GET", _prefix)
     }
   
+    // @LINE:14
+    def approach1(s:String = "a"): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "approach1" + play.core.routing.queryString(List(if(s == "a") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("s", s)))))
+    }
+  
     // @LINE:13
     def myOutfits(): Call = {
       
@@ -69,14 +81,14 @@ package controllers {
   
   }
 
-  // @LINE:15
+  // @LINE:17
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:15
+    // @LINE:17
     def versioned(file:Asset): Call = {
       implicit val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))

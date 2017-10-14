@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/Users/RyanThai/Desktop/SENG2021/Project/ULook/conf/routes
-// @DATE:Wed Oct 11 20:28:48 AEDT 2017
+// @SOURCE:C:/Users/Daniel/ULook/conf/routes
+// @DATE:Sat Oct 14 15:22:15 AEDT 2017
 
 package router
 
@@ -17,7 +17,7 @@ class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
   HomeController_0: controllers.HomeController,
-  // @LINE:15
+  // @LINE:17
   Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -26,7 +26,7 @@ class Routes(
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
     HomeController_0: controllers.HomeController,
-    // @LINE:15
+    // @LINE:17
     Assets_1: controllers.Assets
   ) = this(errorHandler, HomeController_0, Assets_1, "/")
 
@@ -48,6 +48,8 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """search""", """controllers.HomeController.search"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getInspired""", """controllers.HomeController.getInspired"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """myOutfits""", """controllers.HomeController.myOutfits"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """approach1""", """controllers.HomeController.approach1(s:String ?= "a")"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """approach2""", """controllers.HomeController.approach2(s:String ?= "a")"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -200,11 +202,47 @@ class Routes(
     )
   )
 
+  // @LINE:14
+  private[this] lazy val controllers_HomeController_approach18_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("approach1")))
+  )
+  private[this] lazy val controllers_HomeController_approach18_invoker = createInvoker(
+    HomeController_0.approach1(fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "approach1",
+      Seq(classOf[String]),
+      "GET",
+      this.prefix + """approach1""",
+      """""",
+      Seq()
+    )
+  )
+
   // @LINE:15
-  private[this] lazy val controllers_Assets_versioned8_route = Route("GET",
+  private[this] lazy val controllers_HomeController_approach29_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("approach2")))
+  )
+  private[this] lazy val controllers_HomeController_approach29_invoker = createInvoker(
+    HomeController_0.approach2(fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "approach2",
+      Seq(classOf[String]),
+      "GET",
+      this.prefix + """approach2""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:17
+  private[this] lazy val controllers_Assets_versioned10_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned8_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned10_invoker = createInvoker(
     Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -269,10 +307,22 @@ class Routes(
         controllers_HomeController_myOutfits7_invoker.call(HomeController_0.myOutfits)
       }
   
+    // @LINE:14
+    case controllers_HomeController_approach18_route(params) =>
+      call(params.fromQuery[String]("s", Some("a"))) { (s) =>
+        controllers_HomeController_approach18_invoker.call(HomeController_0.approach1(s))
+      }
+  
     // @LINE:15
-    case controllers_Assets_versioned8_route(params) =>
+    case controllers_HomeController_approach29_route(params) =>
+      call(params.fromQuery[String]("s", Some("a"))) { (s) =>
+        controllers_HomeController_approach29_invoker.call(HomeController_0.approach2(s))
+      }
+  
+    // @LINE:17
+    case controllers_Assets_versioned10_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned8_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned10_invoker.call(Assets_1.versioned(path, file))
       }
   }
 }
