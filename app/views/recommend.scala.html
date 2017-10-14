@@ -1,3 +1,4 @@
+@(occasion: List[String],outfits : Map[String,Outfit])
 <!DOCTYPE html>
 <html lang="en">
 <span class="bckg"></span>
@@ -21,13 +22,14 @@
    </div>
    <div class="container-fluid">
    <div class="container">
-   
 
-   
+
+      <form action="@routes.HomeController.approach1("a")">
       <div class="input-group stylish-input-group mt-2">
-        <input type="text" class="form-control"  placeholder="Search by keywords,names,etc" >
+        <input type="search" class="form-control"  placeholder="Search by Keywords" onkeyup="myFunction()" name = "s" required>
         <span class="input-group-addon">
             <button type="submit">
+            </form>
                 <img src="@routes.Assets.versioned("images/search.png")" height="35" width="35">
             </button>  
         </span>
@@ -42,66 +44,14 @@
       </div>
       <div class="card-deck mt-1 ml-2 mb-2 mr-1">
          <div class="card ml-3 mt-1 scrollbox">
+            @for(option <- occasion){
             <div class="form-check form-inline mt-2 mb-2">
                <label class="form-check-label">
                <input class="form-check-input" type="checkbox" value="">
-               Option1
+               @option
                </label>
             </div>
-           <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>            
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option2
-               </label>
-            </div>   
+            }
          </div>
          <div class="card ml-3 mt-1">
             <form class="form-inline-sm mt-4 text-center">
@@ -123,43 +73,23 @@
       <option>Name Z-A</option>
    </select>
    
-      <div class="card-deck mt-4 ml-5 mb-4 mr-1">
-         <div class="card mr-5">
-            <div class="text-center">
-               <a href="#"><img src="@routes.Assets.versioned("images/hat.jpg")" height="120" width="120"></a>
-               <a href="#"><img src="@routes.Assets.versioned("images/shirt.jpg")" height="120" width="120"></a>
-               <a href="#"><img src="@routes.Assets.versioned("images/pants.jpg")" height="120" width="120"></a>
-               <a href="#"><img src="@routes.Assets.versioned("images/boot.jpg")" height="120" width="120"></a>
-            </div> 
-            <div class="card-block">
-               <h4 class="card-title ml-2">Outfit 1</h4>
-               <button type="button" class="btn btn-secondary ml-3">Edit</button>
+      <div class="row mt-4 ml-5 mb-4 mr-1">
+         @for((name,outfit)<- outfits){
+         <div class="col-sm-4 mb-5">
+            <div class="card mr-5">
+               <div class="text-center">
+                  <a href="#"><img src="@routes.Assets.versioned(outfit.getHat())" height="120" width="120"></a>
+                  <a href="#"><img src="@routes.Assets.versioned(outfit.getTop())" height="120" width="120"></a>
+                  <a href="#"><img src="@routes.Assets.versioned(outfit.getBottom())" height="120" width="120"></a>
+                  <a href="#"><img src="@routes.Assets.versioned(outfit.getShoes())" height="120" width="120"></a>
+               </div> 
+               <div class="card-block">
+                  <h4 class="card-title ml-2">@name</h4>
+                  <button type="button" class="btn btn-secondary ml-3 mb-2">Edit</button>
+               </div>
             </div>
          </div>
-         <div class="card mr-5">
-            <div class="text-center">
-               <a href="#"><img src="@routes.Assets.versioned("images/hat.jpg")" height="120" width="120"></a>
-               <a href="#"><img src="@routes.Assets.versioned("images/shirt.jpg")" height="120" width="120"></a>
-               <a href="#"><img src="@routes.Assets.versioned("images/pants.jpg")" height="120" width="120"></a>
-               <a href="#"><img src="@routes.Assets.versioned("images/boot.jpg")" height="120" width="120"></a>
-            </div> 
-            <div class="card-block">
-               <h4 class="card-title ml-2">Cool Outfit</h4>
-               <button type="button" class="btn btn-secondary ml-3">Edit</button>
-            </div>
-         </div>
-         <div class="card mr-5">
-            <div class="text-center">
-               <a href="#"><img src="@routes.Assets.versioned("images/hat.jpg")" height="120" width="120"></a>
-               <a href="#"><img src="@routes.Assets.versioned("images/shirt.jpg")" height="120" width="120"></a>
-               <a href="#"><img src="@routes.Assets.versioned("images/pants.jpg")" height="120" width="120"></a>
-               <a href="#"><img src="@routes.Assets.versioned("images/boot.jpg")" height="120" width="120"></a>
-            </div> 
-            <div class="card-block ">
-               <h4 class="card-title ml-2">Outfit 3</h4>
-               <button type="button" class="btn btn-secondary ml-3 mb-2">Edit</button>
-            </div>        
-         </div>
+         }
       </div>
    </div>
 

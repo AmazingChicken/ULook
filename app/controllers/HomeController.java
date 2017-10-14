@@ -47,16 +47,16 @@ public class HomeController extends Controller {
       	return ok(views.html.myItems.render(dummyImage(),dummyOptions(),dummyType()));
     }
     public Result recommend(){
-      	return ok(views.html.recommend.render());
+      	return ok(views.html.recommend.render(dummyOccasion(),dummyOutfit()));
     }
     public Result search(){
-      	return ok(views.html.search.render());
+      	return ok(views.html.search.render(dummyImage(),dummyOptions(),dummyType()));
     }
     public Result getInspired(){
-      	return ok(views.html.getInspired.render());
+      	return ok(views.html.getInspired.render(dummyInspiree()));
     }
     public Result myOutfits(){
-      	return ok(views.html.myOutfits.render());
+      	return ok(views.html.myOutfits.render(dummyOccasion(),dummyOutfit()));
     }
     public Result approach2(String s) {
         return ok(s);
@@ -108,6 +108,7 @@ public class HomeController extends Controller {
         }
         return result.toString();
     }
+    //Below are some functions that make dummy data for to generate stuff in the html
     public Map<String,String> dummyImage(){
     	Map<String,String> yes = new HashMap<String,String>();
     	yes.put("roshe","images/roshe.jpg");
@@ -136,6 +137,36 @@ public class HomeController extends Controller {
     	yes.add("Basketball");
     	yes.add("Sports");
     	
+    	return yes;
+    }
+    public ArrayList<String> dummyOccasion(){
+    	ArrayList<String> yes = new ArrayList<String>();
+    	yes.add("Formal");
+    	yes.add("Casual");
+    	yes.add("Sport");
+    	yes.add("Work");
+    	yes.add("Semi-Formal");
+    	yes.add("Beach");
+    	
+    	return yes;
+    }
+    public Map<String,String> dummyInspiree(){
+    	Map<String,String> yes = new HashMap<String,String>();
+    	yes.put("Xenia","images/Xenia.png");
+    	yes.put("andreialbu_","images/andreialbu_.png");
+    	yes.put("blogjuniorestevam","images/blogjuniorestevam.png");
+    	return yes;
+    }
+    public Map<String,Outfit> dummyOutfit(){
+    	Map<String,Outfit> yes = new HashMap<String,Outfit>();
+    	Outfit outfit1 = new Outfit("images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/roshe.jpg");
+    	Outfit outfit2 = new Outfit("images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/boot.jpg");
+    	Outfit outfit3 = new Outfit("images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/chucks.jpg");
+    	Outfit outfit4 = new Outfit("images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/4.png");
+    	yes.put("Outfit1", outfit1);
+    	yes.put("Outfit2", outfit2);
+    	yes.put("Outfit3", outfit3);
+    	yes.put("Outfit4", outfit4);
     	return yes;
     }
 }

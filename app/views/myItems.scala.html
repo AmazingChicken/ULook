@@ -24,10 +24,12 @@
    
  
    
+      <form action="@routes.HomeController.approach1("a")">
       <div class="input-group stylish-input-group mt-2">
-        <input type="text" class="form-control"  placeholder="Search by Item Name" >
+        <input type="search" class="form-control"  placeholder="Search by Item Name" onkeyup="myFunction()" name = "s" required>
         <span class="input-group-addon">
             <button type="submit">
+            </form>
                 <img src="@routes.Assets.versioned("images/search.png")" height="35" width="35">
             </button>  
         </span>

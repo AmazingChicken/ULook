@@ -22,28 +22,29 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object recommend extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+object recommend extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[List[String],Map[String, Outfit],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply():play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(occasion: List[String],outfits : Map[String,Outfit]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
+Seq[Any](format.raw/*1.55*/("""
+"""),format.raw/*2.1*/("""<!DOCTYPE html>
 <html lang="en">
 <span class="bckg"></span>
 <head>
-<link rel="stylesheet" media="screen" href=""""),_display_(/*5.46*/routes/*5.52*/.Assets.versioned("bootstrap/css/bootstrap.css")),format.raw/*5.100*/("""">
-<link rel="stylesheet" media="screen" href=""""),_display_(/*6.46*/routes/*6.52*/.Assets.versioned("stylesheets/mainPage.css")),format.raw/*6.97*/("""">
-<link rel="stylesheet" media="screen" href=""""),_display_(/*7.46*/routes/*7.52*/.Assets.versioned("stylesheets/searchbar.css")),format.raw/*7.98*/("""">
-<script src=""""),_display_(/*8.15*/routes/*8.21*/.Assets.versioned("bootstrap/js/bootstrap.js")),format.raw/*8.67*/(""""></script>
+<link rel="stylesheet" media="screen" href=""""),_display_(/*6.46*/routes/*6.52*/.Assets.versioned("bootstrap/css/bootstrap.css")),format.raw/*6.100*/("""">
+<link rel="stylesheet" media="screen" href=""""),_display_(/*7.46*/routes/*7.52*/.Assets.versioned("stylesheets/mainPage.css")),format.raw/*7.97*/("""">
+<link rel="stylesheet" media="screen" href=""""),_display_(/*8.46*/routes/*8.52*/.Assets.versioned("stylesheets/searchbar.css")),format.raw/*8.98*/("""">
+<script src=""""),_display_(/*9.15*/routes/*9.21*/.Assets.versioned("bootstrap/js/bootstrap.js")),format.raw/*9.67*/(""""></script>
 
 </head>
 <header>
   <h1>ULook</h1>
-  """),_display_(/*13.4*/navigator()),format.raw/*13.15*/("""
-"""),format.raw/*14.1*/("""</header>
+  """),_display_(/*14.4*/navigator()),format.raw/*14.15*/("""
+"""),format.raw/*15.1*/("""</header>
 <body>
 <main>
 
@@ -53,14 +54,15 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
    </div>
    <div class="container-fluid">
    <div class="container">
-   
 
-   
+
+      <form action=""""),_display_(/*27.22*/routes/*27.28*/.HomeController.approach1("a")),format.raw/*27.58*/("""">
       <div class="input-group stylish-input-group mt-2">
-        <input type="text" class="form-control"  placeholder="Search by keywords,names,etc" >
+        <input type="search" class="form-control"  placeholder="Search by Keywords" onkeyup="myFunction()" name = "s" required>
         <span class="input-group-addon">
             <button type="submit">
-                <img src=""""),_display_(/*31.28*/routes/*31.34*/.Assets.versioned("images/search.png")),format.raw/*31.72*/("""" height="35" width="35">
+            </form>
+                <img src=""""),_display_(/*33.28*/routes/*33.34*/.Assets.versioned("images/search.png")),format.raw/*33.72*/("""" height="35" width="35">
             </button>  
         </span>
       </div>
@@ -74,67 +76,15 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
       </div>
       <div class="card-deck mt-1 ml-2 mb-2 mr-1">
          <div class="card ml-3 mt-1 scrollbox">
-            <div class="form-check form-inline mt-2 mb-2">
+            """),_display_(/*47.14*/for(option <- occasion) yield /*47.37*/{_display_(Seq[Any](format.raw/*47.38*/("""
+            """),format.raw/*48.13*/("""<div class="form-check form-inline mt-2 mb-2">
                <label class="form-check-label">
                <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
+               """),_display_(/*51.17*/option),format.raw/*51.23*/("""
+               """),format.raw/*52.16*/("""</label>
             </div>
-           <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>            
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option2
-               </label>
-            </div>   
-         </div>
+            """)))}),format.raw/*54.14*/("""
+         """),format.raw/*55.10*/("""</div>
          <div class="card ml-3 mt-1">
             <form class="form-inline-sm mt-4 text-center">
                <input type="text" class="form-control-sm" id="inlineFormInput" placeholder="Minimum Price">
@@ -155,44 +105,24 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
       <option>Name Z-A</option>
    </select>
    
-      <div class="card-deck mt-4 ml-5 mb-4 mr-1">
-         <div class="card mr-5">
-            <div class="text-center">
-               <a href="#"><img src=""""),_display_(/*129.39*/routes/*129.45*/.Assets.versioned("images/hat.jpg")),format.raw/*129.80*/("""" height="120" width="120"></a>
-               <a href="#"><img src=""""),_display_(/*130.39*/routes/*130.45*/.Assets.versioned("images/shirt.jpg")),format.raw/*130.82*/("""" height="120" width="120"></a>
-               <a href="#"><img src=""""),_display_(/*131.39*/routes/*131.45*/.Assets.versioned("images/pants.jpg")),format.raw/*131.82*/("""" height="120" width="120"></a>
-               <a href="#"><img src=""""),_display_(/*132.39*/routes/*132.45*/.Assets.versioned("images/boot.jpg")),format.raw/*132.81*/("""" height="120" width="120"></a>
-            </div> 
-            <div class="card-block">
-               <h4 class="card-title ml-2">Outfit 1</h4>
-               <button type="button" class="btn btn-secondary ml-3">Edit</button>
+      <div class="row mt-4 ml-5 mb-4 mr-1">
+         """),_display_(/*77.11*/for((name,outfit)<- outfits) yield /*77.39*/{_display_(Seq[Any](format.raw/*77.40*/("""
+         """),format.raw/*78.10*/("""<div class="col-sm-4 mb-5">
+            <div class="card mr-5">
+               <div class="text-center">
+                  <a href="#"><img src=""""),_display_(/*81.42*/routes/*81.48*/.Assets.versioned(outfit.getHat())),format.raw/*81.82*/("""" height="120" width="120"></a>
+                  <a href="#"><img src=""""),_display_(/*82.42*/routes/*82.48*/.Assets.versioned(outfit.getTop())),format.raw/*82.82*/("""" height="120" width="120"></a>
+                  <a href="#"><img src=""""),_display_(/*83.42*/routes/*83.48*/.Assets.versioned(outfit.getBottom())),format.raw/*83.85*/("""" height="120" width="120"></a>
+                  <a href="#"><img src=""""),_display_(/*84.42*/routes/*84.48*/.Assets.versioned(outfit.getShoes())),format.raw/*84.84*/("""" height="120" width="120"></a>
+               </div> 
+               <div class="card-block">
+                  <h4 class="card-title ml-2">"""),_display_(/*87.48*/name),format.raw/*87.52*/("""</h4>
+                  <button type="button" class="btn btn-secondary ml-3 mb-2">Edit</button>
+               </div>
             </div>
          </div>
-         <div class="card mr-5">
-            <div class="text-center">
-               <a href="#"><img src=""""),_display_(/*141.39*/routes/*141.45*/.Assets.versioned("images/hat.jpg")),format.raw/*141.80*/("""" height="120" width="120"></a>
-               <a href="#"><img src=""""),_display_(/*142.39*/routes/*142.45*/.Assets.versioned("images/shirt.jpg")),format.raw/*142.82*/("""" height="120" width="120"></a>
-               <a href="#"><img src=""""),_display_(/*143.39*/routes/*143.45*/.Assets.versioned("images/pants.jpg")),format.raw/*143.82*/("""" height="120" width="120"></a>
-               <a href="#"><img src=""""),_display_(/*144.39*/routes/*144.45*/.Assets.versioned("images/boot.jpg")),format.raw/*144.81*/("""" height="120" width="120"></a>
-            </div> 
-            <div class="card-block">
-               <h4 class="card-title ml-2">Cool Outfit</h4>
-               <button type="button" class="btn btn-secondary ml-3">Edit</button>
-            </div>
-         </div>
-         <div class="card mr-5">
-            <div class="text-center">
-               <a href="#"><img src=""""),_display_(/*153.39*/routes/*153.45*/.Assets.versioned("images/hat.jpg")),format.raw/*153.80*/("""" height="120" width="120"></a>
-               <a href="#"><img src=""""),_display_(/*154.39*/routes/*154.45*/.Assets.versioned("images/shirt.jpg")),format.raw/*154.82*/("""" height="120" width="120"></a>
-               <a href="#"><img src=""""),_display_(/*155.39*/routes/*155.45*/.Assets.versioned("images/pants.jpg")),format.raw/*155.82*/("""" height="120" width="120"></a>
-               <a href="#"><img src=""""),_display_(/*156.39*/routes/*156.45*/.Assets.versioned("images/boot.jpg")),format.raw/*156.81*/("""" height="120" width="120"></a>
-            </div> 
-            <div class="card-block ">
-               <h4 class="card-title ml-2">Outfit 3</h4>
-               <button type="button" class="btn btn-secondary ml-3 mb-2">Edit</button>
-            </div>        
-         </div>
-      </div>
+         """)))}),format.raw/*92.11*/("""
+      """),format.raw/*93.7*/("""</div>
    </div>
 
 </main>
@@ -204,9 +134,9 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
     }
   }
 
-  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
+  def render(occasion:List[String],outfits:Map[String, Outfit]): play.twirl.api.HtmlFormat.Appendable = apply(occasion,outfits)
 
-  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
+  def f:((List[String],Map[String, Outfit]) => play.twirl.api.HtmlFormat.Appendable) = (occasion,outfits) => apply(occasion,outfits)
 
   def ref: this.type = this
 
@@ -215,11 +145,11 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 
               /*
                   -- GENERATED --
-                  DATE: Sat Oct 14 15:22:15 AEDT 2017
+                  DATE: Sat Oct 14 17:27:37 AEDT 2017
                   SOURCE: C:/Users/Daniel/ULook/app/views/recommend.scala.html
-                  HASH: 4737faaf239fa81ec337a1013e40ea05c24681e8
-                  MATRIX: 1034->0|1176->116|1190->122|1259->170|1334->219|1348->225|1413->270|1488->319|1502->325|1568->371|1612->389|1626->395|1692->441|1773->496|1805->507|1834->509|2329->977|2344->983|2403->1021|6454->5044|6470->5050|6527->5085|6626->5156|6642->5162|6701->5199|6800->5270|6816->5276|6875->5313|6974->5384|6990->5390|7048->5426|7457->5807|7473->5813|7530->5848|7629->5919|7645->5925|7704->5962|7803->6033|7819->6039|7878->6076|7977->6147|7993->6153|8051->6189|8463->6573|8479->6579|8536->6614|8635->6685|8651->6691|8710->6728|8809->6799|8825->6805|8884->6842|8983->6913|8999->6919|9057->6955
-                  LINES: 33->1|37->5|37->5|37->5|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|45->13|45->13|46->14|63->31|63->31|63->31|161->129|161->129|161->129|162->130|162->130|162->130|163->131|163->131|163->131|164->132|164->132|164->132|173->141|173->141|173->141|174->142|174->142|174->142|175->143|175->143|175->143|176->144|176->144|176->144|185->153|185->153|185->153|186->154|186->154|186->154|187->155|187->155|187->155|188->156|188->156|188->156
+                  HASH: 4fc40b8d7f788422dc9ae8e3c0119ee637931761
+                  MATRIX: 978->1|1126->54|1154->56|1296->172|1310->178|1379->226|1454->275|1468->281|1533->326|1608->375|1622->381|1688->427|1732->445|1746->451|1812->497|1893->552|1925->563|1954->565|2204->788|2219->794|2270->824|2614->1141|2629->1147|2688->1185|3199->1669|3238->1692|3277->1693|3319->1707|3533->1894|3560->1900|3605->1917|3679->1960|3718->1971|4647->2873|4691->2901|4730->2902|4769->2913|4945->3062|4960->3068|5015->3102|5116->3176|5131->3182|5186->3216|5287->3290|5302->3296|5360->3333|5461->3407|5476->3413|5533->3449|5705->3594|5730->3598|5929->3766|5964->3774
+                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|59->27|59->27|59->27|65->33|65->33|65->33|79->47|79->47|79->47|80->48|83->51|83->51|84->52|86->54|87->55|109->77|109->77|109->77|110->78|113->81|113->81|113->81|114->82|114->82|114->82|115->83|115->83|115->83|116->84|116->84|116->84|119->87|119->87|124->92|125->93
                   -- GENERATED --
               */
           

@@ -22,31 +22,31 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object search extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+object search extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template3[Map[String, String],List[String],List[String],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply():play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(images: Map[String, String], brands: List[String], types: List[String] ):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
+Seq[Any](format.raw/*1.75*/("""
+"""),format.raw/*2.1*/("""<!DOCTYPE html>
 <html lang="en">
 <span class="bckg"></span>
 <head>
-<link rel="stylesheet" media="screen" href=""""),_display_(/*5.46*/routes/*5.52*/.Assets.versioned("bootstrap/css/bootstrap.css")),format.raw/*5.100*/("""">
-<link rel="stylesheet" media="screen" href=""""),_display_(/*6.46*/routes/*6.52*/.Assets.versioned("stylesheets/mainPage.css")),format.raw/*6.97*/("""">
-<link rel="stylesheet" media="screen" href=""""),_display_(/*7.46*/routes/*7.52*/.Assets.versioned("stylesheets/searchbar.css")),format.raw/*7.98*/("""">
-<script src=""""),_display_(/*8.15*/routes/*8.21*/.Assets.versioned("bootstrap/js/bootstrap.js")),format.raw/*8.67*/(""""></script>
+<link rel="stylesheet" media="screen" href=""""),_display_(/*6.46*/routes/*6.52*/.Assets.versioned("bootstrap/css/bootstrap.css")),format.raw/*6.100*/("""">
+<link rel="stylesheet" media="screen" href=""""),_display_(/*7.46*/routes/*7.52*/.Assets.versioned("stylesheets/mainPage.css")),format.raw/*7.97*/("""">
+<link rel="stylesheet" media="screen" href=""""),_display_(/*8.46*/routes/*8.52*/.Assets.versioned("stylesheets/searchbar.css")),format.raw/*8.98*/("""">
+<script src=""""),_display_(/*9.15*/routes/*9.21*/.Assets.versioned("bootstrap/js/bootstrap.js")),format.raw/*9.67*/(""""></script>
 
 </head>
 <header>
   <h1>ULook</h1>
-  """),_display_(/*13.4*/navigator()),format.raw/*13.15*/("""
-"""),format.raw/*14.1*/("""</header>
+  """),_display_(/*14.4*/navigator()),format.raw/*14.15*/("""
+"""),format.raw/*15.1*/("""</header>
 <body>
 <main>
-
   <div class="title">
     <h2>Search</h2>
     <a href="javascript:void(0);">Sign in</a>
@@ -54,10 +54,10 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
    <div class="container-fluid">
    <div class="container">
    
-
-      <form action=""""),_display_(/*26.22*/routes/*26.28*/.HomeController.approach1("a")),format.raw/*26.58*/("""">
-      <div class="input-group stylish-input-group mt-2">
+ 
    
+      <form action=""""),_display_(/*27.22*/routes/*27.28*/.HomeController.approach1("a")),format.raw/*27.58*/("""">
+      <div class="input-group stylish-input-group mt-2">
         <input type="search" class="form-control"  placeholder="Search by Item Name" onkeyup="myFunction()" name = "s" required>
         <span class="input-group-addon">
             <button type="submit">
@@ -82,67 +82,15 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
         </div>
    <div class="card-deck mt-1 ml-2 mb-2 mr-1">
          <div class="card ml-3 mt-1 scrollbox">
-            <div class="form-check form-inline mt-2 mb-2">
+             """),_display_(/*53.15*/for(option <- brands) yield /*53.36*/{_display_(Seq[Any](format.raw/*53.37*/("""
+            """),format.raw/*54.13*/("""<div class="form-check form-inline mt-2 mb-2">
                <label class="form-check-label">
                <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option1
-               </label>
-            </div>            
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option2
-               </label>
-            </div>   
-         </div>
+               """),_display_(/*57.17*/option),format.raw/*57.23*/("""
+               """),format.raw/*58.16*/("""</label>
+            </div> 
+            """)))}),format.raw/*60.14*/("""
+         """),format.raw/*61.10*/("""</div>
          <div class="card ml-3 mt-1">
             <form class="form-inline-sm mt-4 text-center">
                <input type="text" class="form-control-sm" id="inlineFormInput" placeholder="Minimum Price">
@@ -152,31 +100,15 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
             </form>
          </div>
          <div class="card ml-3 mt-1 scrollbox">
-            <div class="form-check form-inline mt-2 mb-2">
+            """),_display_(/*71.14*/for(option <- types) yield /*71.34*/{_display_(Seq[Any](format.raw/*71.35*/("""
+            """),format.raw/*72.13*/("""<div class="form-check form-inline mt-2 mb-2">
                <label class="form-check-label">
                <input class="form-check-input" type="checkbox" value="">
-               Option2
-               </label>
+               """),_display_(/*75.17*/option),format.raw/*75.23*/("""
+               """),format.raw/*76.16*/("""</label>
             </div> 
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option2
-               </label>
-            </div> 
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option2
-               </label>
-            </div> 
-            <div class="form-check form-inline mt-2 mb-2 ">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               Option2
-               </label>
-            </div> 
-         </div>
+            """)))}),format.raw/*78.14*/("""
+         """),format.raw/*79.10*/("""</div>
       </div>
    </div>
    <select class="form-control mt-3 sort">
@@ -188,47 +120,29 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
    </select>
    
    
-      <div class="card-deck mt-4 ml-5 mb-4 mr-1">
-         <div class="card mr-5">
-            <div class="text-center">
-               <a href="#"><img src=""""),_display_(/*162.39*/routes/*162.45*/.Assets.versioned("images/roshe.jpg")),format.raw/*162.82*/("""" height="200" width="200"></a>
-            </div> 
-            <div class="card-block">
-               <h4 class="card-title ml-2">Nike Roshe</h4>
-               <div class="mb-2">
-                  <button type="button" class="btn btn-secondary ml-2">Add to Outfit</button>
-                  <button type="button" class="btn btn-success float-right mr-2" >Favourite</button>
+      <div class="row mt-4 ml-5 mb-4 mr-1">
+      """),_display_(/*92.8*/for((name,image) <- images) yield /*92.35*/{_display_(Seq[Any](format.raw/*92.36*/("""
+         """),format.raw/*93.10*/("""<div class="col-sm-4 mb-5">
+            <div class="card mr-5">
+               <div class="text-center">
+                  <a href="#"><img src=""""),_display_(/*96.42*/routes/*96.48*/.Assets.versioned(image)),format.raw/*96.72*/("""" height="200" width="200"></a>
+               </div> 
+               <div class="card-block">
+                  <h4 class="card-title ml-2">"""),_display_(/*99.48*/name),format.raw/*99.52*/("""</h4>
+                  <div class="mb-2">
+                     <button type="button" class="btn btn-secondary ml-2">Add to Outfit</button>
+                     <button type="button" class="btn btn-success float-right mr-2" >Save</button>
+                  </div>
                </div>
             </div>
          </div>
-         <div class="card mr-5">
-            <div class="text-center">
-               <a href="#"><img src=""""),_display_(/*174.39*/routes/*174.45*/.Assets.versioned("images/boot.jpg")),format.raw/*174.81*/("""" height="200" width="200"></a>
-            </div> 
-            <div class="card-block">
-               <h4 class="card-title ml-2">Cool Boot</h4>
-               <div class="mb-2">
-                  <button type="button" class="btn btn-secondary ml-2">Add to Outfit</button>
-                  <button type="button" class="btn btn-success float-right mr-2" >Favourite</button>
-               </div>
-            </div>
-         </div>
-         <div class="card mr-5">
-            <div class="text-center">
-               <a href="#"><img src=""""),_display_(/*186.39*/routes/*186.45*/.Assets.versioned("images/chucks.jpg")),format.raw/*186.83*/("""" height="200" width="200"></a>
-            </div> 
-            <div class="card-block ">
-               <h4 class="card-title ml-2">Chucks</h4>
-               <div class="mb-2">
-                  <button type="button" class="btn btn-secondary ml-2">Add to Outfit</button>
-                  <button type="button" class="btn btn-success float-right mr-2" >Favourite</button>
-               </div>
-            </div>       
-         </div>
-      </div>
+         """)))}),format.raw/*107.11*/("""
+        
+      """),format.raw/*109.7*/("""</div>
    </div>
 
 </main>
+
 </body>
 
 </html>"""))
@@ -236,9 +150,9 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
     }
   }
 
-  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
+  def render(images:Map[String, String],brands:List[String],types:List[String]): play.twirl.api.HtmlFormat.Appendable = apply(images,brands,types)
 
-  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
+  def f:((Map[String, String],List[String],List[String]) => play.twirl.api.HtmlFormat.Appendable) = (images,brands,types) => apply(images,brands,types)
 
   def ref: this.type = this
 
@@ -247,11 +161,11 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 
               /*
                   -- GENERATED --
-                  DATE: Sat Oct 14 15:22:15 AEDT 2017
+                  DATE: Sat Oct 14 17:36:56 AEDT 2017
                   SOURCE: C:/Users/Daniel/ULook/app/views/search.scala.html
-                  HASH: 43243bb3c381873e7fe82d53aa8a381ec9cd66d3
-                  MATRIX: 1031->0|1173->116|1187->122|1256->170|1331->219|1345->225|1410->270|1485->319|1499->325|1565->371|1609->389|1623->395|1689->441|1770->496|1802->507|1831->509|2079->730|2094->736|2145->766|2495->1089|2510->1095|2569->1133|7897->6433|7913->6439|7972->6476|8555->7031|8571->7037|8629->7073|9211->7627|9227->7633|9287->7671
-                  LINES: 33->1|37->5|37->5|37->5|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|45->13|45->13|46->14|58->26|58->26|58->26|65->33|65->33|65->33|194->162|194->162|194->162|206->174|206->174|206->174|218->186|218->186|218->186
+                  HASH: 62e05adcb68257acecbea3ecc080732db27a3a07
+                  MATRIX: 988->1|1156->74|1184->76|1326->192|1340->198|1409->246|1484->295|1498->301|1563->346|1638->395|1652->401|1718->447|1762->465|1776->471|1842->517|1923->572|1955->583|1984->585|2236->810|2251->816|2302->846|2647->1164|2662->1170|2721->1208|3491->1951|3528->1972|3567->1973|3609->1987|3823->2174|3850->2180|3895->2197|3970->2241|4009->2252|4603->2819|4639->2839|4678->2840|4720->2854|4934->3041|4961->3047|5006->3064|5081->3108|5120->3119|5487->3460|5530->3487|5569->3488|5608->3499|5784->3648|5799->3654|5844->3678|6016->3823|6041->3827|6412->4166|6458->4184
+                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|59->27|59->27|59->27|65->33|65->33|65->33|85->53|85->53|85->53|86->54|89->57|89->57|90->58|92->60|93->61|103->71|103->71|103->71|104->72|107->75|107->75|108->76|110->78|111->79|124->92|124->92|124->92|125->93|128->96|128->96|128->96|131->99|131->99|139->107|141->109
                   -- GENERATED --
               */
           
