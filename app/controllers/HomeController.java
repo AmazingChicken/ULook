@@ -50,7 +50,9 @@ public class HomeController extends Controller {
     public Result myOutfits(){
       	return ok(views.html.myOutfits.render());
     }
-
+    public Result approach2(String s) {
+        return ok(s);
+    }
 
     public Result approach1(String s) {
     //  java.io.File yourFile = new java.io.File("app/controllers/test.txt");
