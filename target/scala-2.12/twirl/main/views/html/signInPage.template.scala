@@ -45,7 +45,7 @@ Seq[Any](format.raw/*7.32*/("""
 <div id="mainlogin">
 <div id="or">or</div>
 <h1>Log in with awesome new thing</h1>
-<form action=""""),_display_(/*17.16*/routes/*17.22*/.HomeController.goMainPage()),format.raw/*17.50*/("""">
+<form action=""""),_display_(/*17.16*/routes/*17.22*/.HomeController.signIn("a","b")),format.raw/*17.53*/("""">
 <input type="text" placeholder="username or email" value="" required>
 <input type="password" placeholder="password" value="" required>
 <button type="submit"><i class="fa fa-arrow-right"></i></button>
@@ -78,10 +78,10 @@ Seq[Any](format.raw/*7.32*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sat Oct 14 15:22:15 AEDT 2017
+                  DATE: Sun Oct 15 15:54:36 AEDT 2017
                   SOURCE: C:/Users/Daniel/ULook/app/views/signInPage.scala.html
-                  HASH: 93d089838ff066d8cc3a6c3cb14cd255ccda63ff
-                  MATRIX: 1217->266|1342->296|1370->298|1459->361|1473->367|1533->406|1608->455|1622->461|1685->504|1761->553|1776->559|1840->602|2097->832|2112->838|2161->866|2557->1235|2572->1241|2621->1269
+                  HASH: 80b7d3b376bfe7529111443b195f8d0db2f78c60
+                  MATRIX: 1217->266|1342->296|1370->298|1459->361|1473->367|1533->406|1608->455|1622->461|1685->504|1761->553|1776->559|1840->602|2097->832|2112->838|2164->869|2560->1238|2575->1244|2624->1272
                   LINES: 33->7|38->7|39->8|39->8|39->8|39->8|40->9|40->9|40->9|41->10|41->10|41->10|48->17|48->17|48->17|55->24|55->24|55->24
                   -- GENERATED --
               */

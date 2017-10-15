@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Daniel/ULook/conf/routes
-// @DATE:Sat Oct 14 15:22:15 AEDT 2017
+// @DATE:Sun Oct 15 15:54:35 AEDT 2017
 
 import play.api.mvc.Call
 
@@ -19,22 +19,28 @@ package controllers {
     }
 
   
+    // @LINE:16
+    def signIn(name:String = "a", password:String = "b"): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "signIn" + play.core.routing.queryString(List(if(name == "a") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("name", name)), if(password == "b") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("password", password)))))
+    }
+  
     // @LINE:9
     def myItems(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "myItems")
     }
   
-    // @LINE:15
-    def approach2(s:String = "a"): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "approach2" + play.core.routing.queryString(List(if(s == "a") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("s", s)))))
-    }
-  
     // @LINE:8
     def signUpPage(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "signUpPage")
+    }
+  
+    // @LINE:15
+    def signUp(name:String = "a", password:String = "b"): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "signUp" + play.core.routing.queryString(List(if(name == "a") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("name", name)), if(password == "b") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("password", password)))))
     }
   
     // @LINE:10
@@ -81,14 +87,14 @@ package controllers {
   
   }
 
-  // @LINE:17
+  // @LINE:18
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:17
+    // @LINE:18
     def versioned(file:Asset): Call = {
       implicit val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
