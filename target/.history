@@ -8,3 +8,5 @@ exit
 eclipse
 sbt run
 run
+eclipse
+sbt run
