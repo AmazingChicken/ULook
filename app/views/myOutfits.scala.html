@@ -1,4 +1,4 @@
-@(occasion: List[String],outfits : Map[String,Outfit])
+@(occasion: List[String],outfits :List[Outfit])
 <!DOCTYPE html>
 <html lang="en">
 <span class="bckg"></span>
@@ -76,7 +76,7 @@
    </select>
    
       <div class="row mt-4 ml-5 mb-4 mr-1">
-       @for((name,outfit)<- outfits){
+       @for(outfit<- outfits){
         <div class="col-sm-4 mb-5">
          <div class="card mr-5">
             <div class="text-center">
@@ -86,7 +86,7 @@
                   <a href="#"><img src="@routes.Assets.versioned(outfit.getShoes())" height="120" width="120"></a>
             </div> 
             <div class="card-block">
-               <h4 class="card-title ml-2">Outfit 1</h4>
+               <h4 class="card-title ml-2">@outfit.getName()</h4>
                <button type="button" class="btn btn-secondary ml-3">Edit</button>
                <button type="button" class="btn btn-danger float-right mr-2" >Delete</button>
             </div>

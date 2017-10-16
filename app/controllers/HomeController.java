@@ -45,13 +45,13 @@ public class HomeController extends Controller {
       	return ok(views.html.signUpPage.render());
     }
     public Result myItems(){
-    	return ok(views.html.myItems.render(dummyImage(),dummyOptions(),dummyType()));
+    	return ok(views.html.myItems.render(dummyItems(),dummyOptions(),dummyType()));
     }
     public Result recommend(){
       	return ok(views.html.recommend.render(dummyOccasion(),dummyOutfit()));
     }
     public Result search(){
-      	return ok(views.html.search.render(dummyImage(),dummyOptions(),dummyType()));
+      	return ok(views.html.search.render(dummyItems(),dummyOptions(),dummyType()));
     }
     public Result getInspired(){
       	return  ok(views.html.getInspired.render(dummyInspiree()));
@@ -67,6 +67,9 @@ public class HomeController extends Controller {
       fw.close();
       return ok("Your UserName is :"+ name);
     }
+    
+    
+    
     public Result signIn(String name, String password) throws IOException{
       File file = new File("app/controllers/1.txt");
       StringBuilder result = new StringBuilder();
@@ -138,13 +141,22 @@ public class HomeController extends Controller {
     }
     
   //Below are some functions that make dummy data for to generate stuff in the html
-          public Map<String,String> dummyImage(){
-          	Map<String,String> yes = new HashMap<String,String>();
-          	yes.put("roshe","images/roshe.jpg");
-    
-          	
-          	return yes;
+       
+          public ArrayList<Item> dummyItems(){
+        	  ArrayList<Item> yes = new ArrayList<Item>();
+        	  Item ok = new Item("images/roshe.jpg","Roshe");
+        	  Item ok2 = new Item("images/boot.jpg","Boot");
+        	  Item ok3 = new Item("images/chucks.jpg","Chucks");
+        	  Item ok4 = new Item("images/2.png","Shoe");
+        	  Item ok5 = new Item("images/4.png","Black Nike Shoe");
+        	  yes.add(ok);
+        	  yes.add(ok2);
+        	  yes.add(ok3);
+        	  yes.add(ok4);
+        	  yes.add(ok5);
+        	  return yes;
           }
+          
          public ArrayList<String> dummyOccasion(){
          	ArrayList<String> yes = new ArrayList<String>();
          	yes.add("Formal");
@@ -185,16 +197,16 @@ public class HomeController extends Controller {
         	yes.put("blogjuniorestevam","images/blogjuniorestevam.png");
          	return yes;
          }
-         public Map<String,Outfit> dummyOutfit(){
-         	Map<String,Outfit> yes = new HashMap<String,Outfit>();
-         	Outfit outfit1 = new Outfit("images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/roshe.jpg");
-         	Outfit outfit2 = new Outfit("images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/boot.jpg");
-         	Outfit outfit3 = new Outfit("images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/chucks.jpg");
-         	Outfit outfit4 = new Outfit("images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/4.png");
-         	yes.put("Outfit1", outfit1);
-         	yes.put("Outfit2", outfit2);
-         	yes.put("Outfit3", outfit3);
-         	yes.put("Outfit4", outfit4);
+         public ArrayList<Outfit> dummyOutfit(){
+         	ArrayList<Outfit> yes = new ArrayList<Outfit>();
+         	Outfit outfit1 = new Outfit("Outfit1","images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/roshe.jpg");
+         	Outfit outfit2 = new Outfit("Cool Outfit","images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/boot.jpg");
+         	Outfit outfit3 = new Outfit("Swag","images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/chucks.jpg");
+         	Outfit outfit4 = new Outfit("YOLO","images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/4.png");
+         	yes.add(outfit1);
+         	yes.add(outfit2);
+         	yes.add(outfit3);
+         	yes.add(outfit4);
          	return yes;
          } 
 }

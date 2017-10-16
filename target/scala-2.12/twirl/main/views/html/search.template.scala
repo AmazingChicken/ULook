@@ -22,15 +22,15 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object search extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template3[Map[String, String],List[String],List[String],play.twirl.api.HtmlFormat.Appendable] {
+object search extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template3[List[Item],List[String],List[String],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(images: Map[String, String], brands: List[String], types: List[String] ):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(items: List[Item], brands: List[String], types: List[String] ):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.75*/("""
+Seq[Any](format.raw/*1.65*/("""
 """),format.raw/*2.1*/("""<!DOCTYPE html>
 <html lang="en">
 <span class="bckg"></span>
@@ -121,14 +121,14 @@ Seq[Any](format.raw/*1.75*/("""
    
    
       <div class="row mt-4 ml-5 mb-4 mr-1">
-      """),_display_(/*92.8*/for((name,image) <- images) yield /*92.35*/{_display_(Seq[Any](format.raw/*92.36*/("""
+      """),_display_(/*92.8*/for(item <- items) yield /*92.26*/{_display_(Seq[Any](format.raw/*92.27*/("""
          """),format.raw/*93.10*/("""<div class="col-sm-4 mb-5">
             <div class="card mr-5">
                <div class="text-center">
-                  <a href="#"><img src=""""),_display_(/*96.42*/routes/*96.48*/.Assets.versioned(image)),format.raw/*96.72*/("""" height="200" width="200"></a>
+                  <a href="#"><img src=""""),_display_(/*96.42*/routes/*96.48*/.Assets.versioned(item.getPicture())),format.raw/*96.84*/("""" height="200" width="200"></a>
                </div> 
                <div class="card-block">
-                  <h4 class="card-title ml-2">"""),_display_(/*99.48*/name),format.raw/*99.52*/("""</h4>
+                  <h4 class="card-title ml-2">"""),_display_(/*99.48*/item/*99.52*/.getName()),format.raw/*99.62*/("""</h4>
                   <div class="mb-2">
                      <button type="button" class="btn btn-secondary ml-2">Add to Outfit</button>
                      <button type="button" class="btn btn-success float-right mr-2" >Save</button>
@@ -150,9 +150,9 @@ Seq[Any](format.raw/*1.75*/("""
     }
   }
 
-  def render(images:Map[String, String],brands:List[String],types:List[String]): play.twirl.api.HtmlFormat.Appendable = apply(images,brands,types)
+  def render(items:List[Item],brands:List[String],types:List[String]): play.twirl.api.HtmlFormat.Appendable = apply(items,brands,types)
 
-  def f:((Map[String, String],List[String],List[String]) => play.twirl.api.HtmlFormat.Appendable) = (images,brands,types) => apply(images,brands,types)
+  def f:((List[Item],List[String],List[String]) => play.twirl.api.HtmlFormat.Appendable) = (items,brands,types) => apply(items,brands,types)
 
   def ref: this.type = this
 
@@ -161,11 +161,11 @@ Seq[Any](format.raw/*1.75*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Oct 16 11:52:44 GMT+11:00 2017
-                  SOURCE: C:/Users/Administrator/ULook/app/views/search.scala.html
-                  HASH: 62e05adcb68257acecbea3ecc080732db27a3a07
-                  MATRIX: 988->1|1156->74|1184->76|1326->192|1340->198|1409->246|1484->295|1498->301|1563->346|1638->395|1652->401|1718->447|1762->465|1776->471|1842->517|1923->572|1955->583|1984->585|2236->810|2251->816|2302->846|2647->1164|2662->1170|2721->1208|3491->1951|3528->1972|3567->1973|3609->1987|3823->2174|3850->2180|3895->2197|3970->2241|4009->2252|4603->2819|4639->2839|4678->2840|4720->2854|4934->3041|4961->3047|5006->3064|5081->3108|5120->3119|5487->3460|5530->3487|5569->3488|5608->3499|5784->3648|5799->3654|5844->3678|6016->3823|6041->3827|6412->4166|6458->4184
-                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|59->27|59->27|59->27|65->33|65->33|65->33|85->53|85->53|85->53|86->54|89->57|89->57|90->58|92->60|93->61|103->71|103->71|103->71|104->72|107->75|107->75|108->76|110->78|111->79|124->92|124->92|124->92|125->93|128->96|128->96|128->96|131->99|131->99|139->107|141->109
+                  DATE: Mon Oct 16 18:20:50 AEDT 2017
+                  SOURCE: C:/Users/Daniel/ULook/app/views/search.scala.html
+                  HASH: 556d234db2e939d5bed58d4ff1f29b85a18057c6
+                  MATRIX: 979->1|1137->64|1165->66|1307->182|1321->188|1390->236|1465->285|1479->291|1544->336|1619->385|1633->391|1699->437|1743->455|1757->461|1823->507|1904->562|1936->573|1965->575|2217->800|2232->806|2283->836|2628->1154|2643->1160|2702->1198|3472->1941|3509->1962|3548->1963|3590->1977|3804->2164|3831->2170|3876->2187|3951->2231|3990->2242|4584->2809|4620->2829|4659->2830|4701->2844|4915->3031|4942->3037|4987->3054|5062->3098|5101->3109|5468->3450|5502->3468|5541->3469|5580->3480|5756->3629|5771->3635|5828->3671|6000->3816|6013->3820|6044->3830|6415->4169|6461->4187
+                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|59->27|59->27|59->27|65->33|65->33|65->33|85->53|85->53|85->53|86->54|89->57|89->57|90->58|92->60|93->61|103->71|103->71|103->71|104->72|107->75|107->75|108->76|110->78|111->79|124->92|124->92|124->92|125->93|128->96|128->96|128->96|131->99|131->99|131->99|139->107|141->109
                   -- GENERATED --
               */
           

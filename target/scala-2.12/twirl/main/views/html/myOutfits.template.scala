@@ -22,15 +22,15 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object myOutfits extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[List[String],Map[String, Outfit],play.twirl.api.HtmlFormat.Appendable] {
+object myOutfits extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[List[String],List[Outfit],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(occasion: List[String],outfits : Map[String,Outfit]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(occasion: List[String],outfits :List[Outfit]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.55*/("""
+Seq[Any](format.raw/*1.48*/("""
 """),format.raw/*2.1*/("""<!DOCTYPE html>
 <html lang="en">
 <span class="bckg"></span>
@@ -108,7 +108,7 @@ Seq[Any](format.raw/*1.55*/("""
    </select>
    
       <div class="row mt-4 ml-5 mb-4 mr-1">
-       """),_display_(/*79.9*/for((name,outfit)<- outfits) yield /*79.37*/{_display_(Seq[Any](format.raw/*79.38*/("""
+       """),_display_(/*79.9*/for(outfit<- outfits) yield /*79.30*/{_display_(Seq[Any](format.raw/*79.31*/("""
         """),format.raw/*80.9*/("""<div class="col-sm-4 mb-5">
          <div class="card mr-5">
             <div class="text-center">
@@ -118,7 +118,7 @@ Seq[Any](format.raw/*1.55*/("""
                   <a href="#"><img src=""""),_display_(/*86.42*/routes/*86.48*/.Assets.versioned(outfit.getShoes())),format.raw/*86.84*/("""" height="120" width="120"></a>
             </div> 
             <div class="card-block">
-               <h4 class="card-title ml-2">Outfit 1</h4>
+               <h4 class="card-title ml-2">"""),_display_(/*89.45*/outfit/*89.51*/.getName()),format.raw/*89.61*/("""</h4>
                <button type="button" class="btn btn-secondary ml-3">Edit</button>
                <button type="button" class="btn btn-danger float-right mr-2" >Delete</button>
             </div>
@@ -138,9 +138,9 @@ Seq[Any](format.raw/*1.55*/("""
     }
   }
 
-  def render(occasion:List[String],outfits:Map[String, Outfit]): play.twirl.api.HtmlFormat.Appendable = apply(occasion,outfits)
+  def render(occasion:List[String],outfits:List[Outfit]): play.twirl.api.HtmlFormat.Appendable = apply(occasion,outfits)
 
-  def f:((List[String],Map[String, Outfit]) => play.twirl.api.HtmlFormat.Appendable) = (occasion,outfits) => apply(occasion,outfits)
+  def f:((List[String],List[Outfit]) => play.twirl.api.HtmlFormat.Appendable) = (occasion,outfits) => apply(occasion,outfits)
 
   def ref: this.type = this
 
@@ -149,11 +149,11 @@ Seq[Any](format.raw/*1.55*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Oct 16 11:52:44 GMT+11:00 2017
-                  SOURCE: C:/Users/Administrator/ULook/app/views/myOutfits.scala.html
-                  HASH: 8e6e5160111d52e2cfdb7851487ac4bc7bdaa34a
-                  MATRIX: 978->1|1126->54|1154->56|1296->172|1310->178|1379->226|1454->275|1468->281|1533->326|1608->375|1622->381|1688->427|1732->445|1746->451|1812->497|1893->552|1925->563|1954->565|2211->795|2226->801|2277->831|2624->1151|2639->1157|2698->1195|3217->1687|3256->1710|3295->1711|3337->1725|3551->1912|3578->1918|3623->1935|3697->1978|3736->1989|4662->2889|4706->2917|4745->2918|4782->2928|4949->3068|4964->3074|5019->3108|5120->3182|5135->3188|5190->3222|5291->3296|5306->3302|5364->3339|5465->3413|5480->3419|5537->3455|5960->3851|5975->3857|6033->3894|6140->3970|6175->3978
-                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|60->28|60->28|60->28|66->34|66->34|66->34|81->49|81->49|81->49|82->50|85->53|85->53|86->54|88->56|89->57|111->79|111->79|111->79|112->80|115->83|115->83|115->83|116->84|116->84|116->84|117->85|117->85|117->85|118->86|118->86|118->86|125->93|125->93|125->93|128->96|129->97
+                  DATE: Mon Oct 16 18:25:02 AEDT 2017
+                  SOURCE: C:/Users/Daniel/ULook/app/views/myOutfits.scala.html
+                  HASH: 2dd8fc5cad91c0f0ebaa9b7605c2041c0a2cf990
+                  MATRIX: 971->1|1112->47|1140->49|1282->165|1296->171|1365->219|1440->268|1454->274|1519->319|1594->368|1608->374|1674->420|1718->438|1732->444|1798->490|1879->545|1911->556|1940->558|2197->788|2212->794|2263->824|2610->1144|2625->1150|2684->1188|3203->1680|3242->1703|3281->1704|3323->1718|3537->1905|3564->1911|3609->1928|3683->1971|3722->1982|4648->2882|4685->2903|4724->2904|4761->2914|4928->3054|4943->3060|4998->3094|5099->3168|5114->3174|5169->3208|5270->3282|5285->3288|5343->3325|5444->3399|5459->3405|5516->3441|5679->3577|5694->3583|5725->3593|6005->3846|6020->3852|6078->3889|6185->3965|6220->3973
+                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|60->28|60->28|60->28|66->34|66->34|66->34|81->49|81->49|81->49|82->50|85->53|85->53|86->54|88->56|89->57|111->79|111->79|111->79|112->80|115->83|115->83|115->83|116->84|116->84|116->84|117->85|117->85|117->85|118->86|118->86|118->86|121->89|121->89|121->89|125->93|125->93|125->93|128->96|129->97
                   -- GENERATED --
               */
           

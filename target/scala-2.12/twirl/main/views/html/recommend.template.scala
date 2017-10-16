@@ -22,15 +22,15 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object recommend extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[List[String],Map[String, Outfit],play.twirl.api.HtmlFormat.Appendable] {
+object recommend extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[List[String],List[Outfit],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(occasion: List[String],outfits : Map[String,Outfit]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(occasion: List[String],outfits :List[Outfit]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.55*/("""
+Seq[Any](format.raw/*1.48*/("""
 """),format.raw/*2.1*/("""<!DOCTYPE html>
 <html lang="en">
 <span class="bckg"></span>
@@ -106,7 +106,7 @@ Seq[Any](format.raw/*1.55*/("""
    </select>
    
       <div class="row mt-4 ml-5 mb-4 mr-1">
-         """),_display_(/*77.11*/for((name,outfit)<- outfits) yield /*77.39*/{_display_(Seq[Any](format.raw/*77.40*/("""
+         """),_display_(/*77.11*/for(outfit<- outfits) yield /*77.32*/{_display_(Seq[Any](format.raw/*77.33*/("""
          """),format.raw/*78.10*/("""<div class="col-sm-4 mb-5">
             <div class="card mr-5">
                <div class="text-center">
@@ -116,7 +116,7 @@ Seq[Any](format.raw/*1.55*/("""
                   <a href="#"><img src=""""),_display_(/*84.42*/routes/*84.48*/.Assets.versioned(outfit.getShoes())),format.raw/*84.84*/("""" height="120" width="120"></a>
                </div> 
                <div class="card-block">
-                  <h4 class="card-title ml-2">"""),_display_(/*87.48*/name),format.raw/*87.52*/("""</h4>
+                  <h4 class="card-title ml-2">"""),_display_(/*87.48*/outfit/*87.54*/.getName()),format.raw/*87.64*/("""</h4>
                   <button type="button" class="btn btn-secondary ml-3 mb-2">Edit</button>
                </div>
             </div>
@@ -134,9 +134,9 @@ Seq[Any](format.raw/*1.55*/("""
     }
   }
 
-  def render(occasion:List[String],outfits:Map[String, Outfit]): play.twirl.api.HtmlFormat.Appendable = apply(occasion,outfits)
+  def render(occasion:List[String],outfits:List[Outfit]): play.twirl.api.HtmlFormat.Appendable = apply(occasion,outfits)
 
-  def f:((List[String],Map[String, Outfit]) => play.twirl.api.HtmlFormat.Appendable) = (occasion,outfits) => apply(occasion,outfits)
+  def f:((List[String],List[Outfit]) => play.twirl.api.HtmlFormat.Appendable) = (occasion,outfits) => apply(occasion,outfits)
 
   def ref: this.type = this
 
@@ -145,11 +145,11 @@ Seq[Any](format.raw/*1.55*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Oct 16 11:52:44 GMT+11:00 2017
-                  SOURCE: C:/Users/Administrator/ULook/app/views/recommend.scala.html
-                  HASH: 4fc40b8d7f788422dc9ae8e3c0119ee637931761
-                  MATRIX: 978->1|1126->54|1154->56|1296->172|1310->178|1379->226|1454->275|1468->281|1533->326|1608->375|1622->381|1688->427|1732->445|1746->451|1812->497|1893->552|1925->563|1954->565|2204->788|2219->794|2270->824|2614->1141|2629->1147|2688->1185|3199->1669|3238->1692|3277->1693|3319->1707|3533->1894|3560->1900|3605->1917|3679->1960|3718->1971|4647->2873|4691->2901|4730->2902|4769->2913|4945->3062|4960->3068|5015->3102|5116->3176|5131->3182|5186->3216|5287->3290|5302->3296|5360->3333|5461->3407|5476->3413|5533->3449|5705->3594|5730->3598|5929->3766|5964->3774
-                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|59->27|59->27|59->27|65->33|65->33|65->33|79->47|79->47|79->47|80->48|83->51|83->51|84->52|86->54|87->55|109->77|109->77|109->77|110->78|113->81|113->81|113->81|114->82|114->82|114->82|115->83|115->83|115->83|116->84|116->84|116->84|119->87|119->87|124->92|125->93
+                  DATE: Mon Oct 16 18:25:02 AEDT 2017
+                  SOURCE: C:/Users/Daniel/ULook/app/views/recommend.scala.html
+                  HASH: e9b1c286c2edbe6b429a62e07cd04771994f10cf
+                  MATRIX: 971->1|1112->47|1140->49|1282->165|1296->171|1365->219|1440->268|1454->274|1519->319|1594->368|1608->374|1674->420|1718->438|1732->444|1798->490|1879->545|1911->556|1940->558|2190->781|2205->787|2256->817|2600->1134|2615->1140|2674->1178|3185->1662|3224->1685|3263->1686|3305->1700|3519->1887|3546->1893|3591->1910|3665->1953|3704->1964|4633->2866|4670->2887|4709->2888|4748->2899|4924->3048|4939->3054|4994->3088|5095->3162|5110->3168|5165->3202|5266->3276|5281->3282|5339->3319|5440->3393|5455->3399|5512->3435|5684->3580|5699->3586|5730->3596|5929->3764|5964->3772
+                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|59->27|59->27|59->27|65->33|65->33|65->33|79->47|79->47|79->47|80->48|83->51|83->51|84->52|86->54|87->55|109->77|109->77|109->77|110->78|113->81|113->81|113->81|114->82|114->82|114->82|115->83|115->83|115->83|116->84|116->84|116->84|119->87|119->87|119->87|124->92|125->93
                   -- GENERATED --
               */
           
