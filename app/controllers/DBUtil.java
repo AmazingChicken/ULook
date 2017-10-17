@@ -1,6 +1,7 @@
 package controllers;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Properties;
 
 
@@ -58,20 +59,26 @@ public class DBUtil {
 
     // feel free to test your local database
     public static void main(String[] args) throws SQLException {
-        String itemName = "www";
+        String itemName = "ee2easda";
         String itemBrand = "asd";
-        String itemType = "xc";
+        String itemType = "x213qwdqwdc";
         String itemCategory = "qweqw";
         String itemPrice = "sdcd";
         String itemPicture = "";
-        addItem(itemName, itemBrand, itemType, itemCategory, itemPrice, itemPicture);
+        //addItem(itemName, itemBrand, itemType, itemCategory, itemPrice, itemPicture);
 
         try {
-            Item item = getItemBy("name","aaa");
-            System.out.println(item.itemPrice);
+            ArrayList<Item> itemList = getItemBy("brand","asd"
+            );
+            for(Item item: itemList){
+                System.out.println(item.itemName);
+            }
+            //ßSystem.out.println(item.itemPrice);
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
     }
 
     //add user into the database (for sign up)
@@ -80,7 +87,7 @@ public class DBUtil {
         Connection conn = dbUtils.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
-        System.out.println("asdasdas");
+        //System.out.println("asdasdas");
         try {
             //ps = conn.prepareStatement("SELECT * FROM \"Login\"");
             ps = conn.prepareStatement(
@@ -93,7 +100,7 @@ public class DBUtil {
                 System.out.println(rs.getString("username"));
             }
 
-            System.out.println("asdasdas");
+            //System.out.println("asdasdas");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -158,12 +165,13 @@ public class DBUtil {
     }
 
     //get item (for search) ; there are five types: name, brand, type, category, price
-    public static Item getItemBy(String type, String value) throws Exception {
+    public static ArrayList<Item> getItemBy(String type, String value) throws Exception {
         DBUtil dbUtils = new DBUtil();
         Connection conn = dbUtils.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
         Item item = null;
+        ArrayList<Item> arrList= new ArrayList<Item>();
 
         try {
             if (type.equals("name")) {
@@ -181,7 +189,7 @@ public class DBUtil {
             ps.setString(1, value);
             rs = ps.executeQuery();
 
-            if (rs.next()) {
+            while (rs.next()) {
                 item = new Item();
                 item.setName(rs.getString("name"));
                 item.setBrand(rs.getString("brand"));
@@ -189,6 +197,9 @@ public class DBUtil {
                 item.setCategory(rs.getString("category"));
                 item.setPrice(rs.getString("price"));
                 item.setPicture(rs.getString("picture"));
+                //System.out.println(rs.getString("name"));
+               //System.out.println("qweqweq");
+                arrList.add(item);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -196,7 +207,7 @@ public class DBUtil {
             dbUtils.close();
         }
 
-        return item;
+        return arrList;
 
     }
 
