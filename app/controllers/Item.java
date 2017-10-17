@@ -9,6 +9,16 @@ public class Item {
     public String picture;
 
 
+
+    public Item(){
+    }
+
+    public Item(String picture, String name){
+        this.picture = picture;
+        this.itemName = name;
+    }
+
+
     public String getName() {
         return this.itemName;
     }
