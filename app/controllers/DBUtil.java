@@ -58,12 +58,13 @@ public class DBUtil {
 
     // feel free to test your local database
     public static void main(String[] args) throws SQLException {
-        String itemName = "aaa";
-        String itemBrand = "bbb";
-        String itemType = "ccc";
-        String itemCategory = "ddd";
-        String itemPrice = "eee";
-        addItem(itemName, itemBrand, itemType, itemCategory, itemPrice);
+        String itemName = "www";
+        String itemBrand = "asd";
+        String itemType = "xc";
+        String itemCategory = "qweqw";
+        String itemPrice = "sdcd";
+        String itemPicture = "";
+        addItem(itemName, itemBrand, itemType, itemCategory, itemPrice, itemPicture);
 
         try {
             Item item = getItemBy("name","aaa");
@@ -128,20 +129,21 @@ public class DBUtil {
     }
 
     //add one item to the database
-    public static void addItem(String itemName, String itemBrand, String itemType, String itemCategory, String itemPrice){
+    public static void addItem(String itemName, String itemBrand, String itemType, String itemCategory, String itemPrice,String itemPic){
         DBUtil dbUtils = new DBUtil();
         Connection conn = dbUtils.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
             ps = conn.prepareStatement(
-                    "INSERT INTO \"Data\" (\"name\", \"brand\", \"type\", \"category\", \"price\") " +
-                            "VALUES (?, ?, ?, ?, ?)");
+                    "INSERT INTO \"Data\" (\"name\", \"brand\", \"type\", \"category\", \"price\", \"picture\") " +
+                            "VALUES (?, ?, ?, ?, ?, ?)");
             ps.setString(1, itemName);
             ps.setString(2, itemBrand);
             ps.setString(3, itemType);
             ps.setString(4, itemCategory);
             ps.setString(5, itemPrice);
+            ps.setString(6, itemPic);
             rs = ps.executeQuery();
             if (rs.next()) {
                 System.out.println(rs.getString("username"));
@@ -186,7 +188,7 @@ public class DBUtil {
                 item.setAType(rs.getString("type"));
                 item.setCategory(rs.getString("category"));
                 item.setPrice(rs.getString("price"));
-
+                item.setPicture(rs.getString("picture"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
