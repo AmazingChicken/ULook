@@ -35,7 +35,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: Data; Type: TABLE; Schema: public; Owner: junyulin
+-- Name: Data; Type: TABLE; Schema: public; Owner: Felix
 --
 
 CREATE TABLE "Data" (
@@ -48,10 +48,10 @@ CREATE TABLE "Data" (
 );
 
 
-ALTER TABLE "Data" OWNER TO junyulin;
+ALTER TABLE "Data" OWNER TO Felix;
 
 --
--- Name: Login; Type: TABLE; Schema: public; Owner: junyulin
+-- Name: Login; Type: TABLE; Schema: public; Owner: Felix
 --
 
 CREATE TABLE "Login" (
@@ -60,10 +60,10 @@ CREATE TABLE "Login" (
 );
 
 
-ALTER TABLE "Login" OWNER TO junyulin;
+ALTER TABLE "Login" OWNER TO Felix;
 
 --
--- Name: Data Data_pkey; Type: CONSTRAINT; Schema: public; Owner: junyulin
+-- Name: Data Data_pkey; Type: CONSTRAINT; Schema: public; Owner: Felix
 --
 
 ALTER TABLE ONLY "Data"
@@ -71,7 +71,7 @@ ALTER TABLE ONLY "Data"
 
 
 --
--- Name: Login Login_pkey; Type: CONSTRAINT; Schema: public; Owner: junyulin
+-- Name: Login Login_pkey; Type: CONSTRAINT; Schema: public; Owner: Felix
 --
 
 ALTER TABLE ONLY "Login"
@@ -79,14 +79,14 @@ ALTER TABLE ONLY "Login"
 
 
 --
--- Name: Data; Type: ACL; Schema: public; Owner: junyulin
+-- Name: Data; Type: ACL; Schema: public; Owner: Felix
 --
 
 GRANT ALL ON TABLE "Data" TO frank;
 
 
 --
--- Name: Login; Type: ACL; Schema: public; Owner: junyulin
+-- Name: Login; Type: ACL; Schema: public; Owner: Felix
 --
 
 GRANT ALL ON TABLE "Login" TO frank;
