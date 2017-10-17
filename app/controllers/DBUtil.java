@@ -1,9 +1,12 @@
 package controllers;
 
+import org.postgresql.util.PSQLException;
+
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Properties;
-
+import java.util.UUID;
 
 public class DBUtil {
 
@@ -13,6 +16,8 @@ public class DBUtil {
     private Connection conn = null;
     private PreparedStatement ps = null;
     private ResultSet rs = null;
+    private int favouriteNum;
+
 
     public DBUtil() {
         Properties props = new Properties();
@@ -58,20 +63,28 @@ public class DBUtil {
     }
 
     // feel free to test your local database
-    public static void main(String[] args) throws SQLException {
-        String itemName = "ee2easda";
-        String itemBrand = "asd";
-        String itemType = "x213qwdqwdc";
-        String itemCategory = "qweqw";
-        String itemPrice = "sdcd";
+    public static void main(String[] args) throws Exception {
+        String itemName = "ee2ew";
+        String itemBrand = "asqwasd";
+        String itemType = "x213qweqwqwdqwdc";
+        String itemCategory = "qwewqw";
+        String itemPrice = "sdcwqed";
         String itemPicture = "";
         //addItem(itemName, itemBrand, itemType, itemCategory, itemPrice, itemPicture);
 
+
         try {
-            ArrayList<Item> itemList = getItemBy("brand","asd"
+            //addFavourite("linjj2yy",itemName,itemBrand,itemType,itemCategory,itemPrice,itemPicture);
+            addOutfit("3","1","3","4","5");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            ArrayList<Outfit> outfitList = getOutfitBy("3"
             );
-            for(Item item: itemList){
-                System.out.println(item.itemName);
+            for(Outfit outfit: outfitList){
+                System.out.println(outfit.getHat());
             }
             //ßSystem.out.println(item.itemPrice);
         } catch (Exception e) {
@@ -99,7 +112,6 @@ public class DBUtil {
             if (rs.next()) {
                 System.out.println(rs.getString("username"));
             }
-
             //System.out.println("asdasdas");
 
         } catch (SQLException e) {
@@ -151,6 +163,7 @@ public class DBUtil {
             ps.setString(4, itemCategory);
             ps.setString(5, itemPrice);
             ps.setString(6, itemPic);
+
             rs = ps.executeQuery();
             if (rs.next()) {
                 System.out.println(rs.getString("username"));
@@ -206,9 +219,148 @@ public class DBUtil {
         } finally {
             dbUtils.close();
         }
-
         return arrList;
+    }
 
+    //add Item to the user's favourtite
+    public static void addFavourite(String username, String itemName, String itemBrand, String itemType, String itemCategory, String itemPrice,String itemPic) throws Exception {
+        DBUtil dbUtils = new DBUtil();
+        Connection conn = dbUtils.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        //String id = generateUUID();
+        try {
+
+            ps = conn.prepareStatement(
+                    "INSERT INTO \"Favourite\" (\"username\", \"name\", \"brand\", \"type\", \"category\", \"price\", \"picture\") " +
+                            "VALUES (?, ?, ?, ?, ?, ?, ?)");
+            ps.setString(1, username);
+            ps.setString(2, itemName);
+            ps.setString(3, itemBrand);
+            ps.setString(4, itemType);
+            ps.setString(5, itemCategory);
+            ps.setString(6, itemPrice);
+            ps.setString(7, itemPic);
+
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                System.out.println(rs.getString("username"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            dbUtils.close();
+        }
+    }
+
+    // get the user's favourite according to the username
+    public static ArrayList<Item> getFavouriteBy(String username) throws Exception {
+        DBUtil dbUtils = new DBUtil();
+        Connection conn = dbUtils.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Item item = null;
+        ArrayList<Item> arrList= new ArrayList<Item>();
+
+        try {
+                ps = conn.prepareStatement("SELECT * FROM \"Favourite\" WHERE \"username\"=?");
+
+            ps.setString(1, username);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                item = new Item();
+                item.setName(rs.getString("name"));
+                item.setBrand(rs.getString("brand"));
+                item.setAType(rs.getString("type"));
+                item.setCategory(rs.getString("category"));
+                item.setPrice(rs.getString("price"));
+                item.setPicture(rs.getString("picture"));
+                //System.out.println(rs.getString("name"));
+                //System.out.println("qweqweq");
+                arrList.add(item);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            dbUtils.close();
+        }
+        return arrList;
+    }
+
+    //generate key (I used it to generate "id" for addOutfit)
+    public static String generateUUID() throws Exception {
+        UUID uuid = UUID.randomUUID();
+        String randomUUIDString = uuid.toString();
+
+        return randomUUIDString;
+    }
+
+    //add the outfit into database, the first parameter is username, others are the name of the item.
+    public static void addOutfit(String username, String hat, String top, String bottom, String shoe) throws Exception {
+        DBUtil dbUtils = new DBUtil();
+        Connection conn = dbUtils.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String id = generateUUID();
+        try {
+
+            ps = conn.prepareStatement(
+                    "INSERT INTO \"Outfits\" (\"id\", \"username\", \"hat\", \"top\", \"bottom\", \"shoe\") " +
+                            "VALUES (?, ?, ?, ?, ?, ?)");
+            ps.setString(1, id);
+            ps.setString(2, username);
+            ps.setString(3, hat);
+            ps.setString(4, top);
+            ps.setString(5, bottom);
+            ps.setString(6, shoe);
+
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                System.out.println(rs.getString("username"));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            dbUtils.close();
+        }
+    }
+
+    //get arraylist of outfit according to the username
+    public static ArrayList<Outfit> getOutfitBy(String username) throws Exception {
+        DBUtil dbUtils = new DBUtil();
+        Connection conn = dbUtils.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Outfit outfit = null;
+        ArrayList<Outfit> outfitList = new ArrayList<Outfit>();
+
+        try {
+                ps = conn.prepareStatement("SELECT * FROM \"Outfits\" WHERE \"username\"=?");
+
+            ps.setString(1, username);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                outfit = new Outfit();
+                outfit.setHat(rs.getString("hat"));
+                outfit.setTop(rs.getString("top"));
+                outfit.setBottom(rs.getString("bottom"));
+                outfit.setShoes(rs.getString("shoe"));
+                outfit.setUserName(rs.getString("username"));
+
+                //System.out.println(rs.getString("name"));
+                //System.out.println("qweqweq");
+                outfitList.add(outfit);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            dbUtils.close();
+        }
+        return outfitList;
     }
 
 
