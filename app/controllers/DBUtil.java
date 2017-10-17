@@ -8,8 +8,8 @@ import java.util.Properties;
 public class DBUtil {
 
     private final String DBURL = "jdbc:postgresql://localhost/playdb";  // CHANGE PORT TO 5432 BY DEFAULT
-    private final String DBUSER = "frank";
-    private final String DBPASSWORD = "";                           // CHANGE PASSWOR
+    private final String DBUSER = "postgres";
+    private final String DBPASSWORD = " ";                           // CHANGE PASSWOR
     private Connection conn = null;
     private PreparedStatement ps = null;
     private ResultSet rs = null;
