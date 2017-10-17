@@ -35,7 +35,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: Data; Type: TABLE; Schema: public; Owner: Felix
+-- Name: Data; Type: TABLE; Schema: public; Owner: junyulin
 --
 
 CREATE TABLE "Data" (
@@ -48,10 +48,27 @@ CREATE TABLE "Data" (
 );
 
 
-ALTER TABLE "Data" OWNER TO Felix;
+ALTER TABLE "Data" OWNER TO junyulin;
 
 --
--- Name: Login; Type: TABLE; Schema: public; Owner: Felix
+-- Name: Favourite; Type: TABLE; Schema: public; Owner: junyulin
+--
+
+CREATE TABLE "Favourite" (
+    username character varying,
+    name character varying NOT NULL,
+    brand character varying,
+    type character varying,
+    category character varying,
+    price character varying,
+    picture character varying
+);
+
+
+ALTER TABLE "Favourite" OWNER TO junyulin;
+
+--
+-- Name: Login; Type: TABLE; Schema: public; Owner: junyulin
 --
 
 CREATE TABLE "Login" (
@@ -60,10 +77,47 @@ CREATE TABLE "Login" (
 );
 
 
-ALTER TABLE "Login" OWNER TO Felix;
+ALTER TABLE "Login" OWNER TO junyulin;
 
 --
--- Name: Data Data_pkey; Type: CONSTRAINT; Schema: public; Owner: Felix
+-- Name: Outfits; Type: TABLE; Schema: public; Owner: junyulin
+--
+
+CREATE TABLE "Outfits" (
+    id character varying NOT NULL,
+    username character varying,
+    hat character varying,
+    top character varying,
+    bottom character varying,
+    shoe character varying
+);
+
+
+ALTER TABLE "Outfits" OWNER TO junyulin;
+
+--
+-- Name: outfits_id_seq; Type: SEQUENCE; Schema: public; Owner: junyulin
+--
+
+CREATE SEQUENCE outfits_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE outfits_id_seq OWNER TO junyulin;
+
+--
+-- Name: outfits_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: junyulin
+--
+
+ALTER SEQUENCE outfits_id_seq OWNED BY "Outfits".id;
+
+
+--
+-- Name: Data Data_pkey; Type: CONSTRAINT; Schema: public; Owner: junyulin
 --
 
 ALTER TABLE ONLY "Data"
@@ -71,7 +125,15 @@ ALTER TABLE ONLY "Data"
 
 
 --
--- Name: Login Login_pkey; Type: CONSTRAINT; Schema: public; Owner: Felix
+-- Name: Favourite Favourite_pkey; Type: CONSTRAINT; Schema: public; Owner: junyulin
+--
+
+ALTER TABLE ONLY "Favourite"
+    ADD CONSTRAINT "Favourite_pkey" PRIMARY KEY (name);
+
+
+--
+-- Name: Login Login_pkey; Type: CONSTRAINT; Schema: public; Owner: junyulin
 --
 
 ALTER TABLE ONLY "Login"
@@ -79,17 +141,39 @@ ALTER TABLE ONLY "Login"
 
 
 --
--- Name: Data; Type: ACL; Schema: public; Owner: Felix
+-- Name: Outfits outfits_pkey; Type: CONSTRAINT; Schema: public; Owner: junyulin
+--
+
+ALTER TABLE ONLY "Outfits"
+    ADD CONSTRAINT outfits_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: Data; Type: ACL; Schema: public; Owner: junyulin
 --
 
 GRANT ALL ON TABLE "Data" TO frank;
 
 
 --
--- Name: Login; Type: ACL; Schema: public; Owner: Felix
+-- Name: Favourite; Type: ACL; Schema: public; Owner: junyulin
+--
+
+GRANT ALL ON TABLE "Favourite" TO frank;
+
+
+--
+-- Name: Login; Type: ACL; Schema: public; Owner: junyulin
 --
 
 GRANT ALL ON TABLE "Login" TO frank;
+
+
+--
+-- Name: Outfits; Type: ACL; Schema: public; Owner: junyulin
+--
+
+GRANT ALL ON TABLE "Outfits" TO frank;
 
 
 --
