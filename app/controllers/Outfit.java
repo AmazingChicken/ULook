@@ -5,14 +5,19 @@ public class Outfit {
 	private String Top;
 	private String Bottom;
 	private String Shoes;
-	private String name;
-	
+	private String username;
+
+	public Outfit(){
+
+	}
+
+
 	public Outfit(String name,String hat, String top, String bottom, String shoes) {
 		this.Hat = hat;
 		this.Top = top;
 		this.Bottom = bottom;
 		this.Shoes = shoes;
-		this.name = name;
+		this.username = name;
 	}
 
 	public String getHat() {
@@ -47,12 +52,12 @@ public class Outfit {
 		Shoes = shoes;
 	}
 
-	public String getName() {
-		return name;
+	public String getUserName() {
+		return username;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setUserName(String name) {
+		this.username = name;
 	}
 	
 }
