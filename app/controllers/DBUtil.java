@@ -15,7 +15,7 @@ import java.util.UUID;
 public class DBUtil {
 
     private final String DBURL = "jdbc:postgresql://localhost/playdb";  // CHANGE PORT TO 5432 BY DEFAULT
-    private final String DBUSER = "postgres";
+    private final String DBUSER = "frank";
     private final String DBPASSWORD = " ";                           // CHANGE PASSWOR
     private Connection conn = null;
     private PreparedStatement ps = null;
@@ -79,16 +79,19 @@ public class DBUtil {
 
         try {
             //addFavourite("linjj2yy",itemName,itemBrand,itemType,itemCategory,itemPrice,itemPicture);
-            addOutfit("3","1","3","4","5");
+            //addOutfit("3","1","3","4","5");
+            addInspiration("1","3");
+            addInspiration("2","4");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         try {
-            ArrayList<Outfit> outfitList = getOutfitBy("3"
-            );
-            for(Outfit outfit: outfitList){
-                System.out.println(outfit.getHat());
+           // ArrayList<Outfit> outfitList = getOutfitBy("3");
+            ArrayList<String> inspirationList= getInspirationList("1");
+            for(String picture: inspirationList){
+                System.out.println(picture);
             }
             //ßSystem.out.println(item.itemPrice);
         } catch (Exception e) {
@@ -348,7 +351,7 @@ public class DBUtil {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                outfit = new Outfit("1","1","1","1","1","1");
+                outfit = new Outfit();
                 outfit.setHat(rs.getString("hat"));
                 outfit.setTop(rs.getString("top"));
                 outfit.setBottom(rs.getString("bottom"));
@@ -366,9 +369,65 @@ public class DBUtil {
         }
         return outfitList;
     }
+
+
+    public static void addInspiration(String tusername, String picture){
+        DBUtil dbUtils = new DBUtil();
+        Connection conn = dbUtils.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        //System.out.println("asdasdas");
+        try {
+
+            ps = conn.prepareStatement(
+                    "INSERT INTO \"Inspiration\" (\"picture\", \"tusername\") " +
+                            "VALUES (?, ?)");
+            ps.setString(1, picture);
+            ps.setString(2, tusername);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                //System.out.println(rs.getString("username"));
+            }
+            //System.out.println("asdasdas");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            dbUtils.close();
+        }
+    }
+
+    public static ArrayList<String> getInspirationList(String tusername) throws Exception {
+        DBUtil dbUtils = new DBUtil();
+        Connection conn = dbUtils.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        ArrayList<String> inspirationList= new ArrayList<String>();
+        String picture;
+        try {
+
+            ps = conn.prepareStatement("SELECT * FROM \"Inspiration\" WHERE \"tusername\"=?");
+            ps.setString(1, tusername);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                picture = rs.getString("picture");
+                inspirationList.add(picture);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            dbUtils.close();
+        }
+        return inspirationList;
+    }
+
+
+
+
     
     public static void addDb() throws SQLException, URISyntaxException, IOException{
-      	 Webhose webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:jacket OR name:top OR name:shirt)");
+      	 Webhose webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Shirt");
            webhoseData.pullData();
            JsonArray postArray = webhoseData.getData();
            
@@ -381,7 +440,7 @@ public class DBUtil {
                addItem(productName, productBrand, "Shirt", "Shirt", productPrice, productImage);
            } 
            //Hats
-      	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:headwear OR name:hat OR name:cap)");
+      	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Hat");
            webhoseData.pullData();
            postArray = webhoseData.getData();
            for(JsonElement o  : postArray) {
@@ -392,7 +451,7 @@ public class DBUtil {
                addItem(productName, productBrand, "Hat", "Hat", productPrice, productImage);
            } 
            //Pants
-      	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:jeans OR name:pants OR name:trousers)");
+      	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Pants");
            webhoseData.pullData();
            postArray = webhoseData.getData();
            for(JsonElement o  : postArray) {
@@ -403,7 +462,7 @@ public class DBUtil {
                addItem(productName, productBrand, "Pants", "Pants", productPrice, productImage);
            } 
            //Shoes
-      	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:Shoe OR name:Trainers OR name:sneakers)");
+      	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Shoes");
            webhoseData.pullData();
            postArray = webhoseData.getData();
            for(JsonElement o  : postArray) {
@@ -421,7 +480,7 @@ public class DBUtil {
           JsonArray postArray = webhoseData.getData();
 
           
-     	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:jacket OR name:top OR name:shirt)");
+     	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Shirt");
           webhoseData.pullData();
           postArray = webhoseData.getData();
           for(JsonElement o  : postArray) {
@@ -438,7 +497,7 @@ public class DBUtil {
          JsonArray postArray = webhoseData.getData();
 
      
-    	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:headwear OR name:hat OR name:cap)");
+    	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Shirt");
          webhoseData.pullData();
          postArray = webhoseData.getData();
          for(JsonElement o  : postArray) {
@@ -455,7 +514,7 @@ public class DBUtil {
          JsonArray postArray = webhoseData.getData();
 
        
-    	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:jeans OR name:pants OR name:trousers)");
+    	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Shirt");
          webhoseData.pullData();
          postArray = webhoseData.getData();
          for(JsonElement o  : postArray) {
@@ -472,7 +531,7 @@ public class DBUtil {
         JsonArray postArray = webhoseData.getData();
 
       
-   	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:Shoe OR name:Trainers OR name:sneakers)");
+   	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Shoe");
         webhoseData.pullData();
         postArray = webhoseData.getData();
         for(JsonElement o  : postArray) {
