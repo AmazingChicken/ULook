@@ -22,7 +22,7 @@ public class Webhose {
         WebhoseIOClient webhoseClient = WebhoseIOClient.getInstance("9514e7ab-fd10-47c3-b523-f504a8f66e9d");
         Map queries = new HashMap();
         queries.put("q", query);
-        queries.put("size", "40");
+        queries.put("size", "4	0");
         JsonElement result = webhoseClient.query("productFilter", queries);
         System.out.println(result.getAsJsonObject().get("totalResults"));
 

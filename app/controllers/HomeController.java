@@ -12,9 +12,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.nio.charset.StandardCharsets;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
+import java.sql.SQLException;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
@@ -44,14 +45,16 @@ public class HomeController extends Controller {
     public Result signUpPage(){
       	return ok(views.html.signUpPage.render());
     }
-    public Result myItems(){
-    	return ok(views.html.myItems.render(dummyItems(),dummyOptions(),dummyType()));
+    public Result myItems() throws SQLException, URISyntaxException, IOException, Exception{
+    	DBUtil ok1 = new DBUtil();
+    	return ok(views.html.myItems.render(ok1.getItemBy("category", "Shoes"),dummyOptions(),dummyType()));
     }
     public Result recommend(){
       	return ok(views.html.recommend.render(dummyOccasion(),dummyOutfit()));
     }
-    public Result search(){
-      	return ok(views.html.search.render(dummyItems(),dummyOptions(),dummyType()));
+    public Result search()throws SQLException, URISyntaxException, IOException, Exception{
+    	DBUtil ok1 = new DBUtil();
+      	return ok(views.html.search.render(ok1.getItemBy("category", "Shoes"),dummyOptions(),dummyType()));
     }
     public Result getInspired(){
       	return  ok(views.html.getInspired.render(dummyInspiree()));

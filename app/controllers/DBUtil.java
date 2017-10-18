@@ -1,8 +1,13 @@
 package controllers;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Properties;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 
 
 public class DBUtil {
@@ -210,7 +215,54 @@ public class DBUtil {
         return arrList;
 
     }
-
+    
+    public static void addDb() throws SQLException, URISyntaxException, IOException{
+      	 Webhose webhoseData = new Webhose("(site:asos.com) Shirt");
+           webhoseData.pullData();
+           JsonArray postArray = webhoseData.getData();
+           
+           //Add asos shirts
+           for(JsonElement o  : postArray) {
+               String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
+               String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
+               String productPrice = (o.getAsJsonObject().get("price").getAsString());   
+               String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
+               addItem(productName, productBrand, "Shirt", "Shirt", productPrice, productImage);
+           } 
+           //Hats
+      	 webhoseData = new Webhose("(site:asos.com) Shirt");
+           webhoseData.pullData();
+           postArray = webhoseData.getData();
+           for(JsonElement o  : postArray) {
+               String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
+               String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
+               String productPrice = (o.getAsJsonObject().get("price").getAsString());   
+               String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
+               addItem(productName, productBrand, "Hat", "Hat", productPrice, productImage);
+           } 
+           //Pants
+      	 webhoseData = new Webhose("(site:asos.com) Pants");
+           webhoseData.pullData();
+           postArray = webhoseData.getData();
+           for(JsonElement o  : postArray) {
+               String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
+               String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
+               String productPrice = (o.getAsJsonObject().get("price").getAsString());   
+               String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
+               addItem(productName, productBrand, "Pants", "Pants", productPrice, productImage);
+           } 
+           //Shoes
+      	 webhoseData = new Webhose("(site:asos.com) Shoe");
+           webhoseData.pullData();
+           postArray = webhoseData.getData();
+           for(JsonElement o  : postArray) {
+               String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
+               String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
+               String productPrice = (o.getAsJsonObject().get("price").getAsString());   
+               String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
+               addItem(productName, productBrand, "Shoes", "Shoes", productPrice, productImage);
+           } 
+      }
 
 
 }

@@ -34,19 +34,22 @@ Seq[Any](format.raw/*1.3*/("""<nav>
    
     <ul>
       <li>
-        <a href=""""),_display_(/*5.19*/routes/*5.25*/.HomeController.getInspired()),format.raw/*5.54*/("""" data-title="Projects">Get Inspired!</a>
+        <a href=""""),_display_(/*5.19*/routes/*5.25*/.HomeController.goMainPage()),format.raw/*5.53*/("""" data-title="Projects">Home</a>
       </li>
       <li>
-        <a href=""""),_display_(/*8.19*/routes/*8.25*/.HomeController.recommend()),format.raw/*8.52*/("""" data-title="Team">Recommended</a>
+        <a href=""""),_display_(/*8.19*/routes/*8.25*/.HomeController.getInspired()),format.raw/*8.54*/("""" data-title="Projects">Get Inspired!</a>
       </li>
       <li>
-        <a href=""""),_display_(/*11.19*/routes/*11.25*/.HomeController.myItems()),format.raw/*11.50*/("""" data-title="Diary">My Items</a>
+        <a href=""""),_display_(/*11.19*/routes/*11.25*/.HomeController.recommend()),format.raw/*11.52*/("""" data-title="Team">Recommended</a>
       </li>
       <li>
-        <a href=""""),_display_(/*14.19*/routes/*14.25*/.HomeController.myOutfits()),format.raw/*14.52*/("""" data-title="Timeline">My Outfits</a>
+        <a href=""""),_display_(/*14.19*/routes/*14.25*/.HomeController.myItems()),format.raw/*14.50*/("""" data-title="Diary">My Items</a>
       </li>
       <li>
-        <a href=""""),_display_(/*17.19*/routes/*17.25*/.HomeController.search()),format.raw/*17.49*/("""" data-title="Settings">Search</a>
+        <a href=""""),_display_(/*17.19*/routes/*17.25*/.HomeController.myOutfits()),format.raw/*17.52*/("""" data-title="Timeline">My Outfits</a>
+      </li>
+      <li>
+        <a href=""""),_display_(/*20.19*/routes/*20.25*/.HomeController.search()),format.raw/*20.49*/("""" data-title="Settings">Search</a>
       </li>
 
     </ul>
@@ -66,11 +69,11 @@ Seq[Any](format.raw/*1.3*/("""<nav>
 
               /*
                   -- GENERATED --
-                  DATE: Mon Oct 16 15:02:08 AEDT 2017
+                  DATE: Wed Oct 18 12:01:37 AEDT 2017
                   SOURCE: C:/Users/Daniel/ULook/app/views/navigator.scala.html
-                  HASH: 84382ef0d0a499e236959d576018e5ff725294b7
-                  MATRIX: 1034->2|1112->54|1126->60|1175->89|1287->175|1301->181|1348->208|1455->288|1470->294|1516->319|1621->397|1636->403|1684->430|1794->513|1809->519|1854->543
-                  LINES: 33->1|37->5|37->5|37->5|40->8|40->8|40->8|43->11|43->11|43->11|46->14|46->14|46->14|49->17|49->17|49->17
+                  HASH: 5612a55a536d24f8cc7b5922c1488c51a15663b0
+                  MATRIX: 1034->2|1112->54|1126->60|1174->88|1277->165|1291->171|1340->200|1453->286|1468->292|1516->319|1623->399|1638->405|1684->430|1789->508|1804->514|1852->541|1962->624|1977->630|2022->654
+                  LINES: 33->1|37->5|37->5|37->5|40->8|40->8|40->8|43->11|43->11|43->11|46->14|46->14|46->14|49->17|49->17|49->17|52->20|52->20|52->20
                   -- GENERATED --
               */
           

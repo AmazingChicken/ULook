@@ -37,5 +37,9 @@ img{
 }
 .form-control-sm{
    width:42%;
-   
+}
+.card-block{
+    min-height: 150px;
+    max-height: 150px;
+
 }
