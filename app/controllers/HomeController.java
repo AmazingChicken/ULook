@@ -12,9 +12,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.nio.charset.StandardCharsets;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
+import java.sql.SQLException;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
@@ -44,20 +45,26 @@ public class HomeController extends Controller {
     public Result signUpPage(){
       	return ok(views.html.signUpPage.render());
     }
-    public Result myItems(){
-    	return ok(views.html.myItems.render(dummyItems(),dummyOptions(),dummyType()));
+    public Result myItems() throws SQLException, URISyntaxException, IOException, Exception{
+    	DBUtil.addDb();
+    	return ok(views.html.myItems.render(DBUtil.getItemBy("category", "Shoes"),dummyOptions(),dummyType()));
     }
     public Result recommend(){
       	return ok(views.html.recommend.render(dummyOccasion(),dummyOutfit()));
     }
-    public Result search(){
-      	return ok(views.html.search.render(dummyItems(),dummyOptions(),dummyType()));
+    public Result search()throws SQLException, URISyntaxException, IOException, Exception{
+    	DBUtil ok1 = new DBUtil();
+      	return ok(views.html.search.render(ok1.getItemBy("category", "Shoes"),dummyOptions(),dummyType()));
     }
     public Result getInspired(){
       	return  ok(views.html.getInspired.render(dummyInspiree()));
     }
     public Result myOutfits(){
       	return ok(views.html.myOutfits.render(dummyOccasion(),dummyOutfit()));
+    }
+    public Result detailPage(String itemName){
+    	Item item = new Item("shoe","images/roshe.jpg");
+      	return ok(views.html.detailPage.render(item));
     }
 
     public Result signUp(String name, String password) throws IOException{
@@ -199,10 +206,10 @@ public class HomeController extends Controller {
          }
          public ArrayList<Outfit> dummyOutfit(){
          	ArrayList<Outfit> yes = new ArrayList<Outfit>();
-         	Outfit outfit1 = new Outfit("Outfit1","images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/roshe.jpg");
-         	Outfit outfit2 = new Outfit("Cool Outfit","images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/boot.jpg");
-         	Outfit outfit3 = new Outfit("Swag","images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/chucks.jpg");
-         	Outfit outfit4 = new Outfit("YOLO","images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/4.png");
+         	Outfit outfit1 = new Outfit("user1","images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/roshe.jpg","out1");
+         	Outfit outfit2 = new Outfit("user1","images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/boot.jpg","out2");
+         	Outfit outfit3 = new Outfit("user1","images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/chucks.jpg","swag");
+         	Outfit outfit4 = new Outfit("user1","images/hat.jpg","images/shirt.jpg","images/pants.jpg","images/4.png","test");
          	yes.add(outfit1);
          	yes.add(outfit2);
          	yes.add(outfit3);

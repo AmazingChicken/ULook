@@ -10,9 +10,7 @@ public class Item {
 
 
 
-    public Item(){
-    }
-
+    
     public Item(String picture, String name){
         this.picture = picture;
         this.itemName = name;

@@ -6,19 +6,40 @@ public class Outfit {
 	private String Bottom;
 	private String Shoes;
 	private String username;
-
+	private String name;
 	public Outfit(){
 
 	}
 
 
-	public Outfit(String name,String hat, String top, String bottom, String shoes) {
+	public Outfit(String username,String hat, String top, String bottom, String shoes, String name) {
 		this.Hat = hat;
 		this.Top = top;
 		this.Bottom = bottom;
 		this.Shoes = shoes;
 		this.username = name;
+		this.name = name;
 	}
+
+	public String getUsername() {
+		return username;
+	}
+
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 
 	public String getHat() {
 		return Hat;
