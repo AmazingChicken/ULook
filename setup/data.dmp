@@ -68,6 +68,39 @@ CREATE TABLE "Favourite" (
 ALTER TABLE "Favourite" OWNER TO junyulin;
 
 --
+-- Name: Inspiration; Type: TABLE; Schema: public; Owner: junyulin
+--
+
+CREATE TABLE "Inspiration" (
+    picture character varying NOT NULL,
+    tusername character varying
+);
+
+
+ALTER TABLE "Inspiration" OWNER TO junyulin;
+
+--
+-- Name: Inpiration_id_seq; Type: SEQUENCE; Schema: public; Owner: junyulin
+--
+
+CREATE SEQUENCE "Inpiration_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE "Inpiration_id_seq" OWNER TO junyulin;
+
+--
+-- Name: Inpiration_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: junyulin
+--
+
+ALTER SEQUENCE "Inpiration_id_seq" OWNED BY "Inspiration".picture;
+
+
+--
 -- Name: Login; Type: TABLE; Schema: public; Owner: junyulin
 --
 
@@ -133,6 +166,14 @@ ALTER TABLE ONLY "Favourite"
 
 
 --
+-- Name: Inspiration Inpiration_pkey; Type: CONSTRAINT; Schema: public; Owner: junyulin
+--
+
+ALTER TABLE ONLY "Inspiration"
+    ADD CONSTRAINT "Inpiration_pkey" PRIMARY KEY (picture);
+
+
+--
 -- Name: Login Login_pkey; Type: CONSTRAINT; Schema: public; Owner: junyulin
 --
 
@@ -146,6 +187,13 @@ ALTER TABLE ONLY "Login"
 
 ALTER TABLE ONLY "Outfits"
     ADD CONSTRAINT outfits_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: public; Type: ACL; Schema: -; Owner: junyulin
+--
+
+GRANT USAGE ON SCHEMA public TO frank;
 
 
 --
@@ -163,6 +211,13 @@ GRANT ALL ON TABLE "Favourite" TO frank;
 
 
 --
+-- Name: Inspiration; Type: ACL; Schema: public; Owner: junyulin
+--
+
+GRANT ALL ON TABLE "Inspiration" TO frank;
+
+
+--
 -- Name: Login; Type: ACL; Schema: public; Owner: junyulin
 --
 
@@ -174,6 +229,22 @@ GRANT ALL ON TABLE "Login" TO frank;
 --
 
 GRANT ALL ON TABLE "Outfits" TO frank;
+
+
+--
+-- Name: DEFAULT PRIVILEGES FOR SEQUENCES; Type: DEFAULT ACL; Schema: public; Owner: junyulin
+--
+
+ALTER DEFAULT PRIVILEGES FOR ROLE junyulin IN SCHEMA public REVOKE ALL ON SEQUENCES  FROM junyulin;
+ALTER DEFAULT PRIVILEGES FOR ROLE junyulin IN SCHEMA public GRANT USAGE ON SEQUENCES  TO frank;
+
+
+--
+-- Name: DEFAULT PRIVILEGES FOR TABLES; Type: DEFAULT ACL; Schema: public; Owner: frank
+--
+
+ALTER DEFAULT PRIVILEGES FOR ROLE frank IN SCHEMA public REVOKE ALL ON TABLES  FROM frank;
+ALTER DEFAULT PRIVILEGES FOR ROLE frank IN SCHEMA public GRANT SELECT,INSERT,DELETE,UPDATE ON TABLES  TO frank;
 
 
 --

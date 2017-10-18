@@ -4,7 +4,11 @@
 		module="ulook-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
+<<<<<<< HEAD
 		publication="20171018205906"
+=======
+		publication="20171018232733"
+>>>>>>> 8991a97fb8b463521d0f0633d786c5d8eeed8a2f
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

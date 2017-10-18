@@ -1,7 +1,12 @@
 
 // @GENERATOR:play-routes-compiler
+<<<<<<< HEAD
 // @SOURCE:C:/Users/mr_to/ULook/conf/routes
 // @DATE:Wed Oct 18 21:01:41 AEDT 2017
+=======
+// @SOURCE:C:/Users/Daniel/ULook/conf/routes
+// @DATE:Wed Oct 18 23:27:42 AEDT 2017
+>>>>>>> 8991a97fb8b463521d0f0633d786c5d8eeed8a2f
 
 import play.api.mvc.Call
 
@@ -56,9 +61,9 @@ package controllers {
     }
   
     // @LINE:17
-    def detailPage(item:String): Call = {
+    def addToOutfit(a:String = "a"): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "detailPage" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("item", item)))))
+      Call("GET", _prefix + { _defaultPrefix } + "addToOutfit" + play.core.routing.queryString(List(if(a == "a") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("a", a)))))
     }
   
     // @LINE:7
@@ -93,14 +98,14 @@ package controllers {
   
   }
 
-  // @LINE:19
+  // @LINE:20
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:19
+    // @LINE:20
     def versioned(file:Asset): Call = {
       implicit val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
