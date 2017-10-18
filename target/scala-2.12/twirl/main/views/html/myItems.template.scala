@@ -49,7 +49,7 @@ Seq[Any](format.raw/*1.65*/("""
 <main>
   <div class="title">
     <h2>My Items</h2>
-    <a href="javascript:void(0);">Sign in</a>
+    <a href="javascript:void(0);">Sign out</a>
    </div>
    <div class="container-fluid">
    <div class="container">
@@ -60,11 +60,9 @@ Seq[Any](format.raw/*1.65*/("""
       <div class="input-group stylish-input-group mt-2">
         <input type="search" class="form-control"  placeholder="Search by Item Name" onkeyup="myFunction()" name = "s" required>
         <span class="input-group-addon">
-            <button type="submit">
+            <button type="submit"></button> </span></div>
             </form>
                 <img src=""""),_display_(/*33.28*/routes/*33.34*/.Assets.versioned("images/search.png")),format.raw/*33.72*/("""" height="35" width="35">
-            </button>  
-        </span>
       </div>
    </div>
    <div class="card ml-3 mt-3 mr-2">
@@ -82,15 +80,15 @@ Seq[Any](format.raw/*1.65*/("""
         </div>
    <div class="card-deck mt-1 ml-2 mb-2 mr-1">
          <div class="card ml-3 mt-1 scrollbox">
-             """),_display_(/*53.15*/for(option <- brands) yield /*53.36*/{_display_(Seq[Any](format.raw/*53.37*/("""
-            """),format.raw/*54.13*/("""<div class="form-check form-inline mt-2 mb-2">
+             """),_display_(/*51.15*/for(option <- brands) yield /*51.36*/{_display_(Seq[Any](format.raw/*51.37*/("""
+            """),format.raw/*52.13*/("""<div class="form-check form-inline mt-2 mb-2">
                <label class="form-check-label">
                <input class="form-check-input" type="checkbox" value="">
-               """),_display_(/*57.17*/option),format.raw/*57.23*/("""
-               """),format.raw/*58.16*/("""</label>
+               """),_display_(/*55.17*/option),format.raw/*55.23*/("""
+               """),format.raw/*56.16*/("""</label>
             </div> 
-            """)))}),format.raw/*60.14*/("""
-         """),format.raw/*61.10*/("""</div>
+            """)))}),format.raw/*58.14*/("""
+         """),format.raw/*59.10*/("""</div>
          <div class="card ml-3 mt-1">
             <form class="form-inline-sm mt-4 text-center">
                <input type="text" class="form-control-sm" id="inlineFormInput" placeholder="Minimum Price">
@@ -100,15 +98,15 @@ Seq[Any](format.raw/*1.65*/("""
             </form>
          </div>
          <div class="card ml-3 mt-1 scrollbox">
-            """),_display_(/*71.14*/for(option <- types) yield /*71.34*/{_display_(Seq[Any](format.raw/*71.35*/("""
-            """),format.raw/*72.13*/("""<div class="form-check form-inline mt-2 mb-2">
+            """),_display_(/*69.14*/for(option <- types) yield /*69.34*/{_display_(Seq[Any](format.raw/*69.35*/("""
+            """),format.raw/*70.13*/("""<div class="form-check form-inline mt-2 mb-2">
                <label class="form-check-label">
                <input class="form-check-input" type="checkbox" value="">
-               """),_display_(/*75.17*/option),format.raw/*75.23*/("""
-               """),format.raw/*76.16*/("""</label>
+               """),_display_(/*73.17*/option),format.raw/*73.23*/("""
+               """),format.raw/*74.16*/("""</label>
             </div> 
-            """)))}),format.raw/*78.14*/("""
-         """),format.raw/*79.10*/("""</div>
+            """)))}),format.raw/*76.14*/("""
+         """),format.raw/*77.10*/("""</div>
       </div>
    </div>
    <select class="form-control mt-3 sort">
@@ -121,14 +119,14 @@ Seq[Any](format.raw/*1.65*/("""
    
    
       <div class="row mt-4 ml-5 mb-4 mr-1">
-      """),_display_(/*92.8*/for(item <- items) yield /*92.26*/{_display_(Seq[Any](format.raw/*92.27*/("""
-         """),format.raw/*93.10*/("""<div class="col-sm-4 mb-5">
+      """),_display_(/*90.8*/for(item <- items) yield /*90.26*/{_display_(Seq[Any](format.raw/*90.27*/("""
+         """),format.raw/*91.10*/("""<div class="col-sm-4 mb-5">
             <div class="card mr-5">
                <div class="text-center">
-                  <a href="#"><img src=""""),_display_(/*96.42*/routes/*96.48*/.Assets.versioned(item.getPicture())),format.raw/*96.84*/("""" height="200" width="200"></a>
+                  <a href="#"><img src=""""),_display_(/*94.42*/routes/*94.48*/.Assets.versioned(item.getPicture())),format.raw/*94.84*/("""" height="200" width="200"></a>
                </div> 
                <div class="card-block">
-                  <h4 class="card-title ml-2">"""),_display_(/*99.48*/item/*99.52*/.getName()),format.raw/*99.62*/("""</h4>
+                  <h4 class="card-title ml-2">"""),_display_(/*97.48*/item/*97.52*/.getName()),format.raw/*97.62*/("""</h4>
                   <div class="mb-2">
                      <button type="button" class="btn btn-secondary ml-2">Add to Outfit</button>
                      <button type="button" class="btn btn-danger float-right mr-2" >Delete</button>
@@ -136,10 +134,10 @@ Seq[Any](format.raw/*1.65*/("""
                </div>
             </div>
          </div>
-         """)))}),format.raw/*107.11*/("""
+         """)))}),format.raw/*105.11*/("""
         
-      """),format.raw/*109.7*/("""</div>
-   </div>
+      """),format.raw/*107.7*/("""</div>
+
 
 </main>
 
@@ -161,11 +159,11 @@ Seq[Any](format.raw/*1.65*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Oct 16 18:19:21 AEDT 2017
-                  SOURCE: C:/Users/Daniel/ULook/app/views/myItems.scala.html
-                  HASH: b7c1bbcc1bb9868c266b69b533adc241dbefb2a8
-                  MATRIX: 980->1|1138->64|1166->66|1308->182|1322->188|1391->236|1466->285|1480->291|1545->336|1620->385|1634->391|1700->437|1744->455|1758->461|1824->507|1905->562|1937->573|1966->575|2220->802|2235->808|2286->838|2631->1156|2646->1162|2705->1200|3475->1943|3512->1964|3551->1965|3593->1979|3807->2166|3834->2172|3879->2189|3954->2233|3993->2244|4587->2811|4623->2831|4662->2832|4704->2846|4918->3033|4945->3039|4990->3056|5065->3100|5104->3111|5471->3452|5505->3470|5544->3471|5583->3482|5759->3631|5774->3637|5831->3673|6003->3818|6016->3822|6047->3832|6419->4172|6465->4190
-                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|59->27|59->27|59->27|65->33|65->33|65->33|85->53|85->53|85->53|86->54|89->57|89->57|90->58|92->60|93->61|103->71|103->71|103->71|104->72|107->75|107->75|108->76|110->78|111->79|124->92|124->92|124->92|125->93|128->96|128->96|128->96|131->99|131->99|131->99|139->107|141->109
+                  DATE: Tue Oct 17 21:13:28 AEDT 2017
+                  SOURCE: C:/Users/mr_to/ULook/app/views/myItems.scala.html
+                  HASH: 86261df38a277ab911599aafe8e5cf2e7def9fc1
+                  MATRIX: 980->1|1138->64|1166->66|1308->182|1322->188|1391->236|1466->285|1480->291|1545->336|1620->385|1634->391|1700->437|1744->455|1758->461|1824->507|1905->562|1937->573|1966->575|2221->803|2236->809|2287->839|2655->1180|2670->1186|2729->1224|3457->1925|3494->1946|3533->1947|3575->1961|3789->2148|3816->2154|3861->2171|3936->2215|3975->2226|4569->2793|4605->2813|4644->2814|4686->2828|4900->3015|4927->3021|4972->3038|5047->3082|5086->3093|5453->3434|5487->3452|5526->3453|5565->3464|5741->3613|5756->3619|5813->3655|5985->3800|5998->3804|6029->3814|6401->4154|6447->4172
+                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|59->27|59->27|59->27|65->33|65->33|65->33|83->51|83->51|83->51|84->52|87->55|87->55|88->56|90->58|91->59|101->69|101->69|101->69|102->70|105->73|105->73|106->74|108->76|109->77|122->90|122->90|122->90|123->91|126->94|126->94|126->94|129->97|129->97|129->97|137->105|139->107
                   -- GENERATED --
               */
           

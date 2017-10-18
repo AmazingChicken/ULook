@@ -75,9 +75,9 @@ Seq[Any](format.raw/*7.4*/("""
 
   <article class="larg">
 
-</form>
+
     <div>
-      <h3><img src=""""),_display_(/*49.22*/routes/*49.28*/.Assets.versioned("images/2.png")),format.raw/*49.61*/(""""width="500" height="260">details here</span></h3>
+      <h3><img src=""""),_display_(/*49.22*/routes/*49.28*/.Assets.versioned("images/2.png")),format.raw/*49.61*/(""""width="500" height="260">details here/h3>
       <p>xxx.</p>
       </h3>
     </div>
@@ -90,7 +90,8 @@ Seq[Any](format.raw/*7.4*/("""
     </div>
       <div id="login_click">  
         <a id="btlogin" href="#">Cancel</a>  
-    </div>
+      </div>
+  </article>
 </main>
 """))
       }
@@ -108,10 +109,10 @@ Seq[Any](format.raw/*7.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Mon Oct 16 15:02:08 AEDT 2017
-                  SOURCE: C:/Users/Daniel/ULook/app/views/detailPage.scala.html
-                  HASH: 072accc9008cbd0a682f27c22bf576e0f33b4b89
-                  MATRIX: 1199->260|1295->262|1329->269|1441->354|1456->360|1522->405|1624->480|1639->486|1689->515|1801->600|1816->606|1864->633|1971->713|1986->719|2032->744|2238->923|2253->929|2298->953|2602->1230|2617->1236|2671->1269
+                  DATE: Tue Oct 17 21:13:27 AEDT 2017
+                  SOURCE: C:/Users/mr_to/ULook/app/views/detailPage.scala.html
+                  HASH: c9f48cb3bdeb040aa8bab3bd61620cb6bb35c486
+                  MATRIX: 1199->260|1295->262|1329->269|1441->354|1456->360|1522->405|1624->480|1639->486|1689->515|1801->600|1816->606|1864->633|1971->713|1986->719|2032->744|2238->923|2253->929|2298->953|2595->1223|2610->1229|2664->1262
                   LINES: 33->7|38->7|41->10|44->13|44->13|44->13|51->20|51->20|51->20|54->23|54->23|54->23|57->26|57->26|57->26|63->32|63->32|63->32|80->49|80->49|80->49
                   -- GENERATED --
               */
