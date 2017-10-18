@@ -99,7 +99,8 @@
                   <h4 class="card-title ml-2">@item.getName()</h4>
                   <div class="mb-2">
                      <a href="@routes.HomeController.addToOutfit(item.getName())" class="btn btn-success float-right mr-2">Add to Outfit</a>
-                     <button type="button" class="btn btn-success float-right mr-2" >Save</button>
+                      <a href="@routes.HomeController.addToFavourite(item.getName())" class="btn btn-success float-right mr-2">Save</a>
+                     
                   </div>
                </div>
             </div>

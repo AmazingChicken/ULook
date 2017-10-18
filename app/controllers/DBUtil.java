@@ -433,51 +433,10 @@ public class DBUtil {
 
     
     public static void addDb() throws SQLException, URISyntaxException, IOException{
-      	 Webhose webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Shirt");
-           webhoseData.pullData();
-           JsonArray postArray = webhoseData.getData();
-           
-           //Add asos shirts
-           for(JsonElement o  : postArray) {
-               String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
-               String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
-               String productPrice = (o.getAsJsonObject().get("price").getAsString());   
-               String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
-               addItem(productName, productBrand, "Shirt", "Shirt", productPrice, productImage);
-           } 
-           //Hats
-      	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Hat");
-           webhoseData.pullData();
-           postArray = webhoseData.getData();
-           for(JsonElement o  : postArray) {
-               String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
-               String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
-               String productPrice = (o.getAsJsonObject().get("price").getAsString());   
-               String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
-               addItem(productName, productBrand, "Hat", "Hat", productPrice, productImage);
-           } 
-           //Pants
-      	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Pants");
-           webhoseData.pullData();
-           postArray = webhoseData.getData();
-           for(JsonElement o  : postArray) {
-               String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
-               String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
-               String productPrice = (o.getAsJsonObject().get("price").getAsString());   
-               String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
-               addItem(productName, productBrand, "Pants", "Pants", productPrice, productImage);
-           } 
-           //Shoes
-      	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Shoes");
-           webhoseData.pullData();
-           postArray = webhoseData.getData();
-           for(JsonElement o  : postArray) {
-               String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
-               String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
-               String productPrice = (o.getAsJsonObject().get("price").getAsString());   
-               String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
-               addItem(productName, productBrand, "Shoes", "Shoes", productPrice, productImage);
-           } 
+    	addShirts();
+    	addHats();
+    	addShoes();
+    	addPants();
       }
     
     public static void addShirts() throws SQLException, URISyntaxException, IOException{
@@ -491,7 +450,7 @@ public class DBUtil {
               String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
               String productPrice = (o.getAsJsonObject().get("price").getAsString());   
               String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
-              addItem(productName, productBrand, "Shoes", "Shoes", productPrice, productImage);
+              addItem(productName, productBrand, "Shoes", "Shoes", productPrice, saveImage(productImage,productName));
           } 
      }
     public static void addHats() throws SQLException, URISyntaxException, IOException{
@@ -509,7 +468,7 @@ public class DBUtil {
              String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
              String productPrice = (o.getAsJsonObject().get("price").getAsString());   
              String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
-             addItem(productName, productBrand, "Shoes", "Shoes", productPrice, productImage);
+             addItem(productName, productBrand, "Shoes", "Shoes", productPrice, saveImage(productImage,productName));
          } 
     }
     public static void addPants() throws SQLException, URISyntaxException, IOException{
@@ -525,7 +484,7 @@ public class DBUtil {
              String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
              String productPrice = (o.getAsJsonObject().get("price").getAsString());   
              String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
-             addItem(productName, productBrand, "Shoes", "Shoes", productPrice, productImage);
+             addItem(productName, productBrand, "Shoes", "Shoes", productPrice, saveImage(productImage,productName));
          } 
     }
     public static void addShoes() throws SQLException, URISyntaxException, IOException{

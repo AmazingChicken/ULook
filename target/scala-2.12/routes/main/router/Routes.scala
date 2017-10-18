@@ -1,7 +1,12 @@
 
 // @GENERATOR:play-routes-compiler
+<<<<<<< HEAD
 // @SOURCE:C:/Users/mr_to/ULook/conf/routes
 // @DATE:Thu Oct 19 02:14:35 AEDT 2017
+=======
+// @SOURCE:C:/Users/Daniel/ULook/conf/routes
+// @DATE:Thu Oct 19 01:47:32 AEDT 2017
+>>>>>>> 5155b89c33441a7e39683978ae241d49abbd19f7
 
 package router
 
@@ -17,7 +22,7 @@ class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
   HomeController_0: controllers.HomeController,
-  // @LINE:20
+  // @LINE:21
   Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -26,7 +31,7 @@ class Routes(
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
     HomeController_0: controllers.HomeController,
-    // @LINE:20
+    // @LINE:21
     Assets_1: controllers.Assets
   ) = this(errorHandler, HomeController_0, Assets_1, "/")
 
@@ -52,6 +57,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """signUp""", """controllers.HomeController.signUp(name:String ?= "a", password:String ?= "b")"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """signIn""", """controllers.HomeController.signIn(name:String ?= "a", password:String ?= "b")"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addToOutfit""", """controllers.HomeController.addToOutfit(a:String ?= "a")"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addToFavourite""", """controllers.HomeController.addToFavourite(a:String ?= "a")"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -276,11 +282,29 @@ class Routes(
     )
   )
 
-  // @LINE:20
-  private[this] lazy val controllers_Assets_versioned12_route = Route("GET",
+  // @LINE:18
+  private[this] lazy val controllers_HomeController_addToFavourite12_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addToFavourite")))
+  )
+  private[this] lazy val controllers_HomeController_addToFavourite12_invoker = createInvoker(
+    HomeController_0.addToFavourite(fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "addToFavourite",
+      Seq(classOf[String]),
+      "GET",
+      this.prefix + """addToFavourite""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:21
+  private[this] lazy val controllers_Assets_versioned13_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned12_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned13_invoker = createInvoker(
     Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -369,10 +393,16 @@ class Routes(
         controllers_HomeController_addToOutfit11_invoker.call(HomeController_0.addToOutfit(a))
       }
   
-    // @LINE:20
-    case controllers_Assets_versioned12_route(params) =>
+    // @LINE:18
+    case controllers_HomeController_addToFavourite12_route(params) =>
+      call(params.fromQuery[String]("a", Some("a"))) { (a) =>
+        controllers_HomeController_addToFavourite12_invoker.call(HomeController_0.addToFavourite(a))
+      }
+  
+    // @LINE:21
+    case controllers_Assets_versioned13_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned12_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned13_invoker.call(Assets_1.versioned(path, file))
       }
   }
 }

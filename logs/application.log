@@ -1,11 +1,18 @@
+<<<<<<< HEAD
 2017-10-19 02:20:19,230 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
 2017-10-19 02:20:19,411 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:postgresql://localhost/playdb
 2017-10-19 02:20:20,212 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+=======
+2017-10-19 01:56:22,347 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
+2017-10-19 01:56:22,447 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-3 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 01:56:22,733 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-3 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+>>>>>>> 5155b89c33441a7e39683978ae241d49abbd19f7
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
+<<<<<<< HEAD
 2017-10-19 02:20:20,304 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev)
 2017-10-19 02:20:22,702 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-2 - 
 
@@ -35,6 +42,82 @@ play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[FileNotFo
 	at play.core.server.AkkaHttpServer.executeAction(AkkaHttpServer.scala:297)
 	at play.core.server.AkkaHttpServer.executeHandler(AkkaHttpServer.scala:254)
 	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:200)
+=======
+2017-10-19 01:56:22,767 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-3 - Application started (Dev)
+2017-10-19 01:58:34,086 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-13 - Shutting down connection pool.
+2017-10-19 01:58:34,217 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-13 - Creating Pool for datasource 'default'
+2017-10-19 01:58:34,233 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-13 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 01:58:34,337 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-13 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-10-19 01:58:34,342 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-13 - Application started (Dev)
+2017-10-19 01:59:37,398 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - Shutting down connection pool.
+2017-10-19 01:59:37,524 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-4 - Creating Pool for datasource 'default'
+2017-10-19 01:59:37,538 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-4 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 01:59:37,579 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-4 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-10-19 01:59:37,582 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-4 - Application started (Dev)
+2017-10-19 02:02:11,337 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-35 - Shutting down connection pool.
+2017-10-19 02:02:11,474 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-35 - Creating Pool for datasource 'default'
+2017-10-19 02:02:11,487 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-35 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 02:02:11,532 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-35 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-10-19 02:02:11,535 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-35 - Application started (Dev)
+2017-10-19 02:02:14,486 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-8 - Shutting down connection pool.
+2017-10-19 02:02:14,573 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-8 - Creating Pool for datasource 'default'
+2017-10-19 02:02:14,587 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-8 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 02:02:14,671 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-8 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-10-19 02:02:14,681 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-8 - Application started (Dev)
+2017-10-19 02:02:19,091 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-16 - 
+
+! @75khm4jn7 - Internal server error, for (GET) [/myItems] ->
+ 
+play.sbt.PlayExceptions$CompilationException: Compilation error[method getFavouriteBy in class controllers.DBUtil cannot be applied to given types;
+  required: java.lang.String
+  found: no arguments
+  reason: actual and formal argument lists differ in length]
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
+	at play.sbt.PlayExceptions$CompilationException$.apply(PlayExceptions.scala:27)
+	at scala.Option.map(Option.scala:145)
+	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:49)
+	at play.sbt.run.PlayReload$$anonfun$taskFailureHandler$1.apply(PlayReload.scala:44)
+	at scala.Option.map(Option.scala:145)
+	at play.sbt.run.PlayReload$.taskFailureHandler(PlayReload.scala:44)
+	at play.sbt.run.PlayReload$.compileFailure(PlayReload.scala:40)
+	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
+	at play.sbt.run.PlayReload$$anonfun$compile$1.apply(PlayReload.scala:17)
+	at scala.util.Either$LeftProjection.map(Either.scala:377)
+	at play.sbt.run.PlayReload$.compile(PlayReload.scala:17)
+	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:71)
+	at play.sbt.run.PlayRun$$anonfun$playRunTask$1$$anonfun$apply$2$$anonfun$apply$3$$anonfun$3.apply(PlayRun.scala:71)
+	at play.runsupport.Reloader$$anonfun$reload$1.apply(Reloader.scala:413)
+	at play.runsupport.Reloader$$anon$5.run(Reloader.scala:51)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at play.runsupport.Reloader$.play$runsupport$Reloader$$withReloaderContextClassLoader(Reloader.scala:47)
+	at play.runsupport.Reloader.reload(Reloader.scala:411)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:123)
+	at play.core.server.Server.getHandlerFor(Server.scala:63)
+	at play.core.server.Server.getHandlerFor$(Server.scala:48)
+	at play.core.server.AkkaHttpServer.getHandlerFor(AkkaHttpServer.scala:41)
+	at play.core.server.AkkaHttpServer.getHandler(AkkaHttpServer.scala:214)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:194)
+>>>>>>> 5155b89c33441a7e39683978ae241d49abbd19f7
 	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$3(AkkaHttpServer.scala:106)
 	at akka.stream.impl.fusing.MapAsync$$anon$23.onPush(Ops.scala:1172)
 	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:499)
@@ -57,6 +140,7 @@ play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[FileNotFo
 	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
 	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
 	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+<<<<<<< HEAD
 Caused by: java.io.FileNotFoundException: public\products\THE ICONIC – Fashion Shopping.jpg (The system cannot find the path specified)
 	at java.io.FileOutputStream.open0(Native Method)
 	at java.io.FileOutputStream.open(FileOutputStream.java:270)
@@ -104,3 +188,87 @@ Caused by: java.io.FileNotFoundException: public\products\THE ICONIC – Fashion
 	... 27 common frames omitted
 2017-10-19 02:21:40,032 [INFO] from play.core.server.AkkaHttpServer in pool-4-thread-4 - Stopping server...
 2017-10-19 02:21:40,073 [INFO] from application in pool-4-thread-4 - Shutting down connection pool.
+=======
+2017-10-19 02:02:25,215 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-16 - Shutting down connection pool.
+2017-10-19 02:02:25,345 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-16 - Creating Pool for datasource 'default'
+2017-10-19 02:02:25,359 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-16 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 02:02:25,399 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-16 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-10-19 02:02:25,402 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-16 - Application started (Dev)
+2017-10-19 02:04:44,923 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-68 - Shutting down connection pool.
+2017-10-19 02:04:45,056 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-68 - Creating Pool for datasource 'default'
+2017-10-19 02:04:45,071 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-68 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 02:04:45,119 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-68 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-10-19 02:04:45,122 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-68 - Application started (Dev)
+2017-10-19 02:05:12,107 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-45 - Shutting down connection pool.
+2017-10-19 02:05:12,190 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-45 - Creating Pool for datasource 'default'
+2017-10-19 02:05:12,204 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-45 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 02:05:12,291 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-45 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-10-19 02:05:12,294 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-45 - Application started (Dev)
+2017-10-19 02:09:36,993 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-83 - Shutting down connection pool.
+2017-10-19 02:09:37,079 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-83 - Creating Pool for datasource 'default'
+2017-10-19 02:09:37,093 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-83 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 02:09:37,164 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-83 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-10-19 02:09:37,167 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-83 - Application started (Dev)
+2017-10-19 02:10:05,409 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-83 - Shutting down connection pool.
+2017-10-19 02:10:05,532 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-83 - Creating Pool for datasource 'default'
+2017-10-19 02:10:05,546 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-83 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 02:10:05,574 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-83 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-10-19 02:10:05,577 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-83 - Application started (Dev)
+2017-10-19 02:10:13,140 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-87 - Shutting down connection pool.
+2017-10-19 02:10:13,259 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-87 - Creating Pool for datasource 'default'
+2017-10-19 02:10:13,273 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-87 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 02:10:13,301 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-87 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-10-19 02:10:13,304 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-87 - Application started (Dev)
+2017-10-19 02:10:42,704 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-84 - Shutting down connection pool.
+2017-10-19 02:10:42,820 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-84 - Creating Pool for datasource 'default'
+2017-10-19 02:10:42,834 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-84 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 02:10:42,863 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-84 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-10-19 02:10:42,866 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-84 - Application started (Dev)
+2017-10-19 02:10:52,374 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-88 - Shutting down connection pool.
+2017-10-19 02:10:52,517 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-88 - Creating Pool for datasource 'default'
+2017-10-19 02:10:52,532 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-88 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 02:10:52,576 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-88 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-10-19 02:10:52,579 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-88 - Application started (Dev)
+2017-10-19 02:19:55,494 [INFO] from play.core.server.AkkaHttpServer in pool-6-thread-4 - Stopping server...
+2017-10-19 02:19:55,498 [INFO] from application in pool-6-thread-4 - Shutting down connection pool.
+>>>>>>> 5155b89c33441a7e39683978ae241d49abbd19f7

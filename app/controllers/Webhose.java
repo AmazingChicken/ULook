@@ -23,10 +23,7 @@ public class Webhose {
         Map queries = new HashMap();
         queries.put("q", query);
         queries.put("size", "25");
-        JsonElement result = webhoseClient.query("productFilter", queries);
-        System.out.println(result.getAsJsonObject().get("totalResults"));
-
-
+        JsonElement result = webhoseClient.query("productFilter", queries);   
         JsonArray postArray = result.getAsJsonObject().getAsJsonArray("products");
         data = postArray;
 
