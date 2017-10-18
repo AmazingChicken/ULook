@@ -28,6 +28,7 @@ import java.io.FileWriter;
  */
 public class HomeController extends Controller {
 
+    public String username;
     /**
      * An action that renders an HTML page with a welcome message.
      * The configuration in the <code>routes</code> file means that
@@ -53,6 +54,7 @@ public class HomeController extends Controller {
         return ok(views.html.myItems.render(DBUtil.getItemBy("category", "Shoes"),dummyOptions(),dummyType()));
     }
     public Result recommend(){
+        System.out.println("wwww: " + username);
         return ok(views.html.recommend.render(dummyOccasion(),dummyOutfit()));
     }
     public Result search()throws SQLException, URISyntaxException, IOException, Exception{
@@ -91,6 +93,7 @@ public class HomeController extends Controller {
                 boolean contains2 = s.contains(password);
                 result.append(System.lineSeparator()+s);
                 if(contains1==true && contains2==true){
+                    username = name;
                     return ok(views.html.mainPage.render());
                 }
 
