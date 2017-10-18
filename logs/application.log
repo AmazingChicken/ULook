@@ -1,11 +1,11 @@
-2017-10-18 11:23:09,006 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-6 - Creating Pool for datasource 'default'
-2017-10-18 11:23:09,172 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-6 - Database [default] connected at jdbc:postgresql://localhost/playdb
-2017-10-18 11:23:09,718 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-6 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2017-10-18 21:02:06,503 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-7 - Creating Pool for datasource 'default'
+2017-10-18 21:02:06,702 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-7 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-18 21:02:07,295 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-7 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2017-10-18 11:23:09,814 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-6 - Application started (Dev)
-2017-10-18 11:23:13,331 [INFO] from play.core.server.AkkaHttpServer in pool-4-thread-3 - Stopping server...
-2017-10-18 11:23:13,347 [INFO] from application in pool-4-thread-3 - Shutting down connection pool.
+2017-10-18 21:02:07,383 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-7 - Application started (Dev)
+2017-10-18 21:06:26,556 [INFO] from play.core.server.AkkaHttpServer in pool-4-thread-6 - Stopping server...
+2017-10-18 21:06:26,572 [INFO] from application in pool-4-thread-6 - Shutting down connection pool.
