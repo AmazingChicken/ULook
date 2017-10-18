@@ -36,7 +36,8 @@ public class HomeController extends Controller {
      * <code>GET</code> request with a path of <code>/</code>.
      */
     public Result index() throws SQLException, IOException, URISyntaxException {
-        DBUtil.addDb();
+        DBUtil dbutil = new DBUtil();
+        dbutil.addDb();
         return ok(views.html.index.render());
     }
 
@@ -64,8 +65,13 @@ public class HomeController extends Controller {
     public Result getInspired(){
         return  ok(views.html.getInspired.render(dummyInspiree()));
     }
-    public Result myOutfits(){
-        return ok(views.html.myOutfits.render(dummyOccasion(),dummyOutfit()));
+    public Result myOutfits() throws Exception {
+        DBUtil dbutil = new DBUtil();
+        ArrayList<Outfit> outfitArrayList = dbutil.getOutfitBy(username);
+        Outfit newOutfit = new Outfit();
+        outfitArrayList.add(newOutfit);
+
+        return ok(views.html.myOutfits.render(dummyOccasion(),outfitArrayList));
     }
     public Result detailPage(String itemName){
         Item item = new Item("shoe","images/roshe.jpg");
@@ -80,7 +86,29 @@ public class HomeController extends Controller {
         return ok("Your UserName is :"+ name);
     }
 
-
+    public Result addToOutfit(String itemName)throws Exception{
+        DBUtil dbutil = new DBUtil();
+        ArrayList<Outfit> outfitArrayList = dbutil.getOutfitBy(username);
+        Outfit myoutfit;
+        if(outfitArrayList.size()==0){
+            myoutfit = new Outfit();
+        }else {
+            myoutfit = outfitArrayList.get(0);
+        }
+        ArrayList<Item> itemList = dbutil.getItemBy("name",itemName);
+        Item myItem = itemList.get(0);
+        if(myItem.getCategory().equals("Shirt")){
+            myoutfit.setTop(myItem.itemName);
+        }else if(myItem.getCategory().equals("Hat")){
+            myoutfit.setHat(myItem.itemName);
+        }else if(myItem.getCategory().equals("Pants")){
+            myoutfit.setBottom(myItem.itemName);
+        }else{
+            myoutfit.setShoes(myItem.itemName);
+        }
+        dbutil.addOutfit(username, myoutfit.getHat(), myoutfit.getTop(), myoutfit.getBottom(), myoutfit.getShoes());
+        return ok();
+    }
 
     public Result signIn(String name, String password) throws IOException{
         File file = new File("app/controllers/1.txt");
