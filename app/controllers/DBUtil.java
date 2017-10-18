@@ -207,7 +207,7 @@ public class DBUtil {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                item = new Item();
+                item = new Item("ok", "ok");
                 item.setName(rs.getString("name"));
                 item.setBrand(rs.getString("brand"));
                 item.setAType(rs.getString("type"));
@@ -274,7 +274,7 @@ public class DBUtil {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                item = new Item();
+                item = new Item("1","1");
                 item.setName(rs.getString("name"));
                 item.setBrand(rs.getString("brand"));
                 item.setAType(rs.getString("type"));

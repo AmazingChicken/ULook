@@ -46,8 +46,8 @@ public class HomeController extends Controller {
       	return ok(views.html.signUpPage.render());
     }
     public Result myItems() throws SQLException, URISyntaxException, IOException, Exception{
-    	DBUtil ok1 = new DBUtil();
-    	return ok(views.html.myItems.render(ok1.getItemBy("category", "Shoes"),dummyOptions(),dummyType()));
+    	
+    	return ok(views.html.myItems.render(DBUtil.getItemBy("category", "Shoes"),dummyOptions(),dummyType()));
     }
     public Result recommend(){
       	return ok(views.html.recommend.render(dummyOccasion(),dummyOutfit()));
