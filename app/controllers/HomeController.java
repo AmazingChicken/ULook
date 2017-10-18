@@ -46,7 +46,7 @@ public class HomeController extends Controller {
       	return ok(views.html.signUpPage.render());
     }
     public Result myItems() throws SQLException, URISyntaxException, IOException, Exception{
-    	
+    	DBUtil.addDb();
     	return ok(views.html.myItems.render(DBUtil.getItemBy("category", "Shoes"),dummyOptions(),dummyType()));
     }
     public Result recommend(){
