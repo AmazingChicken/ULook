@@ -1,64 +1,39 @@
-@*
- * This template is called from the index template. This template
- * handles the rendering of the page header and body tags. It takes
- * two arguments, a String for the title of the page and an Html
- * object to insert into the body of the page.
- *@
-@()
-
-
- <span class="bckg"></span>
-<header>
-
+@(item: Item)
+<!DOCTYPE html>
+<html lang="en">
+<span class="bckg"></span>
+<head>
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("bootstrap/css/bootstrap.css")">
 <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/mainPage.css")">
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/searchbar.css")">
+<script src="@routes.Assets.versioned("bootstrap/js/bootstrap.js")"></script>
 
-  <h1>Ulook</h1>
-  <nav>
-    <ul>
-      <li>
-
-        <a href="@routes.HomeController.getInspired()" data-title="Projects">Get inspired</a>
-      </li>
-      <li>
-        <a href="@routes.HomeController.recommend()" data-title="Team">Recommended</a>
-      </li>
-      <li>
-        <a href="@routes.HomeController.myItems()" data-title="Diary">My items</a>
-      </li>
-      <li>
-        <a href="javascript:void(0);" data-title="Timeline">My Outfits</a>
-      </li>
-      <li>
-        <a href="@routes.HomeController.search()" data-title="Settings">Search</a>
-      </li>
-
-    </ul>
-  </nav>
+</head>
+<header>
+  <h1>ULook</h1>
+  @navigator()
 </header>
+<body>
 <main>
-
   <div class="title">
-    <h2>Welcome to ULook!</h2>
+    <h2>Details</h2>
     <a href="javascript:void(0);">Sign out</a>
-  </div>
-
-  <article class="larg">
-
-
-    <div>
-      <h3><img src="@routes.Assets.versioned("images/2.png")"width="500" height="260">details here/h3>
-      <p>xxx.</p>
-      </h3>
-    </div>
-
-  <div id="login_click">  
-        <a id="btlogin" href="#">Buy</a>  
-    </div>
-    <div id="login_click">  
-        <a id="btlogin" href="#">Add to outfit</a>  
-    </div>
-      <div id="login_click">  
-        <a id="btlogin" href="#">Cancel</a>  
+   </div>
+   <div class="container-fluid ">
+   
+   <div class="card details mt-5 ml-2">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-block">
+         <h4 class="card-title">@item.getName()</h4>
+         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+         <a href="#" class="btn btn-secondary">Add to Outfit</a>
       </div>
-  </article>
+   </div>
+   
+
+   </div>
 </main>
+
+</body>
+
+</html>

@@ -1,42 +1,51 @@
-@*
- * This template is called from the index template. This template
- * handles the rendering of the page header and body tags. It takes
- * two arguments, a String for the title of the page and an Html
- * object to insert into the body of the page.
- *@
-@()
 
-
- <span class="bckg"></span>
-<header>
-
+<!DOCTYPE html>
+<html lang="en">
+<span class="bckg"></span>
+<head>
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("bootstrap/css/bootstrap.css")">
 <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/mainPage.css")">
-  <h1>Ulook</h1>
-   @navigator() 
-</header>
-<main>
+<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/searchbar.css")">
+<script src="@routes.Assets.versioned("bootstrap/js/bootstrap.js")"></script>
 
+</head>
+<header>
+  <h1>ULook</h1>
+  @navigator()
+</header>
+<body>
+<main>
   <div class="title">
-    <h2>Welcome to ULook!</h2>
+    <h2>Home</h2>
     <a href="javascript:void(0);">Sign out</a>
+   </div>
+   <div class="container-fluid">
+
+  <div class="card-group mt-5">
+  <div class="card ml-2">
+
+<div class="text-center">
+<a href="#"><img class="mt-2 mb-2" src="@routes.Assets.versioned("images/hatslot.jpg")" height="200" width="200"></a>
+<a href="#"><img class="mt-2 mb-2" src="@routes.Assets.versioned("images/shirtslot.jpg")" height="200" width="200"></a>
+<a href="#"><img  class="mt-2 mb-2"src="@routes.Assets.versioned("images/pantsslot.jpg")" height="200" width="200"></a>
+<a href="#"><img class="mt-2 mb-2" src="@routes.Assets.versioned("images/shoeslot.jpg")" height="200" width="200"></a>
+</div> 
+  </div>
+  <div class="card">
+    <div class="card-block">
+      <h4 class="card-title mt-3">Get Started With Your Outfit!</h4>
+      <p class="card-text">Click on an icon to start searching for apparel in that category!</p>
+    </div>
   </div>
 
-  <article class="larg">
-      <form class="search" action="">
-<input type="search" placeholder="Search here..." required>
-<button type="submit">Search</button>
-</form>
-    <div>
-      <h3><img src="@routes.Assets.versioned("images/2.png")"width="200" height="160">price<span class="entypo-down-open"></span></h3>
-      <p>xxx.</p>
-    </div>
-    <div>
-      <h3><img src="@routes.Assets.versioned("images/3.png")"width="200" height="160"><span class="entypo-down-open"></span></h3>
-      <p>xxx.</p>
-    </div>
-    <div>
-      <h3><img src="@routes.Assets.versioned("images/4.png")"width="200" height="160"><span class="entypo-down-open"></span></h3>
-      <p>xxx.</p>
-    </div>
-  </article>
+</div>
+   </div>
+   
+   
+   
+   </div>
 </main>
+
+</body>
+
+</html>
