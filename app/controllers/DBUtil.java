@@ -348,7 +348,7 @@ public class DBUtil {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                outfit = new Outfit();
+                outfit = new Outfit("1","1","1","1","1","1");
                 outfit.setHat(rs.getString("hat"));
                 outfit.setTop(rs.getString("top"));
                 outfit.setBottom(rs.getString("bottom"));
@@ -368,7 +368,7 @@ public class DBUtil {
     }
     
     public static void addDb() throws SQLException, URISyntaxException, IOException{
-      	 Webhose webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Shirt");
+      	 Webhose webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:jacket OR name:top OR name:shirt)");
            webhoseData.pullData();
            JsonArray postArray = webhoseData.getData();
            
@@ -381,7 +381,7 @@ public class DBUtil {
                addItem(productName, productBrand, "Shirt", "Shirt", productPrice, productImage);
            } 
            //Hats
-      	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Hat");
+      	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:headwear OR name:hat OR name:cap)");
            webhoseData.pullData();
            postArray = webhoseData.getData();
            for(JsonElement o  : postArray) {
@@ -392,7 +392,7 @@ public class DBUtil {
                addItem(productName, productBrand, "Hat", "Hat", productPrice, productImage);
            } 
            //Pants
-      	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Pants");
+      	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:jeans OR name:pants OR name:trousers)");
            webhoseData.pullData();
            postArray = webhoseData.getData();
            for(JsonElement o  : postArray) {
@@ -403,7 +403,7 @@ public class DBUtil {
                addItem(productName, productBrand, "Pants", "Pants", productPrice, productImage);
            } 
            //Shoes
-      	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Shoes");
+      	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:Shoe OR name:Trainers OR name:sneakers)");
            webhoseData.pullData();
            postArray = webhoseData.getData();
            for(JsonElement o  : postArray) {
@@ -421,7 +421,7 @@ public class DBUtil {
           JsonArray postArray = webhoseData.getData();
 
           
-     	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Shirt");
+     	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:jacket OR name:top OR name:shirt)");
           webhoseData.pullData();
           postArray = webhoseData.getData();
           for(JsonElement o  : postArray) {
@@ -438,7 +438,7 @@ public class DBUtil {
          JsonArray postArray = webhoseData.getData();
 
      
-    	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Shirt");
+    	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:headwear OR name:hat OR name:cap)");
          webhoseData.pullData();
          postArray = webhoseData.getData();
          for(JsonElement o  : postArray) {
@@ -455,7 +455,7 @@ public class DBUtil {
          JsonArray postArray = webhoseData.getData();
 
        
-    	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Shirt");
+    	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:jeans OR name:pants OR name:trousers)");
          webhoseData.pullData();
          postArray = webhoseData.getData();
          for(JsonElement o  : postArray) {
@@ -472,7 +472,7 @@ public class DBUtil {
         JsonArray postArray = webhoseData.getData();
 
       
-   	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Shoe");
+   	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:Shoe OR name:Trainers OR name:sneakers)");
         webhoseData.pullData();
         postArray = webhoseData.getData();
         for(JsonElement o  : postArray) {
