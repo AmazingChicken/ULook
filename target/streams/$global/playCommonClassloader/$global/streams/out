@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-[0m[[0mdebug[0m] [0mUsing parent loader for play common classloader: sun.misc.Launcher$ExtClassLoader@9a75613[0m
-=======
-[0m[[0mdebug[0m] [0mUsing parent loader for play common classloader: sun.misc.Launcher$ExtClassLoader@32a80e[0m
->>>>>>> 0658d712bff933720594ea339531680f87773bfe
+[0m[[0mdebug[0m] [0mUsing parent loader for play common classloader: sun.misc.Launcher$ExtClassLoader@174a43c[0m

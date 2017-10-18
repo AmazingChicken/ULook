@@ -1,8 +1,14 @@
 package controllers;
 
 
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URISyntaxException;
+import java.net.URL;
+
 import org.postgresql.util.PSQLException;
 import java.sql.*;
 import java.util.ArrayList;
@@ -416,14 +422,10 @@ public class DBUtil {
       }
     
     public static void addShirts() throws SQLException, URISyntaxException, IOException{
-     	 Webhose webhoseData = new Webhose("(site:asos.com) Shirt");
+
+          Webhose webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:jacket OR name:top OR name:shirt)");
           webhoseData.pullData();
           JsonArray postArray = webhoseData.getData();
-
-          
-     	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:jacket OR name:top OR name:shirt)");
-          webhoseData.pullData();
-          postArray = webhoseData.getData();
           for(JsonElement o  : postArray) {
               String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
               String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
@@ -433,14 +435,10 @@ public class DBUtil {
           } 
      }
     public static void addHats() throws SQLException, URISyntaxException, IOException{
-    	 Webhose webhoseData = new Webhose("(site:asos.com) Hat");
+
+         Webhose webhoseData  = new Webhose("(site:asos.com OR theiconic.com.au)(name:headwear OR name:hat OR name:cap)");
          webhoseData.pullData();
          JsonArray postArray = webhoseData.getData();
-
-     
-    	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:headwear OR name:hat OR name:cap)");
-         webhoseData.pullData();
-         postArray = webhoseData.getData();
          for(JsonElement o  : postArray) {
              String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
              String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
@@ -450,14 +448,10 @@ public class DBUtil {
          } 
     }
     public static void addPants() throws SQLException, URISyntaxException, IOException{
-    	 Webhose webhoseData = new Webhose("(site:asos.com) Pants");
+    
+         Webhose webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:jeans OR name:pants OR name:trousers)");
          webhoseData.pullData();
          JsonArray postArray = webhoseData.getData();
-
-       
-    	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:jeans OR name:pants OR name:trousers)");
-         webhoseData.pullData();
-         postArray = webhoseData.getData();
          for(JsonElement o  : postArray) {
              String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
              String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
@@ -467,21 +461,38 @@ public class DBUtil {
          } 
     }
     public static void addShoes() throws SQLException, URISyntaxException, IOException{
-   	 Webhose webhoseData = new Webhose("(site:asos.com) Shirt");
+
+        Webhose webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:Shoe OR name:Trainers OR name:sneakers)");
         webhoseData.pullData();
         JsonArray postArray = webhoseData.getData();
-
-      
-   	 webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:Shoe OR name:Trainers OR name:sneakers)");
-        webhoseData.pullData();
-        postArray = webhoseData.getData();
         for(JsonElement o  : postArray) {
             String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
             String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
             String productPrice = (o.getAsJsonObject().get("price").getAsString());   
             String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
-            addItem(productName, productBrand, "Shoes", "Shoes", productPrice, productImage);
+            
+            addItem(productName, productBrand, "Shoes", "Shoes", productPrice, saveImage(productImage,productName));
         } 
    }
+    public static String saveImage(String source, String name) throws IOException{
+    	 URL url = new URL(source);
+    	 InputStream in = new BufferedInputStream(url.openStream());
+    	 ByteArrayOutputStream out = new ByteArrayOutputStream();
+    	 byte[] buf = new byte[1024];
+    	 int n = 0;
+    	 while (-1!=(n=in.read(buf)))
+    	 {
+    	    out.write(buf, 0, n);
+    	 }
+    	 out.close();
+    	 in.close();
+    	 byte[] response = out.toByteArray();
+    	 String path = "public/products/"+name+".jpg";
+    	 FileOutputStream fos = new FileOutputStream(path);
+    	 fos.write(response);
+    	 fos.close();
+    	 path = "products/"+name+".jpg";
+    	 return path;
+    }
     	
 }

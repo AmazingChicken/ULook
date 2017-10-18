@@ -51,6 +51,26 @@ Seq[Any](format.raw/*1.3*/("""<nav>
       <li>
         <a href=""""),_display_(/*20.19*/routes/*20.25*/.HomeController.search()),format.raw/*20.49*/("""" data-title="Settings">Search</a>
       </li>
+      <li>
+      <form>
+      <input class="outfitname" type="text" name="outfitname" placeholder="Outfit Name"><br>
+      </form>
+      </li>
+      <li>
+        <a href="#"><img class="mt-2 mb-2" src=""""),_display_(/*28.50*/routes/*28.56*/.Assets.versioned("images/hatslot.jpg")),format.raw/*28.95*/("""" width="80"></a>
+      </li>
+      <li>
+        <a href="#"><img class="mt-2 mb-2" src=""""),_display_(/*31.50*/routes/*31.56*/.Assets.versioned("images/shirtslot.jpg")),format.raw/*31.97*/(""""  width="80"></a>
+      </li>
+      <li>
+        <a href="#"><img  class="mt-2 mb-2"src=""""),_display_(/*34.50*/routes/*34.56*/.Assets.versioned("images/pantsslot.jpg")),format.raw/*34.97*/("""" width="80"></a>
+      </li>
+      <li>
+        <a href="#"><img class="mt-2 mb-2" src=""""),_display_(/*37.50*/routes/*37.56*/.Assets.versioned("images/shoeslot.jpg")),format.raw/*37.96*/(""""  width="80"></a>
+      </li>
+       <li>
+      <button type="button" class="btn btn-success">Save</button>
+      </li>
 
     </ul>
   </nav>"""))
@@ -69,19 +89,11 @@ Seq[Any](format.raw/*1.3*/("""<nav>
 
               /*
                   -- GENERATED --
-<<<<<<< HEAD
-                  DATE: Tue Oct 17 21:13:28 AEDT 2017
-                  SOURCE: C:/Users/mr_to/ULook/app/views/navigator.scala.html
-                  HASH: 84382ef0d0a499e236959d576018e5ff725294b7
-                  MATRIX: 1034->2|1112->54|1126->60|1175->89|1287->175|1301->181|1348->208|1455->288|1470->294|1516->319|1621->397|1636->403|1684->430|1794->513|1809->519|1854->543
-                  LINES: 33->1|37->5|37->5|37->5|40->8|40->8|40->8|43->11|43->11|43->11|46->14|46->14|46->14|49->17|49->17|49->17
-=======
-                  DATE: Wed Oct 18 13:06:56 AEDT 2017
+                  DATE: Thu Oct 19 00:14:42 AEDT 2017
                   SOURCE: C:/Users/Daniel/ULook/app/views/navigator.scala.html
-                  HASH: 5612a55a536d24f8cc7b5922c1488c51a15663b0
-                  MATRIX: 1034->2|1112->54|1126->60|1174->88|1277->165|1291->171|1340->200|1453->286|1468->292|1516->319|1623->399|1638->405|1684->430|1789->508|1804->514|1852->541|1962->624|1977->630|2022->654
-                  LINES: 33->1|37->5|37->5|37->5|40->8|40->8|40->8|43->11|43->11|43->11|46->14|46->14|46->14|49->17|49->17|49->17|52->20|52->20|52->20
->>>>>>> 0658d712bff933720594ea339531680f87773bfe
+                  HASH: b655fdc5c716c88ad6da252fbe9d63cf2f14c064
+                  MATRIX: 1034->2|1112->54|1126->60|1174->88|1277->165|1291->171|1340->200|1453->286|1468->292|1516->319|1623->399|1638->405|1684->430|1789->508|1804->514|1852->541|1962->624|1977->630|2022->654|2307->912|2322->918|2382->957|2502->1050|2517->1056|2579->1097|2700->1191|2715->1197|2777->1238|2897->1331|2912->1337|2973->1377
+                  LINES: 33->1|37->5|37->5|37->5|40->8|40->8|40->8|43->11|43->11|43->11|46->14|46->14|46->14|49->17|49->17|49->17|52->20|52->20|52->20|60->28|60->28|60->28|63->31|63->31|63->31|66->34|66->34|66->34|69->37|69->37|69->37
                   -- GENERATED --
               */
           

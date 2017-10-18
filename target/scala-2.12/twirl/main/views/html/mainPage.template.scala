@@ -52,20 +52,30 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
    </div>
    <div class="container-fluid">
 
-  <div class="card-group mt-5">
-  <div class="card ml-2">
+  <div class="card-deck mt-5 ml-5 mr-5">
+  <div class="card ml-5 mr-5">
 
 <div class="text-center">
-<a href="#"><img class="mt-2 mb-2" src=""""),_display_(/*28.42*/routes/*28.48*/.Assets.versioned("images/hatslot.jpg")),format.raw/*28.87*/("""" height="200" width="200"></a>
-<a href="#"><img class="mt-2 mb-2" src=""""),_display_(/*29.42*/routes/*29.48*/.Assets.versioned("images/shirtslot.jpg")),format.raw/*29.89*/("""" height="200" width="200"></a>
-<a href="#"><img  class="mt-2 mb-2"src=""""),_display_(/*30.42*/routes/*30.48*/.Assets.versioned("images/pantsslot.jpg")),format.raw/*30.89*/("""" height="200" width="200"></a>
-<a href="#"><img class="mt-2 mb-2" src=""""),_display_(/*31.42*/routes/*31.48*/.Assets.versioned("images/shoeslot.jpg")),format.raw/*31.88*/("""" height="200" width="200"></a>
+<h1 class="card-title">Your Outfit Silhouette</h1>
+<a href="#"><img class="mt-2 mb-2" src=""""),_display_(/*29.42*/routes/*29.48*/.Assets.versioned("images/hatslot.jpg")),format.raw/*29.87*/("""" width="150"></a>
+<a href="#"><img class="mt-2 mb-2" src=""""),_display_(/*30.42*/routes/*30.48*/.Assets.versioned("images/shirtslot.jpg")),format.raw/*30.89*/(""""  width="200"></a>
+<a href="#"><img  class="mt-2 mb-2"src=""""),_display_(/*31.42*/routes/*31.48*/.Assets.versioned("images/pantsslot.jpg")),format.raw/*31.89*/("""" width="150"></a>
+<a href="#"><img class="mt-2 mb-2" src=""""),_display_(/*32.42*/routes/*32.48*/.Assets.versioned("images/shoeslot.jpg")),format.raw/*32.88*/(""""  width="200"></a>
 </div> 
   </div>
-  <div class="card">
+  <div class="card ml-5 mr-5">
     <div class="card-block">
-      <h4 class="card-title mt-3">Get Started With Your Outfit!</h4>
-      <p class="card-text">Click on an icon to start searching for apparel in that category!</p>
+      <h1 class="card-title ">Get Started With Your Outfit!</h1>
+      <h2 class="card-text">Click on an icon to start searching for apparel in that category!</h2>
+      <h1 class="card-title ">Adding to your Outfit</h1>
+      <div class="text-center">
+         <img  class="mt-2 mb-2"src=""""),_display_(/*41.39*/routes/*41.45*/.Assets.versioned("images/add.jpg")),format.raw/*41.80*/("""" width="500"></a>
+      </div>
+      <h2 class="card-text">The Add to Outfit button adds the Item to your custom silhouette in the sidebar</h2>
+            <div class="text-center">
+         <img  class="mt-2 mb-2"src=""""),_display_(/*45.39*/routes/*45.45*/.Assets.versioned("images/help.png")),format.raw/*45.81*/("""" width="150"></a>
+      </div>
+      <h2 class="card-text">The Save button saves the item to your My Items tab</h2>
     </div>
   </div>
 
@@ -95,19 +105,11 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
 
               /*
                   -- GENERATED --
-<<<<<<< HEAD
-                  DATE: Tue Oct 17 21:13:27 AEDT 2017
-                  SOURCE: C:/Users/mr_to/ULook/app/views/mainPage.scala.html
-                  HASH: 99137f102d421dc56efc67fff0de768a88bc786a
-                  MATRIX: 1197->260|1293->262|1327->269|1439->354|1454->360|1520->405|1572->431|1604->442|1634->445|2003->787|2018->793|2072->826|2238->965|2253->971|2307->1004|2468->1138|2483->1144|2537->1177
-                  LINES: 33->7|38->7|41->10|44->13|44->13|44->13|46->15|46->15|47->16|61->30|61->30|61->30|65->34|65->34|65->34|69->38|69->38|69->38
-=======
-                  DATE: Wed Oct 18 17:53:03 AEDT 2017
+                  DATE: Wed Oct 18 23:57:52 AEDT 2017
                   SOURCE: C:/Users/Daniel/ULook/app/views/mainPage.scala.html
-                  HASH: 5ba8c37bbf5a9676e7b0b52c2aabbf00007588d8
-                  MATRIX: 1033->2|1175->118|1189->124|1258->172|1333->221|1347->227|1412->272|1487->321|1501->327|1567->373|1611->391|1625->397|1691->443|1772->498|1804->509|1833->511|2154->805|2169->811|2229->850|2330->924|2345->930|2407->971|2508->1045|2523->1051|2585->1092|2686->1166|2701->1172|2762->1212
-                  LINES: 33->2|37->6|37->6|37->6|38->7|38->7|38->7|39->8|39->8|39->8|40->9|40->9|40->9|45->14|45->14|46->15|59->28|59->28|59->28|60->29|60->29|60->29|61->30|61->30|61->30|62->31|62->31|62->31
->>>>>>> 0658d712bff933720594ea339531680f87773bfe
+                  HASH: e2e75cbf1dd28c57a5fb71fbb48f2f365da1477a
+                  MATRIX: 1033->2|1175->118|1189->124|1258->172|1333->221|1347->227|1412->272|1487->321|1501->327|1567->373|1611->391|1625->397|1691->443|1772->498|1804->509|1833->511|2220->871|2235->877|2295->916|2383->977|2398->983|2460->1024|2549->1086|2564->1092|2626->1133|2714->1194|2729->1200|2790->1240|3214->1637|3229->1643|3285->1678|3537->1903|3552->1909|3609->1945
+                  LINES: 33->2|37->6|37->6|37->6|38->7|38->7|38->7|39->8|39->8|39->8|40->9|40->9|40->9|45->14|45->14|46->15|60->29|60->29|60->29|61->30|61->30|61->30|62->31|62->31|62->31|63->32|63->32|63->32|72->41|72->41|72->41|76->45|76->45|76->45
                   -- GENERATED --
               */
           

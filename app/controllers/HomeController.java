@@ -37,11 +37,12 @@ public class HomeController extends Controller {
      */
     public Result index() throws SQLException, IOException, URISyntaxException {
         DBUtil dbutil = new DBUtil();
-        dbutil.addDb();
+        dbutil.addShoes();
         return ok(views.html.index.render());
     }
 
-    public Result goMainPage() {
+    public Result goMainPage() throws IOException {
+    	
         return ok(views.html.mainPage.render());
     }
 
@@ -51,8 +52,8 @@ public class HomeController extends Controller {
     public Result myItems() throws SQLException, URISyntaxException, IOException, Exception{
         //DBUtil dbutil;
         //dbutil = new DBUtil();
-
-        return ok(views.html.myItems.render(DBUtil.getItemBy("category", "Shoes"),dummyOptions(),dummyType()));
+    	DBUtil.addFavourite("username", "cool", "itemBrand", "itemType", "itemCategory", "itemPrice", "itemPic");
+        return ok(views.html.myItems.render(DBUtil.getFavouriteBy("sad"),dummyOptions(),dummyType()));
     }
     public Result recommend(){
         System.out.println("wwww: " + username);
