@@ -1,12 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-<<<<<<< HEAD
 // @SOURCE:C:/Users/mr_to/ULook/conf/routes
-// @DATE:Wed Oct 18 21:01:41 AEDT 2017
-=======
-// @SOURCE:C:/Users/Daniel/ULook/conf/routes
-// @DATE:Wed Oct 18 23:27:42 AEDT 2017
->>>>>>> 8991a97fb8b463521d0f0633d786c5d8eeed8a2f
+// @DATE:Thu Oct 19 02:14:35 AEDT 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
