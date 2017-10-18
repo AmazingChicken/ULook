@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Daniel/ULook/conf/routes
-// @DATE:Wed Oct 18 23:27:42 AEDT 2017
+// @DATE:Thu Oct 19 01:47:32 AEDT 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -26,6 +26,16 @@ package controllers.javascript {
       """
         function(name0,password1) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "signIn" + _qS([(name0 == null ? null : (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("name", name0)), (password1 == null ? null : (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("password", password1))])})
+        }
+      """
+    )
+  
+    // @LINE:18
+    def addToFavourite: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.addToFavourite",
+      """
+        function(a0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addToFavourite" + _qS([(a0 == null ? null : (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("a", a0))])})
         }
       """
     )
@@ -142,7 +152,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:20
+  // @LINE:21
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -150,7 +160,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:20
+    // @LINE:21
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

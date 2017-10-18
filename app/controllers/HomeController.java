@@ -37,7 +37,7 @@ public class HomeController extends Controller {
      */
     public Result index() throws SQLException, IOException, URISyntaxException {
         DBUtil dbutil = new DBUtil();
-        dbutil.addShoes();
+     //   dbutil.addDb();
         return ok(views.html.index.render());
     }
 
@@ -52,8 +52,8 @@ public class HomeController extends Controller {
     public Result myItems() throws SQLException, URISyntaxException, IOException, Exception{
         //DBUtil dbutil;
         //dbutil = new DBUtil();
-    	DBUtil.addFavourite("username", "cool", "itemBrand", "itemType", "itemCategory", "itemPrice", "itemPic");
-        return ok(views.html.myItems.render(DBUtil.getFavouriteBy("sad"),dummyOptions(),dummyType()));
+    	DBUtil.addFavourite(username, "cool", "itemBrand", "itemType", "itemCategory", "itemPrice", "itemPic");
+        return ok(views.html.myItems.render(DBUtil.getFavouriteBy(username),dummyOptions(),dummyType()));
     }
     public Result recommend(){
         System.out.println("wwww: " + username);
@@ -109,6 +109,16 @@ public class HomeController extends Controller {
         }
         dbutil.addOutfit(username, myoutfit.getHat(), myoutfit.getTop(), myoutfit.getBottom(), myoutfit.getShoes());
         return ok();
+    }
+    
+    public Result addToFavourite(String itemName)throws SQLException, URISyntaxException, IOException, Exception{
+        DBUtil dbutil = new DBUtil();
+        
+        ArrayList<Item> itemList = dbutil.getItemBy("name",itemName);
+        Item myItem = itemList.get(0);
+        
+        dbutil.addFavourite(username, itemName, itemName, itemName, itemName,itemName, myItem.getPicture());
+        return ok(views.html.search.render(dbutil.getItemBy("category", "Shoes"),dummyOptions(),dummyType()));
     }
 
     public Result signIn(String name, String password) throws IOException{

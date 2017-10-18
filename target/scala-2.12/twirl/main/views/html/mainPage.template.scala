@@ -69,13 +69,13 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
       <h2 class="card-text">Click on an icon to start searching for apparel in that category!</h2>
       <h1 class="card-title ">Adding to your Outfit</h1>
       <div class="text-center">
-         <img  class="mt-2 mb-2"src=""""),_display_(/*41.39*/routes/*41.45*/.Assets.versioned("images/add.jpg")),format.raw/*41.80*/("""" width="500"></a>
+         <img  class="mt-2 mb-2"src=""""),_display_(/*41.39*/routes/*41.45*/.Assets.versioned("images/add.jpg")),format.raw/*41.80*/("""" width="400"></a>
       </div>
       <h2 class="card-text">The Add to Outfit button adds the Item to your custom silhouette in the sidebar</h2>
             <div class="text-center">
-         <img  class="mt-2 mb-2"src=""""),_display_(/*45.39*/routes/*45.45*/.Assets.versioned("images/help.png")),format.raw/*45.81*/("""" width="150"></a>
+         <img  class="mt-2 mb-2"src=""""),_display_(/*45.39*/routes/*45.45*/.Assets.versioned("images/help.png")),format.raw/*45.81*/("""" width="120"></a>
       </div>
-      <h2 class="card-text">The Save button saves the item to your My Items tab</h2>
+      <h2 class="card-text">The Save button below the silhouette saves the outfit to My Outfits</h2>
     </div>
   </div>
 
@@ -105,9 +105,9 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
 
               /*
                   -- GENERATED --
-                  DATE: Wed Oct 18 23:57:52 AEDT 2017
+                  DATE: Thu Oct 19 02:10:51 AEDT 2017
                   SOURCE: C:/Users/Daniel/ULook/app/views/mainPage.scala.html
-                  HASH: e2e75cbf1dd28c57a5fb71fbb48f2f365da1477a
+                  HASH: 902202767774160a887ba4f8a05ecae8603e4fb6
                   MATRIX: 1033->2|1175->118|1189->124|1258->172|1333->221|1347->227|1412->272|1487->321|1501->327|1567->373|1611->391|1625->397|1691->443|1772->498|1804->509|1833->511|2220->871|2235->877|2295->916|2383->977|2398->983|2460->1024|2549->1086|2564->1092|2626->1133|2714->1194|2729->1200|2790->1240|3214->1637|3229->1643|3285->1678|3537->1903|3552->1909|3609->1945
                   LINES: 33->2|37->6|37->6|37->6|38->7|38->7|38->7|39->8|39->8|39->8|40->9|40->9|40->9|45->14|45->14|46->15|60->29|60->29|60->29|61->30|61->30|61->30|62->31|62->31|62->31|63->32|63->32|63->32|72->41|72->41|72->41|76->45|76->45|76->45
                   -- GENERATED --
