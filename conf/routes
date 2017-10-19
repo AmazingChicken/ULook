@@ -9,7 +9,7 @@ GET     /signInPage                           controllers.HomeController.signInP
 GET     /signUpPage                           controllers.HomeController.signUpPage
 GET     /myItems                         	 controllers.HomeController.myItems
 GET     /recommend 							 controllers.HomeController.recommend
-GET     /search 							 controllers.HomeController.search
+GET     /search 							 controllers.HomeController.search(s:String ?="a")
 GET     /getInspired 							 controllers.HomeController.getInspired
 GET     /myOutfits 							 controllers.HomeController.myOutfits
 GET     /approach1      controllers.HomeController.approach1(s: String ?="a")

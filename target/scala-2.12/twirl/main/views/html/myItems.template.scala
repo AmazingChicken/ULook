@@ -49,7 +49,7 @@ Seq[Any](format.raw/*1.65*/("""
 <main>
   <div class="title">
     <h2>My Items</h2>
-    <a href="javascript:void(0);">Sign out</a>
+<a href=""""),_display_(/*20.11*/routes/*20.17*/.HomeController.signInPage()),format.raw/*20.45*/("""">Sign out</a>
    </div>
    <div class="container-fluid">
 <div class="container">
@@ -64,68 +64,18 @@ Seq[Any](format.raw/*1.65*/("""
         </span>
       </div>
    </div>
-   <div class="card ml-3 mt-3 mr-2">
-      <strong class="ml-3 mt-2">Category</strong>
-      <select class="form-control mt-1 ml-3 category">
-         <option>Hats</option>
-         <option>Shirts</option>
-         <option>Pants</option>
-         <option>Shoes</option>
-      </select>
-        <div class="row mt-3 ml-3">
-            <div class="col-md-4"><strong>Brand</strong></div>
-            <div class="col-md-4"><strong>Price</strong></div>
-            <div class="col-md-4"><strong>Type</strong></div>
-        </div>
-   <div class="card-deck mt-1 ml-2 mb-2 mr-1">
-         <div class="card ml-3 mt-1 scrollbox">
-             """),_display_(/*50.15*/for(option <- brands) yield /*50.36*/{_display_(Seq[Any](format.raw/*50.37*/("""
-            """),format.raw/*51.13*/("""<div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               """),_display_(/*54.17*/option),format.raw/*54.23*/("""
-               """),format.raw/*55.16*/("""</label>
-            </div> 
-            """)))}),format.raw/*57.14*/("""
-         """),format.raw/*58.10*/("""</div>
-         <div class="card ml-3 mt-1">
-            <form class="form-inline-sm mt-4 text-center">
-               <input type="text" class="form-control-sm" id="inlineFormInput" placeholder="Minimum Price">
-               <label class="sr-only" for="priceFrom">priceFrom</label>
-               <label class="sr-only" for="priceTo">priceTo</label>
-               <input type="text" class="form-control-sm" id="inlineFormInput" placeholder="Maximum Price">
-            </form>
-         </div>
-         <div class="card ml-3 mt-1 scrollbox">
-            """),_display_(/*68.14*/for(option <- types) yield /*68.34*/{_display_(Seq[Any](format.raw/*68.35*/("""
-            """),format.raw/*69.13*/("""<div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               """),_display_(/*72.17*/option),format.raw/*72.23*/("""
-               """),format.raw/*73.16*/("""</label>
-            </div> 
-            """)))}),format.raw/*75.14*/("""
-         """),format.raw/*76.10*/("""</div>
-      </div>
-   </div>
-   <select class="form-control mt-3 sort">
-      <option>Price High to Low</option>
-      <option>Price Low to High</option>
-      <option>Newest-Oldest</option>
-      <option>Name A-Z</option>
-      <option>Name Z-A</option>
-   </select>
+  
    
    
       <div class="row mt-4 ml-5 mb-4 mr-1">
-      """),_display_(/*89.8*/for(item <- items) yield /*89.26*/{_display_(Seq[Any](format.raw/*89.27*/("""
-         """),format.raw/*90.10*/("""<div class="col-sm-4 mb-5">
+      """),_display_(/*39.8*/for(item <- items) yield /*39.26*/{_display_(Seq[Any](format.raw/*39.27*/("""
+         """),format.raw/*40.10*/("""<div class="col-sm-4 mb-5">
             <div class="card mr-5">
                <div class="text-center">
-                  <a href="#"><img src=""""),_display_(/*93.42*/routes/*93.48*/.Assets.versioned(item.getPicture())),format.raw/*93.84*/("""" height="200" width="200"></a>
+                  <a href="#"><img src=""""),_display_(/*43.42*/routes/*43.48*/.Assets.versioned(item.getPicture())),format.raw/*43.84*/("""" height="200" width="200"></a>
                </div> 
                <div class="card-block">
-                  <h4 class="card-title ml-2">"""),_display_(/*96.48*/item/*96.52*/.getName()),format.raw/*96.62*/("""</h4>
+                  <h4 class="card-title ml-2">"""),_display_(/*46.48*/item/*46.52*/.getName()),format.raw/*46.62*/("""</h4>
                   <div class="mb-2">
                      <button type="button" class="btn btn-secondary ml-2">Add to Outfit</button>
                      <button type="button" class="btn btn-danger float-right mr-2" >Delete</button>
@@ -133,9 +83,9 @@ Seq[Any](format.raw/*1.65*/("""
                </div>
             </div>
          </div>
-         """)))}),format.raw/*104.11*/("""
+         """)))}),format.raw/*54.11*/("""
         
-      """),format.raw/*106.7*/("""</div>
+      """),format.raw/*56.7*/("""</div>
 
 
 </main>
@@ -143,7 +93,8 @@ Seq[Any](format.raw/*1.65*/("""
 
 </body>
 
-</html>"""))
+</html>
+"""))
       }
     }
   }
@@ -159,19 +110,11 @@ Seq[Any](format.raw/*1.65*/("""
 
               /*
                   -- GENERATED --
-<<<<<<< HEAD
-                  DATE: Wed Oct 18 21:01:42 AEDT 2017
-                  SOURCE: C:/Users/mr_to/ULook/app/views/myItems.scala.html
-                  HASH: 86261df38a277ab911599aafe8e5cf2e7def9fc1
-                  MATRIX: 980->1|1138->64|1166->66|1308->182|1322->188|1391->236|1466->285|1480->291|1545->336|1620->385|1634->391|1700->437|1744->455|1758->461|1824->507|1905->562|1937->573|1966->575|2221->803|2236->809|2287->839|2655->1180|2670->1186|2729->1224|3457->1925|3494->1946|3533->1947|3575->1961|3789->2148|3816->2154|3861->2171|3936->2215|3975->2226|4569->2793|4605->2813|4644->2814|4686->2828|4900->3015|4927->3021|4972->3038|5047->3082|5086->3093|5453->3434|5487->3452|5526->3453|5565->3464|5741->3613|5756->3619|5813->3655|5985->3800|5998->3804|6029->3814|6401->4154|6447->4172
-                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|59->27|59->27|59->27|65->33|65->33|65->33|83->51|83->51|83->51|84->52|87->55|87->55|88->56|90->58|91->59|101->69|101->69|101->69|102->70|105->73|105->73|106->74|108->76|109->77|122->90|122->90|122->90|123->91|126->94|126->94|126->94|129->97|129->97|129->97|137->105|139->107
-=======
-                  DATE: Thu Oct 19 16:27:12 AEDT 2017
+                  DATE: Thu Oct 19 20:32:29 AEDT 2017
                   SOURCE: C:/Users/Daniel/ULook/app/views/myItems.scala.html
-                  HASH: 63b12e845465d195aecd7fd884da415c213b95a9
-                  MATRIX: 980->1|1138->64|1166->66|1308->182|1322->188|1391->236|1466->285|1480->291|1545->336|1620->385|1634->391|1700->437|1744->455|1758->461|1824->507|1905->562|1937->573|1966->575|2205->787|2220->793|2271->823|2616->1141|2631->1147|2690->1185|3460->1928|3497->1949|3536->1950|3578->1964|3792->2151|3819->2157|3864->2174|3939->2218|3978->2229|4572->2796|4608->2816|4647->2817|4689->2831|4903->3018|4930->3024|4975->3041|5050->3085|5089->3096|5456->3437|5490->3455|5529->3456|5568->3467|5744->3616|5759->3622|5816->3658|5988->3803|6001->3807|6032->3817|6404->4157|6450->4175
-                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|56->24|56->24|56->24|62->30|62->30|62->30|82->50|82->50|82->50|83->51|86->54|86->54|87->55|89->57|90->58|100->68|100->68|100->68|101->69|104->72|104->72|105->73|107->75|108->76|121->89|121->89|121->89|122->90|125->93|125->93|125->93|128->96|128->96|128->96|136->104|138->106
->>>>>>> 97995ab25d004ba6bd74582703152614fdf6978f
+                  HASH: 1e3b867336ec0222beac3edf5cec0b8a7de6ecef
+                  MATRIX: 980->1|1138->64|1166->66|1308->182|1322->188|1391->236|1466->285|1480->291|1545->336|1620->385|1634->391|1700->437|1744->455|1758->461|1824->507|1905->562|1937->573|1966->575|2076->658|2091->664|2140->692|2274->799|2289->805|2340->835|2685->1153|2700->1159|2759->1197|2945->1357|2979->1375|3018->1376|3057->1387|3233->1536|3248->1542|3305->1578|3477->1723|3490->1727|3521->1737|3892->2077|3937->2095
+                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|52->20|52->20|52->20|56->24|56->24|56->24|62->30|62->30|62->30|71->39|71->39|71->39|72->40|75->43|75->43|75->43|78->46|78->46|78->46|86->54|88->56
                   -- GENERATED --
               */
           

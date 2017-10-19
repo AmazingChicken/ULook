@@ -34,56 +34,19 @@
    </div>
 
    <div class="card ml-3 mt-3 mr-2">
-      <strong class="ml-3 mt-2">Category</strong>
-      <select class="form-control mt-1 ml-3 category">
-         <option>Hats</option>
-         <option>Tops</option>
-         <option>Bottoms</option>
-         <option>Footwear</option>
-      </select>
-        <div class="row mt-3 ml-3">
-            <div class="col-md-4"><strong>Brand</strong></div>
-            <div class="col-md-4"><strong>Price</strong></div>
-            <div class="col-md-4"><strong>Type</strong></div>
-        </div>
-   <div class="card-deck mt-1 ml-2 mb-2 mr-1">
-         <div class="card ml-3 mt-1 scrollbox">
-             @for(option <- brands){
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               @option
-               </label>
-            </div> 
-            }
-         </div>
-         <div class="card ml-3 mt-1">
-            <form class="form-inline-sm mt-4 text-center">
-               <input type="text" class="form-control-sm" id="inlineFormInput" placeholder="Minimum Price">
-               <label class="sr-only" for="priceFrom">priceFrom</label>
-               <label class="sr-only" for="priceTo">priceTo</label>
-               <input type="text" class="form-control-sm" id="inlineFormInput" placeholder="Maximum Price">
-            </form>
-         </div>
-         <div class="card ml-3 mt-1 scrollbox">
-            @for(option <- types){
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               @option
-               </label>
-            </div> 
-            }
-         </div>
-      </div>
+<div class="dropdown">
+  <button class="dropbtn">Category</button>
+  <div class="dropdown-content">
+    <a href="@routes.HomeController.search("Hats")">Hats</a>
+    <a href="@routes.HomeController.search("Tops")">Tops</a>
+    <a href="@routes.HomeController.search("Bottoms")">Bottoms</a>
+    <a href="@routes.HomeController.search("Shoes")">Footwear</a>
+  </div>
+</div>
+       
+
    </div>
-   <select class="form-control mt-3 sort">
-      <option>Price High to Low</option>
-      <option>Price Low to High</option>
-      <option>Newest-Oldest</option>
-      <option>Name A-Z</option>
-      <option>Name Z-A</option>
-   </select>
+  
    
    
       <div class="row mt-4 ml-5 mb-4 mr-1">

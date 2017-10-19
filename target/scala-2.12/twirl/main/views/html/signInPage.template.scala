@@ -41,9 +41,9 @@ Seq[Any](format.raw/*7.32*/("""
 <link rel="stylesheet" media="screen" href=""""),_display_(/*10.46*/routes/*10.52*/.Assets.versioned("stylesheets/button.css")),format.raw/*10.95*/("""">
 
 <div id="loginform">
-<div id="facebook"><i class="fa fa-facebook"></i><div id="connect">Connect with Facebook</div></div>
+<div id="facebook"><i class="fa fa-facebook"></i><div id="connect">Welcome To ULook!</div></div>
 <div id="mainlogin">
-<div id="or">or</div>
+<div id="or"></div>
 <h1>Log in with awesome new thing</h1>
 <form action=""""),_display_(/*17.16*/routes/*17.22*/.HomeController.signIn("a","b")),format.raw/*17.53*/("""">
 <input type="text" name = "name"placeholder="username or email" value="" required>
@@ -78,10 +78,10 @@ Seq[Any](format.raw/*7.32*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Oct 18 21:01:42 AEDT 2017
-                  SOURCE: C:/Users/mr_to/ULook/app/views/signInPage.scala.html
-                  HASH: 7492020a8bd7bd95de0bc0be2dd940fa02299c4c
-                  MATRIX: 1217->266|1342->296|1370->298|1459->361|1473->367|1533->406|1608->455|1622->461|1685->504|1761->553|1776->559|1840->602|2097->832|2112->838|2164->869|2591->1269|2606->1275|2655->1303
+                  DATE: Thu Oct 19 20:09:09 AEDT 2017
+                  SOURCE: C:/Users/Daniel/ULook/app/views/signInPage.scala.html
+                  HASH: 7527ec0e60b4956b2a54372c77650c00211ea524
+                  MATRIX: 1217->266|1342->296|1370->298|1459->361|1473->367|1533->406|1608->455|1622->461|1685->504|1761->553|1776->559|1840->602|2091->826|2106->832|2158->863|2585->1263|2600->1269|2649->1297
                   LINES: 33->7|38->7|39->8|39->8|39->8|39->8|40->9|40->9|40->9|41->10|41->10|41->10|48->17|48->17|48->17|55->24|55->24|55->24
                   -- GENERATED --
               */

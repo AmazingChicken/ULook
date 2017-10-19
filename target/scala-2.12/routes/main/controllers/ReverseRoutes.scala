@@ -1,12 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-<<<<<<< HEAD
-// @SOURCE:C:/Users/mr_to/ULook/conf/routes
-// @DATE:Thu Oct 19 02:24:10 AEDT 2017
-=======
 // @SOURCE:C:/Users/Daniel/ULook/conf/routes
-// @DATE:Thu Oct 19 16:28:14 AEDT 2017
->>>>>>> 97995ab25d004ba6bd74582703152614fdf6978f
+// @DATE:Thu Oct 19 20:16:59 AEDT 2017
 
 import play.api.mvc.Call
 
@@ -24,61 +19,67 @@ package controllers {
     }
 
   
-    // @LINE:17
+    // @LINE:8
+    def signInPage(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "signInPage")
+    }
+  
+    // @LINE:18
     def signIn(name:String = "a", password:String = "b"): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "signIn" + play.core.routing.queryString(List(if(name == "a") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("name", name)), if(password == "b") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("password", password)))))
     }
   
-    // @LINE:19
+    // @LINE:20
     def addToFavourite(a:String = "a"): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "addToFavourite" + play.core.routing.queryString(List(if(a == "a") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("a", a)))))
     }
   
-    // @LINE:9
+    // @LINE:10
     def myItems(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "myItems")
     }
   
-    // @LINE:15
+    // @LINE:16
     def approach2(s:String = "a"): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "approach2" + play.core.routing.queryString(List(if(s == "a") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("s", s)))))
     }
   
-    // @LINE:8
+    // @LINE:9
     def signUpPage(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "signUpPage")
     }
   
-    // @LINE:16
+    // @LINE:12
+    def search(s:String = "a"): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "search" + play.core.routing.queryString(List(if(s == "a") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("s", s)))))
+    }
+  
+    // @LINE:17
     def signUp(name:String = "a", password:String = "b"): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "signUp" + play.core.routing.queryString(List(if(name == "a") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("name", name)), if(password == "b") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("password", password)))))
     }
   
-    // @LINE:20
+    // @LINE:21
     def details(a:String = "a"): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "details" + play.core.routing.queryString(List(if(a == "a") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("a", a)))))
     }
   
-    // @LINE:10
+    // @LINE:11
     def recommend(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "recommend")
     }
   
-    // @LINE:11
-    def search(): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "search")
-    }
-  
-    // @LINE:18
+    // @LINE:19
     def addToOutfit(a:String = "a"): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "addToOutfit" + play.core.routing.queryString(List(if(a == "a") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("a", a)))))
@@ -90,7 +91,7 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "mainPage")
     }
   
-    // @LINE:12
+    // @LINE:13
     def getInspired(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "getInspired")
@@ -102,13 +103,13 @@ package controllers {
       Call("GET", _prefix)
     }
   
-    // @LINE:14
+    // @LINE:15
     def approach1(s:String = "a"): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "approach1" + play.core.routing.queryString(List(if(s == "a") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("s", s)))))
     }
   
-    // @LINE:13
+    // @LINE:14
     def myOutfits(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "myOutfits")
@@ -116,14 +117,14 @@ package controllers {
   
   }
 
-  // @LINE:23
+  // @LINE:24
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:23
+    // @LINE:24
     def versioned(file:Asset): Call = {
       implicit val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))

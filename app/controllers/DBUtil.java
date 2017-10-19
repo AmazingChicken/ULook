@@ -239,6 +239,41 @@ public class DBUtil {
         }
         return arrList;
     }
+    
+    public static ArrayList<Item> getAllItems() throws Exception {
+        DBUtil dbUtils = new DBUtil();
+        Connection conn = dbUtils.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Item item = null;
+        ArrayList<Item> arrList= new ArrayList<Item>();
+
+        try {
+            ps = conn.prepareStatement("SELECT * FROM \"Data\"");
+           
+
+          //  ps.setString(1, value);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                item = new Item("ok", "ok");
+                item.setName(rs.getString("name"));
+                item.setBrand(rs.getString("brand"));
+                item.setAType(rs.getString("type"));
+                item.setCategory(rs.getString("category"));
+                item.setPrice(rs.getString("price"));
+                item.setPicture(rs.getString("picture"));
+                //System.out.println(rs.getString("name"));
+               //System.out.println("qweqweq");
+                arrList.add(item);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            dbUtils.close();
+        }
+        return arrList;
+    }
 
     //add Item to the user's favourtite
     public static void addFavourite(String username, String itemName, String itemBrand, String itemType, String itemCategory, String itemPrice,String itemPic) throws Exception {

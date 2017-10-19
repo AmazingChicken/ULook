@@ -1,12 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-<<<<<<< HEAD
-// @SOURCE:C:/Users/mr_to/ULook/conf/routes
-// @DATE:Thu Oct 19 02:24:10 AEDT 2017
-=======
 // @SOURCE:C:/Users/Daniel/ULook/conf/routes
-// @DATE:Thu Oct 19 16:28:14 AEDT 2017
->>>>>>> 97995ab25d004ba6bd74582703152614fdf6978f
+// @DATE:Thu Oct 19 20:16:59 AEDT 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -25,7 +20,17 @@ package controllers.javascript {
     }
 
   
-    // @LINE:17
+    // @LINE:8
+    def signInPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.signInPage",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "signInPage"})
+        }
+      """
+    )
+  
+    // @LINE:18
     def signIn: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.signIn",
       """
@@ -35,7 +40,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:19
+    // @LINE:20
     def addToFavourite: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addToFavourite",
       """
@@ -45,7 +50,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:9
+    // @LINE:10
     def myItems: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.myItems",
       """
@@ -55,7 +60,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:15
+    // @LINE:16
     def approach2: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.approach2",
       """
@@ -65,7 +70,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:8
+    // @LINE:9
     def signUpPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.signUpPage",
       """
@@ -75,7 +80,17 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:16
+    // @LINE:12
+    def search: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.search",
+      """
+        function(s0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "search" + _qS([(s0 == null ? null : (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("s", s0))])})
+        }
+      """
+    )
+  
+    // @LINE:17
     def signUp: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.signUp",
       """
@@ -85,7 +100,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:20
+    // @LINE:21
     def details: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.details",
       """
@@ -95,7 +110,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:10
+    // @LINE:11
     def recommend: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.recommend",
       """
@@ -105,17 +120,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:11
-    def search: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.search",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "search"})
-        }
-      """
-    )
-  
-    // @LINE:18
+    // @LINE:19
     def addToOutfit: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addToOutfit",
       """
@@ -135,7 +140,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:12
+    // @LINE:13
     def getInspired: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.getInspired",
       """
@@ -155,7 +160,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:14
+    // @LINE:15
     def approach1: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.approach1",
       """
@@ -165,7 +170,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:13
+    // @LINE:14
     def myOutfits: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.myOutfits",
       """
@@ -177,7 +182,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:23
+  // @LINE:24
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -185,7 +190,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:23
+    // @LINE:24
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
