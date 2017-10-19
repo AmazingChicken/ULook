@@ -1,4 +1,4 @@
-@(occasion: List[String],outfits :List[Outfit])
+@(items: List[Item], brands: List[String], types: List[String] )
 <!DOCTYPE html>
 <html lang="en">
 <span class="bckg"></span>
@@ -23,69 +23,33 @@
    <div class="container-fluid">
    <div class="container">
 
+<p>
+<font size="10" face="Verdana">
+The Most popular Items
+</font>
+</p>
 
-      <form action="@routes.HomeController.approach1("a")">
-      <div class="input-group stylish-input-group mt-2">
-        <input type="search" class="form-control"  placeholder="Search by Keywords" onkeyup="myFunction()" name = "s" required>
-        <span class="input-group-addon">
-            <button type="submit"></button></span></div>
-            </form>
-                <img src="@routes.Assets.versioned("images/search.png")" height="35" width="35">
 
 
       </div>
    </div>
    
-   <div class="card ml-3 mt-3 mr-2">
-      <div class="row mt-3 ml-3">
-         <div class="col-md-4"><strong>Occasion</strong></div>
-         <div class="col-md-4"><strong>Price</strong></div>
-         <div class="col-md-4"><strong>Tags</strong></div>
-      </div>
-      <div class="card-deck mt-1 ml-2 mb-2 mr-1">
-         <div class="card ml-3 mt-1 scrollbox">
-            @for(option <- occasion){
-            <div class="form-check form-inline mt-2 mb-2">
-               <label class="form-check-label">
-               <input class="form-check-input" type="checkbox" value="">
-               @option
-               </label>
-            </div>
-            }
-         </div>
-         <div class="card ml-3 mt-1">
-            <form class="form-inline-sm mt-4 text-center">
-               <input type="text" class="form-control-sm" id="inlineFormInput" placeholder="Minimum Price">
-               <label class="sr-only" for="priceFrom">priceFrom</label>
-               <label class="sr-only" for="priceTo">priceTo</label>
-               <input type="text" class="form-control-sm" id="inlineFormInput" placeholder="Maximum Price">
-            </form>
-         </div>
-         <div class="card ml-3 mt-1 scrollbox">
-         </div>
-      </div>
-   </div>
-   <select class="form-control mt-3 sort">
-      <option>Price High to Low</option>
-      <option>Price Low to High</option>
-      <option>Newest-Oldest</option>
-      <option>Name A-Z</option>
-      <option>Name Z-A</option>
-   </select>
+ 
    
       <div class="row mt-4 ml-5 mb-4 mr-1">
-         @for(outfit<- outfits){
+         @for(item <- items){
          <div class="col-sm-4 mb-5">
             <div class="card mr-5">
                <div class="text-center">
-                  <a href="#"><img src="@routes.Assets.versioned(outfit.getHat())" height="120" width="120"></a>
-                  <a href="#"><img src="@routes.Assets.versioned(outfit.getTop())" height="120" width="120"></a>
-                  <a href="#"><img src="@routes.Assets.versioned(outfit.getBottom())" height="120" width="120"></a>
-                  <a href="#"><img src="@routes.Assets.versioned(outfit.getShoes())" height="120" width="120"></a>
+                 <a href="#"><img src="@routes.Assets.versioned(item.getPicture())" height="200" width="200"></a>
                </div> 
                <div class="card-block">
-                  <h4 class="card-title ml-2">@outfit.getName()</h4>
-                  <button type="button" class="btn btn-secondary ml-3 mb-2">Edit</button>
+                  <h4 class="card-title ml-2">@item.getName()</h4>
+                   
+                   
+            
+                   
+
                </div>
             </div>
          </div>
