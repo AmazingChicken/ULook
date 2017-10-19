@@ -17,3 +17,5 @@ libraryDependencies ++= Seq(
   cache,
   javaWs
 )
+
+herokuAppName in Compile := "hidden-falls-26897"
