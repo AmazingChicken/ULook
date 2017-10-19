@@ -47,6 +47,10 @@ public class HomeController extends Controller {
         return ok(views.html.mainPage.render());
     }
 
+    public Result signInPage(){
+        return ok(views.html.signInPage.render("a",new play.twirl.api.Html("It <em>finally</em> works!")));
+    }
+
     public Result signUpPage(){
         return ok(views.html.signUpPage.render());
     }
@@ -98,7 +102,7 @@ public class HomeController extends Controller {
         fw.write("name:"+name+" ");
         fw.write("password:"+password+"\r\n");
         fw.close();
-        return ok("Your UserName is :"+ name);
+        return ok(views.html.signInPage.render("a",new play.twirl.api.Html("It <em>finally</em> works!")));
     }
 
     public Result addToOutfit(String itemName)throws Exception	{
