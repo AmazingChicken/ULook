@@ -22,15 +22,15 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object getInspired extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[Map[String, String],play.twirl.api.HtmlFormat.Appendable] {
+object getInspired extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[ArrayList[TwitterPhoto],play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply/*1.2*/(images: Map[String,String]):play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(images: ArrayList[TwitterPhoto]):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.30*/("""
+Seq[Any](format.raw/*1.35*/("""
 """),format.raw/*2.1*/("""<!DOCTYPE html>
 <html lang="en">
 <span class="bckg"></span>
@@ -55,25 +55,27 @@ Seq[Any](format.raw/*1.30*/("""
    <div class="container-fluid">
    <div class="card mt-2">
       <div>
-         <img class="img-valign mt-2 mb-2 ml-2" src=""""),_display_(/*26.55*/routes/*26.61*/.Assets.versioned("images/insta.png")),format.raw/*26.98*/("""" height="60" width="60">
+         <img class="img-valign mt-2 mb-2 ml-2" src=""""),_display_(/*26.55*/routes/*26.61*/.Assets.versioned("images/twitter.png")),format.raw/*26.100*/("""" height="60" width="60">
          <span><strong>Outfit of the Day! #OOTD</strong></span>
       </div>
    </div>
-   
+   <div>
+   <h1 class="mt-3">Get Inspired by these creative outfits from Twitter!<h1>
+   </div>
       <div class="row mt-4 ml-5 mb-4 mr-1">
-         """),_display_(/*32.11*/for((name,image) <- images) yield /*32.38*/{_display_(Seq[Any](format.raw/*32.39*/("""
-         """),format.raw/*33.10*/("""<div class="col-sm-4 mb-5">
-            <div class="card mr-5">
+         """),_display_(/*34.11*/for(image <- images) yield /*34.31*/{_display_(Seq[Any](format.raw/*34.32*/("""
+         """),format.raw/*35.10*/("""<div class="col-sm-4 mb-5">
+            <div class="card mr-5 twitter">
                <div class="text-center mt-4 mb-3">
-                  <a href="#"><img src=""""),_display_(/*36.42*/routes/*36.48*/.Assets.versioned(image)),format.raw/*36.72*/("""" height="500" width="400"></a>
+                  <img src=""""),_display_(/*38.30*/routes/*38.36*/.Assets.versioned(image.getPicture())),format.raw/*38.73*/("""" height="500" width="400">
                </div> 
                <div class="card-block">
-                  <h4 class="card-title ml-4">"""),_display_(/*39.48*/name),format.raw/*39.52*/("""</h4>
+                  <h4 class="card-title ml-4">"""),_display_(/*41.48*/image/*41.53*/.getUsername()),format.raw/*41.67*/("""</h4>
                </div>
             </div>
         </div>
-        """)))}),format.raw/*43.10*/("""
-      """),format.raw/*44.7*/("""</div>
+        """)))}),format.raw/*45.10*/("""
+      """),format.raw/*46.7*/("""</div>
    </div>
 
 </main>
@@ -85,9 +87,9 @@ Seq[Any](format.raw/*1.30*/("""
     }
   }
 
-  def render(images:Map[String, String]): play.twirl.api.HtmlFormat.Appendable = apply(images)
+  def render(images:ArrayList[TwitterPhoto]): play.twirl.api.HtmlFormat.Appendable = apply(images)
 
-  def f:((Map[String, String]) => play.twirl.api.HtmlFormat.Appendable) = (images) => apply(images)
+  def f:((ArrayList[TwitterPhoto]) => play.twirl.api.HtmlFormat.Appendable) = (images) => apply(images)
 
   def ref: this.type = this
 
@@ -96,11 +98,19 @@ Seq[Any](format.raw/*1.30*/("""
 
               /*
                   -- GENERATED --
+<<<<<<< HEAD
                   DATE: Wed Oct 18 21:01:42 AEDT 2017
                   SOURCE: C:/Users/mr_to/ULook/app/views/getInspired.scala.html
                   HASH: 789152504ef98761a9aef25ba15a87592b29cd7c
                   MATRIX: 967->1|1090->29|1118->31|1260->147|1274->153|1343->201|1418->250|1432->256|1497->301|1572->350|1586->356|1652->402|1696->420|1710->426|1776->472|1857->527|1889->538|1918->540|2213->808|2228->814|2286->851|2490->1028|2533->1055|2572->1056|2611->1067|2797->1226|2812->1232|2857->1256|3029->1401|3054->1405|3160->1480|3195->1488
                   LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|58->26|58->26|58->26|64->32|64->32|64->32|65->33|68->36|68->36|68->36|71->39|71->39|75->43|76->44
+=======
+                  DATE: Thu Oct 19 14:28:30 AEDT 2017
+                  SOURCE: C:/Users/Daniel/ULook/app/views/getInspired.scala.html
+                  HASH: e37fee77dbf2844d49b2ef3345987d1e68071461
+                  MATRIX: 971->1|1099->34|1127->36|1269->152|1283->158|1352->206|1427->255|1441->261|1506->306|1581->355|1595->361|1661->407|1705->425|1719->431|1785->477|1866->532|1898->543|1927->545|2222->813|2237->819|2298->858|2596->1129|2632->1149|2671->1150|2710->1161|2892->1316|2907->1322|2965->1359|3133->1500|3147->1505|3182->1519|3288->1594|3323->1602
+                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|58->26|58->26|58->26|66->34|66->34|66->34|67->35|70->38|70->38|70->38|73->41|73->41|73->41|77->45|78->46
+>>>>>>> 97995ab25d004ba6bd74582703152614fdf6978f
                   -- GENERATED --
               */
           

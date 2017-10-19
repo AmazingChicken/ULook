@@ -21,13 +21,16 @@
    </div>
    <div class="container-fluid ">
    
-   <div class="card details mt-5 ml-2">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-block">
-         <h4 class="card-title">@item.getName()</h4>
-         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-         <a href="#" class="btn btn-secondary">Add to Outfit</a>
+   <div class="card details mt-5 ml-10">
+   <div class="text-center">
+      <img class="card-img-top" src="@routes.Assets.versioned(item.getPicture())" >
       </div>
+         <h1 class="card-title mt-2">@item.getName()</h1>
+         <p class="card-text">@item.getType()</p>
+         <h1 class="card-title mt-2">Price $@item.getPrice</h1>
+         <a href="#" class="btn btn-secondary">Add to Outfit</a>
+         <a href="@routes.HomeController.addToFavourite(item.getName())" class="btn btn-success">Save</a>
+        
    </div>
    
 

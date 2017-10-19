@@ -17,13 +17,10 @@
 <main>
   <div class="title">
     <h2>Search</h2>
-    <a href="javascript:void(0);">Sign in</a>
+ <a href="@routes.HomeController.signInPage()">Sign out</a>
    </div>
    <div class="container-fluid">
    <div class="container">
-   
- 
-   
       <form action="@routes.HomeController.approach1("a")">
       <div class="input-group stylish-input-group mt-2">
         <input type="search" class="form-control"  placeholder="Search by Item Name" onkeyup="myFunction()" name = "s" required>
@@ -35,13 +32,14 @@
         </span>
       </div>
    </div>
+
    <div class="card ml-3 mt-3 mr-2">
       <strong class="ml-3 mt-2">Category</strong>
       <select class="form-control mt-1 ml-3 category">
          <option>Hats</option>
-         <option>Shirts</option>
-         <option>Pants</option>
-         <option>Shoes</option>
+         <option>Tops</option>
+         <option>Bottoms</option>
+         <option>Footwear</option>
       </select>
         <div class="row mt-3 ml-3">
             <div class="col-md-4"><strong>Brand</strong></div>
@@ -93,7 +91,7 @@
          <div class="col-sm-4 mb-5">
             <div class="card mr-5">
                <div class="text-center">
-                  <a href="#"><img src="@routes.Assets.versioned(item.getPicture())" height="200" width="200"></a>
+                  <a href="@routes.HomeController.details(item.getName())"><img src="@routes.Assets.versioned(item.getPicture())" height="200" width="200"></a>
                </div> 
                <div class="card-block">
                   <h4 class="card-title ml-2">@item.getName()</h4>

@@ -30,24 +30,27 @@
 				 <h2>Or sign up with</h2>
 				 <form action="@routes.HomeController.signUp("a","b")">
 							<div class="lable">
-		                     	<input type="text" name = "name" class="text" value="UserName" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Name';}" >
+		                     	<input type="text" name = "name" placeholder="UserName" class="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Name';}" >
 
 		                     
 		                    </div>
 		                    <div class="clear"> </div>
 		                    <div class="lable-2">
-		                    <input type="text" name = "password" class="text" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+		                    <input type="text" name = "password" class="text" placeholder="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
 		                   
 							</div>
 							<div class="clear"> </div>
 							
 								 <div class="submit">
 									<input type="submit" onclick="myFunction()" value="Create account" >
-									<input type="submit" onclick="myFunction()" value="Cancel" >
+									
 								</div>
 									<div class="clear"> </div>
 									
 							 </form>
+							 <a href="@routes.HomeController.signInPage()" >
+										<input type="submit" onclick="myFunction()" value="Cancel" >
+									</a>
 	
 	 
 </body>

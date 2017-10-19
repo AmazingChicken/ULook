@@ -1,4 +1,4 @@
-@(images: Map[String,String])
+@(images: ArrayList[TwitterPhoto])
 <!DOCTYPE html>
 <html lang="en">
 <span class="bckg"></span>
@@ -23,20 +23,22 @@
    <div class="container-fluid">
    <div class="card mt-2">
       <div>
-         <img class="img-valign mt-2 mb-2 ml-2" src="@routes.Assets.versioned("images/insta.png")" height="60" width="60">
+         <img class="img-valign mt-2 mb-2 ml-2" src="@routes.Assets.versioned("images/twitter.png")" height="60" width="60">
          <span><strong>Outfit of the Day! #OOTD</strong></span>
       </div>
    </div>
-   
+   <div>
+   <h1 class="mt-3">Get Inspired by these creative outfits from Twitter!<h1>
+   </div>
       <div class="row mt-4 ml-5 mb-4 mr-1">
-         @for((name,image) <- images){
+         @for(image <- images){
          <div class="col-sm-4 mb-5">
-            <div class="card mr-5">
+            <div class="card mr-5 twitter">
                <div class="text-center mt-4 mb-3">
-                  <a href="#"><img src="@routes.Assets.versioned(image)" height="500" width="400"></a>
+                  <img src="@routes.Assets.versioned(image.getPicture())" height="500" width="400">
                </div> 
                <div class="card-block">
-                  <h4 class="card-title ml-4">@name</h4>
+                  <h4 class="card-title ml-4">@image.getUsername()</h4>
                </div>
             </div>
         </div>
