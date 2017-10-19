@@ -50,44 +50,23 @@ Seq[Any](format.raw/*1.14*/("""
   <div class="title">
     <h2>Details</h2>
     <a href="javascript:void(0);">Sign out</a>
-<<<<<<< HEAD
-  </div>
-
-  <article class="larg">
-
-
-    <div>
-      <h3><img src=""""),_display_(/*49.22*/routes/*49.28*/.Assets.versioned("images/2.png")),format.raw/*49.61*/(""""width="500" height="260">details here/h3>
-      <p>xxx.</p>
-      </h3>
-    </div>
-
-  <div id="login_click">  
-        <a id="btlogin" href="#">Buy</a>  
-    </div>
-    <div id="login_click">  
-        <a id="btlogin" href="#">Add to outfit</a>  
-    </div>
-      <div id="login_click">  
-        <a id="btlogin" href="#">Cancel</a>  
-      </div>
-  </article>
-=======
    </div>
    <div class="container-fluid ">
    
-   <div class="card details mt-5 ml-2">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-block">
-         <h4 class="card-title">"""),_display_(/*27.34*/item/*27.38*/.getName()),format.raw/*27.48*/("""</h4>
-         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-         <a href="#" class="btn btn-secondary">Add to Outfit</a>
+   <div class="card details mt-5 ml-10">
+   <div class="text-center">
+      <img class="card-img-top" src=""""),_display_(/*26.39*/routes/*26.45*/.Assets.versioned(item.getPicture())),format.raw/*26.81*/("""" >
       </div>
+         <h1 class="card-title mt-2">"""),_display_(/*28.39*/item/*28.43*/.getName()),format.raw/*28.53*/("""</h1>
+         <p class="card-text">"""),_display_(/*29.32*/item/*29.36*/.getType()),format.raw/*29.46*/("""</p>
+         <h1 class="card-title mt-2">Price $"""),_display_(/*30.46*/item/*30.50*/.getPrice),format.raw/*30.59*/("""</h1>
+         <a href="#" class="btn btn-secondary">Add to Outfit</a>
+         <a href=""""),_display_(/*32.20*/routes/*32.26*/.HomeController.addToFavourite(item.getName())),format.raw/*32.72*/("""" class="btn btn-success">Save</a>
+        
    </div>
    
 
    </div>
->>>>>>> 0658d712bff933720594ea339531680f87773bfe
 </main>
 
 </body>
@@ -108,19 +87,11 @@ Seq[Any](format.raw/*1.14*/("""
 
               /*
                   -- GENERATED --
-<<<<<<< HEAD
-                  DATE: Tue Oct 17 21:13:27 AEDT 2017
-                  SOURCE: C:/Users/mr_to/ULook/app/views/detailPage.scala.html
-                  HASH: c9f48cb3bdeb040aa8bab3bd61620cb6bb35c486
-                  MATRIX: 1199->260|1295->262|1329->269|1441->354|1456->360|1522->405|1624->480|1639->486|1689->515|1801->600|1816->606|1864->633|1971->713|1986->719|2032->744|2238->923|2253->929|2298->953|2595->1223|2610->1229|2664->1262
-                  LINES: 33->7|38->7|41->10|44->13|44->13|44->13|51->20|51->20|51->20|54->23|54->23|54->23|57->26|57->26|57->26|63->32|63->32|63->32|80->49|80->49|80->49
-=======
-                  DATE: Wed Oct 18 17:39:03 AEDT 2017
+                  DATE: Thu Oct 19 12:19:47 AEDT 2017
                   SOURCE: C:/Users/Daniel/ULook/app/views/detailPage.scala.html
-                  HASH: 3f647e562aca87f9b10a162cf6b8ef8e35c5ca22
-                  MATRIX: 951->1|1058->13|1086->15|1228->131|1242->137|1311->185|1386->234|1400->240|1465->285|1540->334|1554->340|1620->386|1664->404|1678->410|1744->456|1825->511|1857->522|1886->524|2255->866|2268->870|2299->880
-                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|59->27|59->27|59->27
->>>>>>> 0658d712bff933720594ea339531680f87773bfe
+                  HASH: 0d77a0efdf2a347e1c76140aabd32e5939fe1a7b
+                  MATRIX: 951->1|1058->13|1086->15|1228->131|1242->137|1311->185|1386->234|1400->240|1465->285|1540->334|1554->340|1620->386|1664->404|1678->410|1744->456|1825->511|1857->522|1886->524|2194->805|2209->811|2266->847|2350->904|2363->908|2394->918|2459->956|2472->960|2503->970|2581->1021|2594->1025|2624->1034|2743->1126|2758->1132|2825->1178
+                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|58->26|58->26|58->26|60->28|60->28|60->28|61->29|61->29|61->29|62->30|62->30|62->30|64->32|64->32|64->32
                   -- GENERATED --
               */
           

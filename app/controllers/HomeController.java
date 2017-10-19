@@ -37,7 +37,7 @@ public class HomeController extends Controller {
      */
     public Result index() throws SQLException, IOException, URISyntaxException {
         DBUtil dbutil = new DBUtil();
-     //   dbutil.addDb();
+        dbutil.addDb();
         return ok(views.html.index.render());
     }
 
@@ -48,6 +48,11 @@ public class HomeController extends Controller {
 
     public Result signUpPage(){
         return ok(views.html.signUpPage.render());
+    }
+    public Result details(String itemname)throws Exception{
+    	ArrayList<Item> itemList = DBUtil.getItemBy("name", itemname);
+        Item myItem = itemList.get(0);
+        return ok(views.html.detailPage.render(myItem));
     }
     public Result myItems() throws SQLException, URISyntaxException, IOException, Exception{
         //DBUtil dbutil;
@@ -74,7 +79,7 @@ public class HomeController extends Controller {
 
         return ok(views.html.myOutfits.render(dummyOccasion(),outfitArrayList));
     }
-    public Result detailPage(String itemName){
+    public Result detailPage(String itemName)throws Exception{
         Item item = new Item("shoe","images/roshe.jpg");
         return ok(views.html.detailPage.render(item));
     }
@@ -87,7 +92,7 @@ public class HomeController extends Controller {
         return ok("Your UserName is :"+ name);
     }
 
-    public Result addToOutfit(String itemName)throws Exception{
+    public Result addToOutfit(String itemName)throws Exception	{
         DBUtil dbutil = new DBUtil();
         ArrayList<Outfit> outfitArrayList = dbutil.getOutfitBy(username);
         Outfit myoutfit;
