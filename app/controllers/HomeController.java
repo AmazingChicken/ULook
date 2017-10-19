@@ -66,14 +66,19 @@ public class HomeController extends Controller {
     }
     public Result recommend()throws SQLException, URISyntaxException, IOException, Exception{
          //DBUtil.getFavouriteBy(username);
-        int number = new Random().nextInt(1);
+
         ArrayList<Item> arrList = new ArrayList<Item>();
         ArrayList<Item> arrList2 = new ArrayList<Item>();
+        for(int i = 0;i<12;i++){
+            int number = new Random().nextInt(99);
+            arrList.add(DBUtil.getAllItem().get(number));
+
+        }
         //arrList.add(DBUtil.getAllFavourite().get(number));
        // arrList = DBUtil.getFavouriteBy("un");
        // arrList2 = DBUtil.getFavouriteBy("s");
        // arrList.addAll(arrList2);
-        return ok(views.html.recommend.render(DBUtil.getAllFavourite(),dummyOptions(),dummyType()));
+        return ok(views.html.recommend.render(arrList,dummyOptions(),dummyType()));
     }
 
     public Result search(String s)throws SQLException, URISyntaxException, IOException, Exception{
