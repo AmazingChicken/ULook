@@ -201,7 +201,7 @@ public static ArrayList<Item> getAllItem() throws Exception {
         ResultSet rs = null;
         Item item = null;
         ArrayList<Item> arrList= new ArrayList<Item>();
-        
+
         try {
                 ps = conn.prepareStatement("SELECT * FROM \"Data\" ");
 
@@ -225,7 +225,7 @@ public static ArrayList<Item> getAllItem() throws Exception {
             dbUtils.close();
         }
         return arrList;
-    }	
+    }
     //get item (for search) ; there are five types: name, brand, type, category, price
     public static ArrayList<Item> getItemBy(String type, String value) throws Exception {
         DBUtil dbUtils = new DBUtil();
@@ -324,7 +324,7 @@ public static ArrayList<Item> getAllItem() throws Exception {
             dbUtils.close();
         }
     }
-    
+
     public static void deleteFavourite(String itemName) throws Exception {
         DBUtil dbUtils = new DBUtil();
         Connection conn = dbUtils.getConnection();
@@ -552,21 +552,21 @@ public static ArrayList<Item> getAllItem() throws Exception {
     	TwitterInfo get = new TwitterInfo();
     	HashMap<String,String> tweets = get.getTweets();
     	for (Map.Entry<String, String> entry : tweets.entrySet()){
-    		
+
     		DBUtil.addInspiration(entry.getValue(), DBUtil.tweetPic(entry.getKey(), entry.getValue()));
-    		
+
     	}
     }
 
 
-    
+
     public static void addDb() throws SQLException, URISyntaxException, IOException{
     	addShirts();
     	addHats();
     	addShoes();
     	addPants();
       }
-    
+
     public static void addShirts() throws SQLException, URISyntaxException, IOException{
 
           Webhose webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:shirt OR name:top OR name:jacket OR name:hoodie OR name:vest)");
@@ -576,11 +576,11 @@ public static ArrayList<Item> getAllItem() throws Exception {
           for(JsonElement o  : postArray) {
               String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
               String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
-              String productPrice = (o.getAsJsonObject().get("price").getAsString());   
+              String productPrice = (o.getAsJsonObject().get("price").getAsString());
               String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
               String type = (o.getAsJsonObject().get("description").getAsString());
               addItem(productName, productBrand, type, "Top", productPrice, saveImage(productImage,productName));
-          } 
+          }
      }
     public static void addHats() throws SQLException, URISyntaxException, IOException{
 
@@ -591,16 +591,16 @@ public static ArrayList<Item> getAllItem() throws Exception {
          for(JsonElement o  : postArray) {
              String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
              String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
-             String productPrice = (o.getAsJsonObject().get("price").getAsString());   
+             String productPrice = (o.getAsJsonObject().get("price").getAsString());
              String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
              String type = (o.getAsJsonObject().get("description").getAsString());
              addItem(productName, productBrand, type, "Hat", productPrice, saveImage(productImage,productName));
-         } 
+         }
     }
     public static void addPants() throws SQLException, URISyntaxException, IOException{
-    
-  
-       
+
+
+
 		 Webhose webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:pants OR name:jeans OR name:sweats OR name:skirt OR name:chino OR name:leggings)  ");
          webhoseData.pullData();
          JsonArray postArray = webhoseData.getData();
@@ -608,11 +608,11 @@ public static ArrayList<Item> getAllItem() throws Exception {
          for(JsonElement o  : postArray) {
              String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
              String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
-             String productPrice = (o.getAsJsonObject().get("price").getAsString());   
+             String productPrice = (o.getAsJsonObject().get("price").getAsString());
              String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
              String type = (o.getAsJsonObject().get("description").getAsString());
              addItem(productName, productBrand, type, "Pants", productPrice, saveImage(productImage,productName));
-         } 
+         }
     }
     public static void addShoes() throws SQLException, URISyntaxException, IOException{
 
@@ -624,11 +624,11 @@ public static ArrayList<Item> getAllItem() throws Exception {
         for(JsonElement o  : postArray) {
             String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
             String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
-            String productPrice = (o.getAsJsonObject().get("price").getAsString());   
+            String productPrice = (o.getAsJsonObject().get("price").getAsString());
             String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
             String type = (o.getAsJsonObject().get("description").getAsString());
             addItem(productName, productBrand, type, "Shoes", productPrice, saveImage(productImage,productName));
-        } 
+        }
    }
     public static String saveImage(String source, String name) throws IOException{
     	 URL url = new URL(source);
@@ -644,7 +644,7 @@ public static ArrayList<Item> getAllItem() throws Exception {
     	 in.close();
     	 byte[] response = out.toByteArray();
     	 name = name.replaceAll("[^A-Za-z0-9]", "");
-    	
+
     	 String path = "public/products/"+name+".jpg";
     	 FileOutputStream fos = new FileOutputStream(path);
     	 fos.write(response);
@@ -666,7 +666,7 @@ public static ArrayList<Item> getAllItem() throws Exception {
    	 in.close();
    	 byte[] response = out.toByteArray();
    	 name = name.replaceAll("[^A-Za-z0-9]", "");
-   	
+
    	 String path = "public/twitter/"+name+".jpg";
    	 FileOutputStream fos = new FileOutputStream(path);
    	 fos.write(response);
@@ -674,5 +674,5 @@ public static ArrayList<Item> getAllItem() throws Exception {
    	 path = "twitter/"+name+".jpg";
    	 return path;
    }
-    	
+
 }

@@ -43,7 +43,7 @@ public class HomeController extends Controller {
     }
 
     public Result goMainPage() throws IOException {
-    	
+
         return ok(views.html.mainPage.render());
     }
 
@@ -86,7 +86,7 @@ public class HomeController extends Controller {
     public Result search(String s)throws SQLException, URISyntaxException, IOException, Exception{
 
 
- 
+
 
         DBUtil ok1 = new DBUtil();
         if (s.equals("Tops")){
@@ -97,7 +97,7 @@ public class HomeController extends Controller {
         	return ok(views.html.search.render(ok1.getItemBy("category", "Pants"),dummyOptions(),dummyType()));
         } else {
         	return ok(views.html.search.render(ok1.getItemBy("category", "Shoes"),dummyOptions(),dummyType()));
-        } 
+        }
     }
     public Result getInspired()throws Exception, IOException{
     	DBUtil.addTwitter();
@@ -106,8 +106,6 @@ public class HomeController extends Controller {
     public Result myOutfits() throws Exception {
         DBUtil dbutil = new DBUtil();
         ArrayList<Outfit> outfitArrayList = dbutil.getOutfitBy(username);
-        Outfit newOutfit = new Outfit();
-        outfitArrayList.add(newOutfit);
 
         return ok(views.html.myOutfits.render(dummyOccasion(),outfitArrayList));
     }
@@ -145,25 +143,25 @@ public class HomeController extends Controller {
             myoutfit.setShoes(myItem.itemName);
         }
         dbutil.addOutfit(username, myoutfit.getHat(), myoutfit.getTop(), myoutfit.getBottom(), myoutfit.getShoes());
-        return ok();
+        return ok(views.html.search.render(dbutil.getItemBy("category", "Shoes"),dummyOptions(),dummyType()));
     }
-    
+
     public Result addToFavourite(String itemName)throws SQLException, URISyntaxException, IOException, Exception{
         DBUtil dbutil = new DBUtil();
-        
+
         ArrayList<Item> itemList = dbutil.getItemBy("name",itemName);
         Item myItem = itemList.get(0);
-        
+
         dbutil.addFavourite(username, itemName, itemName, itemName, itemName,itemName, myItem.getPicture());
         return ok(views.html.search.render(dbutil.getItemBy("category", "Shoes"),dummyOptions(),dummyType()));
     }
     public Result removeFromFavourite(String itemName)throws SQLException, URISyntaxException, IOException, Exception{
         DBUtil dbutil = new DBUtil();
-        
+
         ArrayList<Item> itemList = dbutil.getItemBy("name",itemName);
         Item myItem = itemList.get(0);
         dbutil.deleteFavourite(itemName);
-        
+
         return ok(views.html.myItems.render(DBUtil.getFavouriteBy(username),dummyOptions(),dummyType()));
     }
 
@@ -210,7 +208,7 @@ public class HomeController extends Controller {
         Iterator<Item> it = items.iterator();
         while (it.hasNext()){
 		//    String content = txt2String(file);
-        	
+
         	Item check = it.next();
 		    String content = check.getName().toLowerCase();
 		    // return ok(content);
@@ -225,11 +223,11 @@ public class HomeController extends Controller {
 		        // return ok(content);
 		    	it.remove();
 		    }
-		   
+
         }
         return ok(views.html.search.render(items,dummyOptions(),dummyType()));
     }
-    
+
     public Result approach2(String s)throws Exception {
         //  java.io.File yourFile = new java.io.File("app/controllers/test.txt");
         // java.io.FileReader fr = new java.io.FileReader(yourFile);
@@ -249,7 +247,7 @@ public class HomeController extends Controller {
         Iterator<Item> it = items.iterator();
         while (it.hasNext()){
 		//    String content = txt2String(file);
-        	
+
         	Item check = it.next();
 		    String content = check.getName().toLowerCase();
 		    // return ok(content);
@@ -264,7 +262,7 @@ public class HomeController extends Controller {
 		        // return ok(content);
 		    	it.remove();
 		    }
-		   
+
         }
         return ok(views.html.myItems.render(items,dummyOptions(),dummyType()));
     }
