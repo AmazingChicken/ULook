@@ -1,4 +1,4 @@
-@(outfit: List[Item])
+@(occasion:List[String],out:List[Outfit])
 <!DOCTYPE html>
 <html lang="en">
 <span class="bckg"></span>
@@ -30,9 +30,7 @@
         <div class="col-sm-4 mb-5">
          <div class="card mr-5">
             <div class="text-center">
-             @for(item <- outfit){
-               <a href="#"><img src="@routes.Assets.versioned(item.getPicture())" height="120" width="120"></a>
-            }
+           
             </div> 
             <div class="card-block">
                <h4 class="card-title ml-2">Your Outfit</h4>

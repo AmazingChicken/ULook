@@ -109,7 +109,7 @@ public class HomeController extends Controller {
         ArrayList<Item> items = new ArrayList<Item>();
       
         
-        return ok(views.html.myOutfits.render(items));
+        return ok(views.html.myOutfits.render(dummyOccasion(),outfitArrayList));
     }
     public Result detailPage(String itemName)throws Exception{
         Item item = new Item("shoe","images/roshe.jpg");
