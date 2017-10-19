@@ -287,7 +287,7 @@ public class HomeController extends Controller {
         }
         String content = result.toString();
 
-        return ok("sorry, the UserName or the Password is Wrong");
+        return ok(views.html.index.render());
     }
     public Result approach1(String s)throws Exception {
         //  java.io.File yourFile = new java.io.File("app/controllers/test.txt");
