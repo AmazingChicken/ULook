@@ -76,9 +76,21 @@ public class HomeController extends Controller {
         return ok(views.html.recommend.render(DBUtil.getAllFavourite(),dummyOptions(),dummyType()));
     }
 
-    public Result search()throws SQLException, URISyntaxException, IOException, Exception{
+    public Result search(String s)throws SQLException, URISyntaxException, IOException, Exception{
+
+
+ 
+
         DBUtil ok1 = new DBUtil();
-        return ok(views.html.search.render(ok1.getItemBy("category", "Hat"),dummyOptions(),dummyType()));
+        if (s.equals("Tops")){
+        	return ok(views.html.search.render(ok1.getItemBy("category", "Top"),dummyOptions(),dummyType()));
+        } else if (s.equals("Hats")){
+        	return ok(views.html.search.render(ok1.getItemBy("category", "Hat"),dummyOptions(),dummyType()));
+        } else if (s.equals("Bottoms")){
+        	return ok(views.html.search.render(ok1.getItemBy("category", "Pants"),dummyOptions(),dummyType()));
+        } else {
+        	return ok(views.html.search.render(ok1.getItemBy("category", "Shoes"),dummyOptions(),dummyType()));
+        } 
     }
     public Result getInspired()throws Exception, IOException{
     	DBUtil.addTwitter();

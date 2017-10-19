@@ -57,10 +57,10 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
 
 <div class="text-center">
 <h1 class="card-title">Your Outfit Silhouette</h1>
-<a href="#"><img class="mt-2 mb-2" src=""""),_display_(/*29.42*/routes/*29.48*/.Assets.versioned("images/hatslot.jpg")),format.raw/*29.87*/("""" width="150"></a>
-<a href="#"><img class="mt-2 mb-2" src=""""),_display_(/*30.42*/routes/*30.48*/.Assets.versioned("images/shirtslot.jpg")),format.raw/*30.89*/(""""  width="200"></a>
-<a href="#"><img  class="mt-2 mb-2"src=""""),_display_(/*31.42*/routes/*31.48*/.Assets.versioned("images/pantsslot.jpg")),format.raw/*31.89*/("""" width="150"></a>
-<a href="#"><img class="mt-2 mb-2" src=""""),_display_(/*32.42*/routes/*32.48*/.Assets.versioned("images/shoeslot.jpg")),format.raw/*32.88*/(""""  width="200"></a>
+<a href=""""),_display_(/*29.11*/routes/*29.17*/.HomeController.search("Hats")),format.raw/*29.47*/(""""><img class="mt-2 mb-2" src=""""),_display_(/*29.78*/routes/*29.84*/.Assets.versioned("images/hatslot.jpg")),format.raw/*29.123*/("""" width="150"></a>
+<a href=""""),_display_(/*30.11*/routes/*30.17*/.HomeController.search("Tops")),format.raw/*30.47*/(""""><img class="mt-2 mb-2" src=""""),_display_(/*30.78*/routes/*30.84*/.Assets.versioned("images/shirtslot.jpg")),format.raw/*30.125*/(""""  width="200"></a>
+<a href=""""),_display_(/*31.11*/routes/*31.17*/.HomeController.search("Bottoms")),format.raw/*31.50*/(""""><img  class="mt-2 mb-2"src=""""),_display_(/*31.81*/routes/*31.87*/.Assets.versioned("images/pantsslot.jpg")),format.raw/*31.128*/("""" width="150"></a>
+<a href=""""),_display_(/*32.11*/routes/*32.17*/.HomeController.search("Shoes")),format.raw/*32.48*/(""""><img class="mt-2 mb-2" src=""""),_display_(/*32.79*/routes/*32.85*/.Assets.versioned("images/shoeslot.jpg")),format.raw/*32.125*/(""""  width="200"></a>
 </div> 
   </div>
   <div class="card ml-5 mr-5">
@@ -105,11 +105,11 @@ Seq[Any](format.raw/*2.1*/("""<!DOCTYPE html>
 
               /*
                   -- GENERATED --
-                  DATE: Thu Oct 19 20:09:09 AEDT 2017
+                  DATE: Thu Oct 19 20:55:18 AEDT 2017
                   SOURCE: C:/Users/Daniel/ULook/app/views/mainPage.scala.html
-                  HASH: a40a12abe144bea3a3f17a8273bc12bffbe2e7a3
-                  MATRIX: 1033->2|1175->118|1189->124|1258->172|1333->221|1347->227|1412->272|1487->321|1501->327|1567->373|1611->391|1625->397|1691->443|1772->498|1804->509|1833->511|1943->594|1958->600|2007->628|2293->887|2308->893|2368->932|2456->993|2471->999|2533->1040|2622->1102|2637->1108|2699->1149|2787->1210|2802->1216|2863->1256|3287->1653|3302->1659|3358->1694|3610->1919|3625->1925|3682->1961
-                  LINES: 33->2|37->6|37->6|37->6|38->7|38->7|38->7|39->8|39->8|39->8|40->9|40->9|40->9|45->14|45->14|46->15|51->20|51->20|51->20|60->29|60->29|60->29|61->30|61->30|61->30|62->31|62->31|62->31|63->32|63->32|63->32|72->41|72->41|72->41|76->45|76->45|76->45
+                  HASH: be9b209780944e82ae97f726c44b5ff73054b5f5
+                  MATRIX: 1033->2|1175->118|1189->124|1258->172|1333->221|1347->227|1412->272|1487->321|1501->327|1567->373|1611->391|1625->397|1691->443|1772->498|1804->509|1833->511|1943->594|1958->600|2007->628|2262->856|2277->862|2328->892|2386->923|2401->929|2462->968|2519->998|2534->1004|2585->1034|2643->1065|2658->1071|2721->1112|2779->1143|2794->1149|2848->1182|2906->1213|2921->1219|2984->1260|3041->1290|3056->1296|3108->1327|3166->1358|3181->1364|3243->1404|3667->1801|3682->1807|3738->1842|3990->2067|4005->2073|4062->2109
+                  LINES: 33->2|37->6|37->6|37->6|38->7|38->7|38->7|39->8|39->8|39->8|40->9|40->9|40->9|45->14|45->14|46->15|51->20|51->20|51->20|60->29|60->29|60->29|60->29|60->29|60->29|61->30|61->30|61->30|61->30|61->30|61->30|62->31|62->31|62->31|62->31|62->31|62->31|63->32|63->32|63->32|63->32|63->32|63->32|72->41|72->41|72->41|76->45|76->45|76->45
                   -- GENERATED --
               */
           
