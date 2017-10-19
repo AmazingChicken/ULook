@@ -106,8 +106,10 @@ public class HomeController extends Controller {
     public Result myOutfits() throws Exception {
         DBUtil dbutil = new DBUtil();
         ArrayList<Outfit> outfitArrayList = dbutil.getOutfitBy(username);
-
-        return ok(views.html.myOutfits.render(dummyOccasion(),outfitArrayList));
+        ArrayList<Item> items = new ArrayList<Item>();
+      
+        
+        return ok(views.html.myOutfits.render(items));
     }
     public Result detailPage(String itemName)throws Exception{
         Item item = new Item("shoe","images/roshe.jpg");
@@ -210,7 +212,7 @@ public class HomeController extends Controller {
         Pattern pattern = Pattern.compile(regEx);
         //System.out.println(pattern);
         // String content = Files.toString(new File("test.txt"));
-        ArrayList<Item> items = DBUtil.getItemBy("category", "Hat");
+        ArrayList<Item> items = DBUtil.getAllItem();
         Iterator<Item> it = items.iterator();
         while (it.hasNext()){
 		//    String content = txt2String(file);
@@ -231,6 +233,7 @@ public class HomeController extends Controller {
 		    }
 
         }
+        
         return ok(views.html.search.render(items,dummyOptions(),dummyType()));
     }
 
