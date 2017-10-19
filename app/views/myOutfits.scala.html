@@ -38,7 +38,10 @@
             <div class="card-block">
                <h4 class="card-title ml-2">@outfit.getName()</h4>
                <button type="button" class="btn btn-secondary ml-3">Edit</button>
+                <a href="@routes.HomeController.deleteFromOutfit()" >
                <button type="button" class="btn btn-danger float-right mr-2" >Delete</button>
+               </a>
+
             </div>
             <a href="#" class="ml-2"><img src="@routes.Assets.versioned("images/share.png")" height="50" width="150"></a>
          </div>
