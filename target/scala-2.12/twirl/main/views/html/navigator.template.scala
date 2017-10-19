@@ -40,7 +40,7 @@ Seq[Any](format.raw/*1.3*/("""<nav>
         <a href=""""),_display_(/*8.19*/routes/*8.25*/.HomeController.getInspired()),format.raw/*8.54*/("""" data-title="Projects">Get Inspired!</a>
       </li>
       <li>
-        <a href=""""),_display_(/*11.19*/routes/*11.25*/.HomeController.recommend()),format.raw/*11.52*/("""" data-title="Team">Recommended</a>
+        <a href=""""),_display_(/*11.19*/routes/*11.25*/.HomeController.recommend()),format.raw/*11.52*/("""" data-title="Team">What's Hot?</a>
       </li>
       <li>
         <a href=""""),_display_(/*14.19*/routes/*14.25*/.HomeController.myItems()),format.raw/*14.50*/("""" data-title="Diary">My Items</a>
@@ -89,17 +89,10 @@ Seq[Any](format.raw/*1.3*/("""<nav>
 
               /*
                   -- GENERATED --
-<<<<<<< HEAD
-                  DATE: Thu Oct 19 02:14:36 AEDT 2017
-                  SOURCE: C:/Users/mr_to/ULook/app/views/navigator.scala.html
-                  HASH: b655fdc5c716c88ad6da252fbe9d63cf2f14c064
-                  MATRIX: 1034->2|1112->54|1126->60|1174->88|1277->165|1291->171|1340->200|1453->286|1468->292|1516->319|1623->399|1638->405|1684->430|1789->508|1804->514|1852->541|1962->624|1977->630|2022->654|2307->912|2322->918|2382->957|2502->1050|2517->1056|2579->1097|2700->1191|2715->1197|2777->1238|2897->1331|2912->1337|2973->1377
-=======
-                  DATE: Thu Oct 19 16:40:21 AEDT 2017
+                  DATE: Thu Oct 19 21:20:40 AEDT 2017
                   SOURCE: C:/Users/Daniel/ULook/app/views/navigator.scala.html
-                  HASH: 757c124fc3ae20f929e3f9e628a0ae1e3f179254
+                  HASH: af7812a8aeb1209a6868de7e3a1bc907d50fa598
                   MATRIX: 1034->2|1112->54|1126->60|1174->88|1277->165|1291->171|1340->200|1453->286|1468->292|1516->319|1623->399|1638->405|1684->430|1789->508|1804->514|1852->541|1962->624|1977->630|2022->654|2307->912|2322->918|2382->957|2503->1051|2518->1057|2580->1098|2701->1192|2716->1198|2778->1239|2898->1332|2913->1338|2974->1378
->>>>>>> 97995ab25d004ba6bd74582703152614fdf6978f
                   LINES: 33->1|37->5|37->5|37->5|40->8|40->8|40->8|43->11|43->11|43->11|46->14|46->14|46->14|49->17|49->17|49->17|52->20|52->20|52->20|60->28|60->28|60->28|63->31|63->31|63->31|66->34|66->34|66->34|69->37|69->37|69->37
                   -- GENERATED --
               */

@@ -1,159 +1,81 @@
-2017-10-19 20:59:12,991 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-2 - Creating Pool for datasource 'default'
-2017-10-19 20:59:13,092 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-2 - Database [default] connected at jdbc:postgresql://localhost/playdb
-2017-10-19 20:59:13,545 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-2 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2017-10-19 21:06:40,465 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-3 - Creating Pool for datasource 'default'
+2017-10-19 21:06:40,572 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-3 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 21:06:40,976 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-3 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2017-10-19 20:59:13,587 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-2 - Application started (Dev)
-2017-10-19 20:59:33,604 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-6 - 
-
-! @75knfd0f5 - Internal server error, for (GET) [/search] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPointerException: null]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:255)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:182)
-	at play.api.http.DefaultHttpErrorHandler$.onServerError(HttpErrorHandler.scala:286)
-	at play.core.server.Server.logExceptionAndGetResult$1(Server.scala:52)
-	at play.core.server.Server.getHandlerFor(Server.scala:82)
-	at play.core.server.Server.getHandlerFor$(Server.scala:48)
-	at play.core.server.AkkaHttpServer.getHandlerFor(AkkaHttpServer.scala:41)
-	at play.core.server.AkkaHttpServer.getHandler(AkkaHttpServer.scala:214)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:194)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$3(AkkaHttpServer.scala:106)
-	at akka.stream.impl.fusing.MapAsync$$anon$23.onPush(Ops.scala:1172)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:499)
-	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:462)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:368)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:571)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:457)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:546)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:725)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:740)
-	at akka.actor.Actor.aroundReceive(Actor.scala:514)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:512)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:650)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:496)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:224)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: java.lang.NullPointerException: null
-	at play.core.j.JavaActionAnnotations.<init>(JavaAction.scala:33)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8.play$core$routing$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$$cachedAnnotations(HandlerInvoker.scala:97)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8$$anon$2$$anon$1.<init>(HandlerInvoker.scala:105)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8$$anon$2.withComponents(HandlerInvoker.scala:104)
-	at play.api.http.JavaCompatibleHttpRequestHandler$MapJavaHandler.apply(HttpRequestHandler.scala:234)
-	at play.api.mvc.Handler$.applyStages(Handler.scala:36)
-	at play.api.http.DefaultHttpRequestHandler.handlerForRequest(HttpRequestHandler.scala:157)
-	at play.core.server.Server.getHandlerFor(Server.scala:69)
-	... 26 common frames omitted
-2017-10-19 20:59:36,786 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-3 - 
-
-! @75knfd57h - Internal server error, for (GET) [/search] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPointerException: null]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:255)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:182)
-	at play.api.http.DefaultHttpErrorHandler$.onServerError(HttpErrorHandler.scala:286)
-	at play.core.server.Server.logExceptionAndGetResult$1(Server.scala:52)
-	at play.core.server.Server.getHandlerFor(Server.scala:82)
-	at play.core.server.Server.getHandlerFor$(Server.scala:48)
-	at play.core.server.AkkaHttpServer.getHandlerFor(AkkaHttpServer.scala:41)
-	at play.core.server.AkkaHttpServer.getHandler(AkkaHttpServer.scala:214)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:194)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$3(AkkaHttpServer.scala:106)
-	at akka.stream.impl.fusing.MapAsync$$anon$23.onPush(Ops.scala:1172)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:499)
-	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:462)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:368)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:571)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:457)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:546)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:725)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:740)
-	at akka.actor.Actor.aroundReceive(Actor.scala:514)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:512)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:650)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:496)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:224)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: java.lang.NullPointerException: null
-	at play.core.j.JavaActionAnnotations.<init>(JavaAction.scala:33)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8.play$core$routing$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$$cachedAnnotations(HandlerInvoker.scala:97)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8$$anon$2$$anon$1.<init>(HandlerInvoker.scala:105)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8$$anon$2.withComponents(HandlerInvoker.scala:104)
-	at play.api.http.JavaCompatibleHttpRequestHandler$MapJavaHandler.apply(HttpRequestHandler.scala:234)
-	at play.api.mvc.Handler$.applyStages(Handler.scala:36)
-	at play.api.http.DefaultHttpRequestHandler.handlerForRequest(HttpRequestHandler.scala:157)
-	at play.core.server.Server.getHandlerFor(Server.scala:69)
-	... 26 common frames omitted
-2017-10-19 20:59:56,696 [ERROR] from application in play-dev-mode-akka.actor.default-dispatcher-3 - 
-
-! @75knfe8jb - Internal server error, for (GET) [/search] ->
- 
-play.api.http.HttpErrorHandlerExceptions$$anon$1: Execution exception[[NullPointerException: null]]
-	at play.api.http.HttpErrorHandlerExceptions$.throwableToUsefulException(HttpErrorHandler.scala:255)
-	at play.api.http.DefaultHttpErrorHandler.onServerError(HttpErrorHandler.scala:182)
-	at play.api.http.DefaultHttpErrorHandler$.onServerError(HttpErrorHandler.scala:286)
-	at play.core.server.Server.logExceptionAndGetResult$1(Server.scala:52)
-	at play.core.server.Server.getHandlerFor(Server.scala:82)
-	at play.core.server.Server.getHandlerFor$(Server.scala:48)
-	at play.core.server.AkkaHttpServer.getHandlerFor(AkkaHttpServer.scala:41)
-	at play.core.server.AkkaHttpServer.getHandler(AkkaHttpServer.scala:214)
-	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:194)
-	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$3(AkkaHttpServer.scala:106)
-	at akka.stream.impl.fusing.MapAsync$$anon$23.onPush(Ops.scala:1172)
-	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:499)
-	at akka.stream.impl.fusing.GraphInterpreter.processEvent(GraphInterpreter.scala:462)
-	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:368)
-	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:571)
-	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:457)
-	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:546)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:725)
-	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:740)
-	at akka.actor.Actor.aroundReceive(Actor.scala:514)
-	at akka.actor.Actor.aroundReceive$(Actor.scala:512)
-	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:650)
-	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:527)
-	at akka.actor.ActorCell.invoke(ActorCell.scala:496)
-	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:257)
-	at akka.dispatch.Mailbox.run(Mailbox.scala:224)
-	at akka.dispatch.Mailbox.exec(Mailbox.scala:234)
-	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
-	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
-	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
-	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
-Caused by: java.lang.NullPointerException: null
-	at play.core.j.JavaActionAnnotations.<init>(JavaAction.scala:33)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8.play$core$routing$HandlerInvokerFactory$JavaActionInvokerFactory$$anon$$cachedAnnotations(HandlerInvoker.scala:97)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8$$anon$2$$anon$1.<init>(HandlerInvoker.scala:105)
-	at play.core.routing.HandlerInvokerFactory$JavaActionInvokerFactory$$anon$8$$anon$2.withComponents(HandlerInvoker.scala:104)
-	at play.api.http.JavaCompatibleHttpRequestHandler$MapJavaHandler.apply(HttpRequestHandler.scala:234)
-	at play.api.mvc.Handler$.applyStages(Handler.scala:36)
-	at play.api.http.DefaultHttpRequestHandler.handlerForRequest(HttpRequestHandler.scala:157)
-	at play.core.server.Server.getHandlerFor(Server.scala:69)
-	... 26 common frames omitted
-2017-10-19 21:01:32,923 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-17 - Shutting down connection pool.
-2017-10-19 21:01:33,039 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-17 - Creating Pool for datasource 'default'
-2017-10-19 21:01:33,053 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-17 - Database [default] connected at jdbc:postgresql://localhost/playdb
-2017-10-19 21:01:33,150 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-17 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2017-10-19 21:06:41,014 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-3 - Application started (Dev)
+2017-10-19 21:18:55,894 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-56 - Shutting down connection pool.
+2017-10-19 21:18:56,077 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-56 - Creating Pool for datasource 'default'
+2017-10-19 21:18:56,092 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-56 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 21:18:56,123 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-56 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2017-10-19 21:01:33,156 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-17 - Application started (Dev)
-2017-10-19 21:01:37,580 [INFO] from play.core.server.AkkaHttpServer in pool-6-thread-5 - Stopping server...
-2017-10-19 21:01:37,591 [INFO] from application in pool-6-thread-5 - Shutting down connection pool.
+2017-10-19 21:18:56,127 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-56 - Application started (Dev)
+2017-10-19 21:20:41,756 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-90 - Shutting down connection pool.
+2017-10-19 21:20:41,883 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-90 - Creating Pool for datasource 'default'
+2017-10-19 21:20:41,897 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-90 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 21:20:41,925 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-90 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-10-19 21:20:41,928 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-90 - Application started (Dev)
+2017-10-19 21:21:08,181 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-92 - Shutting down connection pool.
+2017-10-19 21:21:08,326 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-92 - Creating Pool for datasource 'default'
+2017-10-19 21:21:08,341 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-92 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 21:21:08,369 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-92 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-10-19 21:21:08,372 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-92 - Application started (Dev)
+2017-10-19 21:21:17,823 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-95 - Shutting down connection pool.
+2017-10-19 21:21:17,980 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-95 - Creating Pool for datasource 'default'
+2017-10-19 21:21:17,994 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-95 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 21:21:18,021 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-95 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-10-19 21:21:18,034 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-95 - Application started (Dev)
+2017-10-19 21:21:28,229 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-89 - Shutting down connection pool.
+2017-10-19 21:21:28,363 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-89 - Creating Pool for datasource 'default'
+2017-10-19 21:21:28,377 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-89 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 21:21:28,405 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-89 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-10-19 21:21:28,408 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-89 - Application started (Dev)
+2017-10-19 21:21:33,487 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-98 - Shutting down connection pool.
+2017-10-19 21:21:33,592 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-98 - Creating Pool for datasource 'default'
+2017-10-19 21:21:33,606 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-98 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 21:21:33,678 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-98 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-10-19 21:21:33,681 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-98 - Application started (Dev)
+2017-10-19 21:21:53,228 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-95 - Shutting down connection pool.
+2017-10-19 21:21:53,305 [INFO] from application in play-dev-mode-akka.actor.default-dispatcher-95 - Creating Pool for datasource 'default'
+2017-10-19 21:21:53,319 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-95 - Database [default] connected at jdbc:postgresql://localhost/playdb
+2017-10-19 21:21:53,380 [INFO] from play.api.http.EnabledFilters in play-dev-mode-akka.actor.default-dispatcher-95 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2017-10-19 21:21:53,383 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-95 - Application started (Dev)
+2017-10-19 21:22:30,985 [INFO] from play.core.server.AkkaHttpServer in pool-6-thread-1 - Stopping server...
+2017-10-19 21:22:30,991 [INFO] from application in pool-6-thread-1 - Shutting down connection pool.
