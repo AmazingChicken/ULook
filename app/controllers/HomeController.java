@@ -38,7 +38,7 @@ public class HomeController extends Controller {
      */
     public Result index() throws SQLException, IOException, URISyntaxException {
         DBUtil dbutil = new DBUtil();
-     //   dbutil.addDb();
+        dbutil.addDb();
         return ok(views.html.index.render());
     }
 
@@ -60,7 +60,8 @@ public class HomeController extends Controller {
         return ok(views.html.detailPage.render(myItem));
     }
     public Result myItems() throws SQLException, URISyntaxException, IOException, Exception{
-        
+        //DBUtil dbutil;
+        //dbutil = new DBUtil();
         return ok(views.html.myItems.render(DBUtil.getFavouriteBy(username),dummyOptions(),dummyType()));
     }
     public Result recommend()throws SQLException, URISyntaxException, IOException, Exception{
@@ -68,27 +69,16 @@ public class HomeController extends Controller {
         int number = new Random().nextInt(1);
         ArrayList<Item> arrList = new ArrayList<Item>();
         ArrayList<Item> arrList2 = new ArrayList<Item>();
-        arrList.add(DBUtil.getFavouriteBy("un").get(number));
+        //arrList.add(DBUtil.getAllFavourite().get(number));
        // arrList = DBUtil.getFavouriteBy("un");
        // arrList2 = DBUtil.getFavouriteBy("s");
        // arrList.addAll(arrList2);
-        return ok(views.html.recommend.render(DBUtil.getFavouriteBy("un"),dummyOptions(),dummyType()));
+        return ok(views.html.recommend.render(DBUtil.getAllFavourite(),dummyOptions(),dummyType()));
     }
 
-    public Result search(String s)throws SQLException, URISyntaxException, IOException, Exception{
-
+    public Result search()throws SQLException, URISyntaxException, IOException, Exception{
         DBUtil ok1 = new DBUtil();
-        if (s.equals("Tops")){
-        	return ok(views.html.search.render(ok1.getItemBy("category", "Top"),dummyOptions(),dummyType()));
-        } else if (s.equals("Hats")){
-        	return ok(views.html.search.render(ok1.getItemBy("category", "Hat"),dummyOptions(),dummyType()));
-        } else if (s.equals("Bottoms")){
-        	return ok(views.html.search.render(ok1.getItemBy("category", "Pants"),dummyOptions(),dummyType()));
-        } else if (s.equals("Shoes")){
-        	return ok(views.html.search.render(ok1.getItemBy("category", "Shoes"),dummyOptions(),dummyType()));
-        } else {
-        	return ok(views.html.search.render(ok1.getAllItems(),dummyOptions(),dummyType()));
-        }
+        return ok(views.html.search.render(ok1.getItemBy("category", "Hat"),dummyOptions(),dummyType()));
     }
     public Result getInspired()throws Exception, IOException{
     	DBUtil.addTwitter();
@@ -188,7 +178,7 @@ public class HomeController extends Controller {
         Pattern pattern = Pattern.compile(regEx);
         //System.out.println(pattern);
         // String content = Files.toString(new File("test.txt"));
-        ArrayList<Item> items = DBUtil.getAllItems();
+        ArrayList<Item> items = DBUtil.getItemBy("category", "Hat");
         Iterator<Item> it = items.iterator();
         while (it.hasNext()){
 		//    String content = txt2String(file);
