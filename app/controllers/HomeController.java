@@ -64,6 +64,7 @@ public class HomeController extends Controller {
         //dbutil = new DBUtil();
         return ok(views.html.myItems.render(DBUtil.getFavouriteBy(username),dummyOptions(),dummyType()));
     }
+
     public Result recommend()throws SQLException, URISyntaxException, IOException, Exception{
          //DBUtil.getFavouriteBy(username);
 
@@ -80,6 +81,7 @@ public class HomeController extends Controller {
        // arrList.addAll(arrList2);
         return ok(views.html.recommend.render(arrList,dummyOptions(),dummyType()));
     }
+
 
     public Result search(String s)throws SQLException, URISyntaxException, IOException, Exception{
 
@@ -154,6 +156,15 @@ public class HomeController extends Controller {
         
         dbutil.addFavourite(username, itemName, itemName, itemName, itemName,itemName, myItem.getPicture());
         return ok(views.html.search.render(dbutil.getItemBy("category", "Shoes"),dummyOptions(),dummyType()));
+    }
+    public Result removeFromFavourite(String itemName)throws SQLException, URISyntaxException, IOException, Exception{
+        DBUtil dbutil = new DBUtil();
+        
+        ArrayList<Item> itemList = dbutil.getItemBy("name",itemName);
+        Item myItem = itemList.get(0);
+        dbutil.deleteFavourite(itemName);
+        
+        return ok(views.html.myItems.render(DBUtil.getFavouriteBy(username),dummyOptions(),dummyType()));
     }
 
     public Result signIn(String name, String password) throws IOException{
