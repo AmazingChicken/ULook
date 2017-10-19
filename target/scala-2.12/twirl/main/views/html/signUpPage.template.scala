@@ -61,13 +61,13 @@ Seq[Any](format.raw/*7.4*/("""
 				 <h2>Or sign up with</h2>
 				 <form action=""""),_display_(/*31.21*/routes/*31.27*/.HomeController.signUp("a","b")),format.raw/*31.58*/("""">
 							<div class="lable">
-		                     	<input type="text" name = "name" class="text" value="UserName" onfocus="this.value = '';" onblur="if (this.value == '') """),format.raw/*33.145*/("""{"""),format.raw/*33.146*/("""this.value = 'User Name';"""),format.raw/*33.171*/("""}"""),format.raw/*33.172*/("""" >
+		                     	<input type="text" name = "name" placeholder="UserName" class="text" onfocus="this.value = '';" onblur="if (this.value == '') """),format.raw/*33.151*/("""{"""),format.raw/*33.152*/("""this.value = 'User Name';"""),format.raw/*33.177*/("""}"""),format.raw/*33.178*/("""" >
 
 		                     
 		                    </div>
 		                    <div class="clear"> </div>
 		                    <div class="lable-2">
-		                    <input type="text" name = "password" class="text" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') """),format.raw/*39.147*/("""{"""),format.raw/*39.148*/("""this.value = 'Password';"""),format.raw/*39.172*/("""}"""),format.raw/*39.173*/("""">
+		                    <input type="text" name = "password" class="text" placeholder="Password" onfocus="this.value = '';" onblur="if (this.value == '') """),format.raw/*39.153*/("""{"""),format.raw/*39.154*/("""this.value = 'Password';"""),format.raw/*39.178*/("""}"""),format.raw/*39.179*/("""">
 		                   
 							</div>
 							<div class="clear"> </div>
@@ -98,10 +98,10 @@ Seq[Any](format.raw/*7.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Wed Oct 18 23:27:43 AEDT 2017
+                  DATE: Thu Oct 19 16:32:41 AEDT 2017
                   SOURCE: C:/Users/Daniel/ULook/app/views/signUpPage.scala.html
-                  HASH: 2b7ca211d4aa97d7f125580a8bd95a8f6e7f1392
-                  MATRIX: 1205->266|1301->268|1331->272|1635->548|1664->549|1693->550|1749->577|1779->578|1839->609|1869->610|1899->611|1950->633|1980->634|2010->635|2097->695|2112->701|2176->744|2400->941|2415->947|2470->981|2626->1110|2641->1116|2700->1154|2916->1343|2931->1349|2983->1380|3188->1556|3218->1557|3272->1582|3302->1583|3634->1886|3664->1887|3717->1911|3747->1912
+                  HASH: 5c1eeba699e725513602cdc21d355130cdfc3958
+                  MATRIX: 1205->266|1301->268|1331->272|1635->548|1664->549|1693->550|1749->577|1779->578|1839->609|1869->610|1899->611|1950->633|1980->634|2010->635|2097->695|2112->701|2176->744|2400->941|2415->947|2470->981|2626->1110|2641->1116|2700->1154|2916->1343|2931->1349|2983->1380|3194->1562|3224->1563|3278->1588|3308->1589|3646->1898|3676->1899|3729->1923|3759->1924
                   LINES: 33->7|38->7|40->9|46->15|46->15|46->15|46->15|46->15|46->15|46->15|46->15|46->15|46->15|46->15|47->16|47->16|47->16|56->25|56->25|56->25|57->26|57->26|57->26|62->31|62->31|62->31|64->33|64->33|64->33|64->33|70->39|70->39|70->39|70->39
                   -- GENERATED --
               */
