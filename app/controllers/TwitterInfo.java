@@ -34,9 +34,8 @@ public class TwitterInfo {
             MediaEntity[] picture = tweet.getMediaEntities();
             
             for(MediaEntity url : picture) {
-            	
-                System.out.println(url.getMediaURL());
-                pics.put(url.getMediaURL(),tweet.getUser().getName());
+
+                pics.put(url.getMediaURL(),tweet.getUser().getScreenName());
                 
             }
 

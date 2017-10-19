@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/Daniel/ULook/conf/routes
-// @DATE:Thu Oct 19 22:39:00 AEDT 2017
+// @SOURCE:/Users/RyanThai/Desktop/SENG2021/Project/ULook/conf/routes
+// @DATE:Thu Oct 19 23:01:28 AEDT 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -100,7 +100,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:22
+    // @LINE:23
     def details: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.details",
       """
@@ -136,6 +136,16 @@ package controllers.javascript {
       """
         function(a0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addToOutfit" + _qS([(a0 == null ? null : (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("a", a0))])})
+        }
+      """
+    )
+  
+    // @LINE:22
+    def deleteFromOutfit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.deleteFromOutfit",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "deleteFromOutfit"})
         }
       """
     )
@@ -192,7 +202,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:25
+  // @LINE:26
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -200,7 +210,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:25
+    // @LINE:26
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

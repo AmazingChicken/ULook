@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/Daniel/ULook/conf/routes
-// @DATE:Thu Oct 19 22:39:00 AEDT 2017
+// @SOURCE:/Users/RyanThai/Desktop/SENG2021/Project/ULook/conf/routes
+// @DATE:Thu Oct 19 23:01:28 AEDT 2017
 
 package router
 
@@ -17,7 +17,7 @@ class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
   HomeController_0: controllers.HomeController,
-  // @LINE:25
+  // @LINE:26
   Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -26,7 +26,7 @@ class Routes(
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
     HomeController_0: controllers.HomeController,
-    // @LINE:25
+    // @LINE:26
     Assets_1: controllers.Assets
   ) = this(errorHandler, HomeController_0, Assets_1, "/")
 
@@ -56,6 +56,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addToOutfit""", """controllers.HomeController.addToOutfit(a:String ?= "a")"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addToFavourite""", """controllers.HomeController.addToFavourite(a:String ?= "a")"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """removeFromFavourite""", """controllers.HomeController.removeFromFavourite(a:String ?= "a")"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """deleteFromOutfit""", """controllers.HomeController.deleteFromOutfit()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """details""", """controllers.HomeController.details(a:String ?= "a")"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
     Nil
@@ -354,10 +355,28 @@ class Routes(
   )
 
   // @LINE:22
-  private[this] lazy val controllers_HomeController_details16_route = Route("GET",
+  private[this] lazy val controllers_HomeController_deleteFromOutfit16_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deleteFromOutfit")))
+  )
+  private[this] lazy val controllers_HomeController_deleteFromOutfit16_invoker = createInvoker(
+    HomeController_0.deleteFromOutfit(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "deleteFromOutfit",
+      Nil,
+      "GET",
+      this.prefix + """deleteFromOutfit""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:23
+  private[this] lazy val controllers_HomeController_details17_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("details")))
   )
-  private[this] lazy val controllers_HomeController_details16_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_details17_invoker = createInvoker(
     HomeController_0.details(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -371,11 +390,11 @@ class Routes(
     )
   )
 
-  // @LINE:25
-  private[this] lazy val controllers_Assets_versioned17_route = Route("GET",
+  // @LINE:26
+  private[this] lazy val controllers_Assets_versioned18_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned17_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned18_invoker = createInvoker(
     Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -489,15 +508,21 @@ class Routes(
       }
   
     // @LINE:22
-    case controllers_HomeController_details16_route(params) =>
-      call(params.fromQuery[String]("a", Some("a"))) { (a) =>
-        controllers_HomeController_details16_invoker.call(HomeController_0.details(a))
+    case controllers_HomeController_deleteFromOutfit16_route(params) =>
+      call { 
+        controllers_HomeController_deleteFromOutfit16_invoker.call(HomeController_0.deleteFromOutfit())
       }
   
-    // @LINE:25
-    case controllers_Assets_versioned17_route(params) =>
+    // @LINE:23
+    case controllers_HomeController_details17_route(params) =>
+      call(params.fromQuery[String]("a", Some("a"))) { (a) =>
+        controllers_HomeController_details17_invoker.call(HomeController_0.details(a))
+      }
+  
+    // @LINE:26
+    case controllers_Assets_versioned18_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned17_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned18_invoker.call(Assets_1.versioned(path, file))
       }
   }
 }

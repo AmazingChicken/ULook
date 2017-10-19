@@ -1,4 +1,4 @@
 [0m[[0mdebug[0m] [0mCopy resource mappings: [0m
-[0m[[0mdebug[0m] [0m	(C:\Users\Daniel\ULook\conf\application.conf,C:\Users\Daniel\ULook\target\scala-2.12\classes\application.conf)[0m
-[0m[[0mdebug[0m] [0m	(C:\Users\Daniel\ULook\conf\logback.xml,C:\Users\Daniel\ULook\target\scala-2.12\classes\logback.xml)[0m
-[0m[[0mdebug[0m] [0m	(C:\Users\Daniel\ULook\conf\routes,C:\Users\Daniel\ULook\target\scala-2.12\classes\routes)[0m
+[0m[[0mdebug[0m] [0m	(/Users/RyanThai/Desktop/SENG2021/Project/ULook/conf/application.conf,/Users/RyanThai/Desktop/SENG2021/Project/ULook/target/scala-2.12/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/Users/RyanThai/Desktop/SENG2021/Project/ULook/conf/logback.xml,/Users/RyanThai/Desktop/SENG2021/Project/ULook/target/scala-2.12/classes/logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(/Users/RyanThai/Desktop/SENG2021/Project/ULook/conf/routes,/Users/RyanThai/Desktop/SENG2021/Project/ULook/target/scala-2.12/classes/routes)[0m

@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/Daniel/ULook/conf/routes
-// @DATE:Thu Oct 19 22:39:00 AEDT 2017
+// @SOURCE:/Users/RyanThai/Desktop/SENG2021/Project/ULook/conf/routes
+// @DATE:Thu Oct 19 23:01:28 AEDT 2017
 
 import play.api.mvc.Call
 
@@ -67,7 +67,7 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "signUp" + play.core.routing.queryString(List(if(name == "a") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("name", name)), if(password == "b") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("password", password)))))
     }
   
-    // @LINE:22
+    // @LINE:23
     def details(a:String = "a"): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "details" + play.core.routing.queryString(List(if(a == "a") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("a", a)))))
@@ -89,6 +89,12 @@ package controllers {
     def addToOutfit(a:String = "a"): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "addToOutfit" + play.core.routing.queryString(List(if(a == "a") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("a", a)))))
+    }
+  
+    // @LINE:22
+    def deleteFromOutfit(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "deleteFromOutfit")
     }
   
     // @LINE:7
@@ -123,14 +129,14 @@ package controllers {
   
   }
 
-  // @LINE:25
+  // @LINE:26
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:25
+    // @LINE:26
     def versioned(file:Asset): Call = {
       implicit val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
