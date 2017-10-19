@@ -20,7 +20,7 @@ import java.sql.SQLException;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
-
+import java.util.Random;
 
 
 /**
@@ -60,10 +60,18 @@ public class HomeController extends Controller {
         //dbutil = new DBUtil();
         return ok(views.html.myItems.render(DBUtil.getFavouriteBy(username),dummyOptions(),dummyType()));
     }
-    public Result recommend(){
-        System.out.println("wwww: " + username);
-        return ok(views.html.recommend.render(dummyOccasion(),dummyOutfit()));
+    public Result recommend()throws SQLException, URISyntaxException, IOException, Exception{
+         //DBUtil.getFavouriteBy(username);
+        int number = new Random().nextInt(1);
+        ArrayList<Item> arrList = new ArrayList<Item>();
+        ArrayList<Item> arrList2 = new ArrayList<Item>();
+        arrList.add(DBUtil.getFavouriteBy("un").get(number));
+       // arrList = DBUtil.getFavouriteBy("un");
+       // arrList2 = DBUtil.getFavouriteBy("s");
+       // arrList.addAll(arrList2);
+        return ok(views.html.recommend.render(DBUtil.getFavouriteBy("un"),dummyOptions(),dummyType()));
     }
+
     public Result search()throws SQLException, URISyntaxException, IOException, Exception{
         DBUtil ok1 = new DBUtil();
         return ok(views.html.search.render(ok1.getItemBy("category", "Hat"),dummyOptions(),dummyType()));
