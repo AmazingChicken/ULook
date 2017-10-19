@@ -46,7 +46,9 @@
                   <h4 class="card-title ml-2">@item.getName()</h4>
                   <div class="mb-2">
                      <button type="button" class="btn btn-secondary ml-2">Add to Outfit</button>
+                     <a href="@routes.HomeController.removeFromFavourite(item.getName())" >
                      <button type="button" class="btn btn-danger float-right mr-2" >Delete</button>
+                     </a> 
                   </div>
                </div>
             </div>
