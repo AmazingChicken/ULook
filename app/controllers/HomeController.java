@@ -110,29 +110,38 @@ public class HomeController extends Controller {
         ArrayList<Outfit> outfitArrayList = dbutil.getOutfitBy(username);
         ArrayList<Item> items = new ArrayList<Item>();
         
+        int hatnum = 0;
+        int topnum = 0;
+        int botnum = 0;
+        int shonum = 0;	
+
         if(!outfitArrayList.isEmpty()){
         	for (Outfit out : outfitArrayList){
-	        	if (out.getHat() != null){
+	        	if (out.getHat() != null && hatnum == 0){
 	        		Item hat = dbutil.getItemBy("name", out.getHat()).get(0);
 	        		items.add(hat);
+	        		hatnum = 1;
 	        	}
-	        	if (out.getTop() != null){
+	        	if (out.getTop() != null && topnum == 0){
 	        		Item top = dbutil.getItemBy("name", out.getTop()).get(0);
 	        		items.add(top);
+	        		topnum = 1;
 	        	}
-	        	if (out.getBottom() != null){
+	        	if (out.getBottom() != null && botnum == 0){
 	        		Item bottom = dbutil.getItemBy("name", out.getBottom()).get(0);
 	        		items.add(bottom);
+	        		botnum = 1;
 	        	}
-	        	if (out.getShoes() != null){
+	        	if (out.getShoes() != null && shonum == 0){
 	        		Item shoe = dbutil.getItemBy("name", out.getShoes()).get(0);
 	        		items.add(shoe);
+	        		shonum = 1;
 	        	}
 	       
         	}
-        
-        	
+     
         }
+
         Set<Item> temp = new HashSet<Item>();
     	temp.addAll(items);
     	items.clear();
