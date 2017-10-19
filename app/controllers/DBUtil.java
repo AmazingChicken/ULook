@@ -194,7 +194,38 @@ public class DBUtil {
             dbUtils.close();
         }
     }
+public static ArrayList<Item> getAllItem() throws Exception {
+        DBUtil dbUtils = new DBUtil();
+        Connection conn = dbUtils.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Item item = null;
+        ArrayList<Item> arrList= new ArrayList<Item>();
+        
+        try {
+                ps = conn.prepareStatement("SELECT * FROM \"Data\" ");
 
+            rs = ps.executeQuery();
+
+            while (rs.next() && arrList.size()<100) {
+                item = new Item("ok", "ok");
+                item.setName(rs.getString("name"));
+                item.setBrand(rs.getString("brand"));
+                item.setAType(rs.getString("type"));
+                item.setCategory(rs.getString("category"));
+                item.setPrice(rs.getString("price"));
+                item.setPicture(rs.getString("picture"));
+                //System.out.println(rs.getString("name"));
+               //System.out.println("qweqweq");
+                arrList.add(item);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            dbUtils.close();
+        }
+        return arrList;
+    }	
     //get item (for search) ; there are five types: name, brand, type, category, price
     public static ArrayList<Item> getItemBy(String type, String value) throws Exception {
         DBUtil dbUtils = new DBUtil();
