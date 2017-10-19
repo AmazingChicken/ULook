@@ -1,4 +1,4 @@
-@(occasion:List[String],out:List[Outfit])
+@(out:List[Item])
 <!DOCTYPE html>
 <html lang="en">
 <span class="bckg"></span>
@@ -33,9 +33,17 @@
            
             </div> 
             <div class="card-block">
-               <h4 class="card-title ml-2">Your Outfit</h4>
+               <h4 class="card-title ml-2">My Outfit</h4>
                <button type="button" class="btn btn-secondary ml-3">Edit</button>
+               <div class="card">
+               <div class="text-center">
+               @for(item<-out){ 
+                <a href="@routes.HomeController.details(item.getName())"><img src="@routes.Assets.versioned(item.getPicture())" height="200" width="200"></a>
+                }
+                </div> 
+                </div>
                 <a href="@routes.HomeController.deleteFromOutfit()" >
+               
                <button type="button" class="btn btn-danger float-right mr-2" >Delete</button>
                </a>
 

@@ -107,9 +107,31 @@ public class HomeController extends Controller {
         DBUtil dbutil = new DBUtil();
         ArrayList<Outfit> outfitArrayList = dbutil.getOutfitBy(username);
         ArrayList<Item> items = new ArrayList<Item>();
-      
         
-        return ok(views.html.myOutfits.render(dummyOccasion(),outfitArrayList));
+        if(!outfitArrayList.isEmpty()){
+        	for (Outfit out : outfitArrayList){
+	        	if (out.getHat() != null){
+	        		Item hat = dbutil.getItemBy("name", out.getHat()).get(0);
+	        		items.add(hat);
+	        	}
+	        	if (out.getTop() != null){
+	        		Item top = dbutil.getItemBy("name", out.getTop()).get(0);
+	        		items.add(top);
+	        	}
+	        	if (out.getBottom() != null){
+	        		Item bottom = dbutil.getItemBy("name", out.getBottom()).get(0);
+	        		items.add(bottom);
+	        	}
+	        	if (out.getShoes() != null){
+	        		Item shoe = dbutil.getItemBy("name", out.getShoes()).get(0);
+	        		items.add(shoe);
+	        	}
+	        	break;
+        	}
+        	
+        }
+        
+        return ok(views.html.myOutfits.render(items));
     }
     public Result detailPage(String itemName)throws Exception{
         Item item = new Item("shoe","images/roshe.jpg");
@@ -159,7 +181,30 @@ public class HomeController extends Controller {
         dbutil.deleteOutfit(username);
         
         ArrayList<Outfit> outfitArrayList1 = dbutil.getOutfitBy(username);
-        return ok(views.html.myOutfits.render(dummyOccasion(),outfitArrayList1));
+        ArrayList<Item> items = new ArrayList<Item>();
+        
+        if(!outfitArrayList1.isEmpty()){
+        	for (Outfit out : outfitArrayList1){
+	        	if (out.getHat() != null){
+	        		Item hat = dbutil.getItemBy("name", out.getHat()).get(0);
+	        		items.add(hat);
+	        	}
+	        	if (out.getTop() != null){
+	        		Item top = dbutil.getItemBy("name", out.getTop()).get(0);
+	        		items.add(top);
+	        	}
+	        	if (out.getBottom() != null){
+	        		Item bottom = dbutil.getItemBy("name", out.getBottom()).get(0);
+	        		items.add(bottom);
+	        	}
+	        	if (out.getShoes() != null){
+	        		Item shoe = dbutil.getItemBy("name", out.getShoes()).get(0);
+	        		items.add(shoe);
+	        	}
+        	}
+        	
+        }
+        return ok(views.html.myOutfits.render(items));
        
 
     }
