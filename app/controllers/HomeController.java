@@ -153,7 +153,16 @@ public class HomeController extends Controller {
         dbutil.addOutfit(username, myoutfit.getHat(), myoutfit.getTop(), myoutfit.getBottom(), myoutfit.getShoes());
         return ok(views.html.search.render(dbutil.getItemBy("category", whatAdd),dummyOptions(),dummyType()));
     }
+ public Result deleteFromOutfit()throws Exception  {
+        DBUtil dbutil = new DBUtil();
 
+        dbutil.deleteOutfit(username);
+        
+        ArrayList<Outfit> outfitArrayList1 = dbutil.getOutfitBy(username);
+        return ok(views.html.myOutfits.render(dummyOccasion(),outfitArrayList1));
+       
+
+    }
     public Result addToFavourite(String itemName)throws SQLException, URISyntaxException, IOException, Exception{
         DBUtil dbutil = new DBUtil();
 

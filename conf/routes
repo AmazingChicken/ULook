@@ -19,6 +19,7 @@ GET     /signIn      controllers.HomeController.signIn(name: String ?="a",passwo
 GET     /addToOutfit    controllers.HomeController.addToOutfit(a: String ?= "a")
 GET     /addToFavourite    controllers.HomeController.addToFavourite(a: String ?= "a")
 GET     /removeFromFavourite    controllers.HomeController.removeFromFavourite(a: String ?= "a")
+GET     /deleteFromOutfit    controllers.HomeController.deleteFromOutfit()
 GET     /details    controllers.HomeController.details(a: String ?= "a")
 
 # Map static resources from the /public folder to the /assets URL path
