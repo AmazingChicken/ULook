@@ -1,1 +1,1 @@
-name:daniel password:password
+name:daniel password:1

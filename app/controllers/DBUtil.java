@@ -575,7 +575,7 @@ public static ArrayList<Item> getAllItem() throws Exception {
           JsonArray postArray = webhoseData.getData();
           for(JsonElement o  : postArray) {
               String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
-              String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
+              String productBrand = (o.getAsJsonObject().get("url").getAsString()); // Print author
               String productPrice = (o.getAsJsonObject().get("price").getAsString());
               String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
               String type = (o.getAsJsonObject().get("description").getAsString());
@@ -590,7 +590,7 @@ public static ArrayList<Item> getAllItem() throws Exception {
          JsonArray postArray = webhoseData.getData();
          for(JsonElement o  : postArray) {
              String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
-             String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
+             String productBrand = (o.getAsJsonObject().get("url").getAsString()); // Print author
              String productPrice = (o.getAsJsonObject().get("price").getAsString());
              String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
              String type = (o.getAsJsonObject().get("description").getAsString());
@@ -607,7 +607,7 @@ public static ArrayList<Item> getAllItem() throws Exception {
 
          for(JsonElement o  : postArray) {
              String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
-             String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
+             String productBrand = (o.getAsJsonObject().get("url").getAsString()); // Print author
              String productPrice = (o.getAsJsonObject().get("price").getAsString());
              String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
              String type = (o.getAsJsonObject().get("description").getAsString());
@@ -623,7 +623,7 @@ public static ArrayList<Item> getAllItem() throws Exception {
         JsonArray postArray = webhoseData.getData();
         for(JsonElement o  : postArray) {
             String productName = (o.getAsJsonObject().get("name").getAsString());  // Print title
-            String productBrand = (o.getAsJsonObject().get("brand").getAsString()); // Print author
+            String productBrand = (o.getAsJsonObject().get("url").getAsString()); // Print author
             String productPrice = (o.getAsJsonObject().get("price").getAsString());
             String productImage = (o.getAsJsonObject().get("images").getAsString());// Print language
             String type = (o.getAsJsonObject().get("description").getAsString());
