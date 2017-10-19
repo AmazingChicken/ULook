@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Daniel/ULook/conf/routes
-// @DATE:Thu Oct 19 12:03:58 AEDT 2017
+// @DATE:Thu Oct 19 16:28:14 AEDT 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -20,7 +20,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:16
+    // @LINE:17
     def signIn: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.signIn",
       """
@@ -30,7 +30,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:18
+    // @LINE:19
     def addToFavourite: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addToFavourite",
       """
@@ -50,6 +50,16 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:15
+    def approach2: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.approach2",
+      """
+        function(s0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "approach2" + _qS([(s0 == null ? null : (""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("s", s0))])})
+        }
+      """
+    )
+  
     // @LINE:8
     def signUpPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.signUpPage",
@@ -60,7 +70,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:15
+    // @LINE:16
     def signUp: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.signUp",
       """
@@ -70,7 +80,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:19
+    // @LINE:20
     def details: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.details",
       """
@@ -100,7 +110,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:17
+    // @LINE:18
     def addToOutfit: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addToOutfit",
       """
@@ -162,7 +172,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:22
+  // @LINE:23
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -170,7 +180,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:22
+    // @LINE:23
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """

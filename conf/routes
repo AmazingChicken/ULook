@@ -12,6 +12,7 @@ GET     /search 							 controllers.HomeController.search
 GET     /getInspired 							 controllers.HomeController.getInspired
 GET     /myOutfits 							 controllers.HomeController.myOutfits
 GET     /approach1      controllers.HomeController.approach1(s: String ?="a")
+GET     /approach2      controllers.HomeController.approach2(s: String ?="a")
 GET     /signUp      controllers.HomeController.signUp(name: String ?="a",password: String ?="b")
 GET     /signIn      controllers.HomeController.signIn(name: String ?="a",password: String ?="b")
 GET     /addToOutfit    controllers.HomeController.addToOutfit(a: String ?= "a")

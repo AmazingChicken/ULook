@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Daniel/ULook/conf/routes
-// @DATE:Thu Oct 19 12:03:58 AEDT 2017
+// @DATE:Thu Oct 19 16:28:14 AEDT 2017
 
 package router
 
@@ -17,7 +17,7 @@ class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:6
   HomeController_0: controllers.HomeController,
-  // @LINE:22
+  // @LINE:23
   Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -26,7 +26,7 @@ class Routes(
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:6
     HomeController_0: controllers.HomeController,
-    // @LINE:22
+    // @LINE:23
     Assets_1: controllers.Assets
   ) = this(errorHandler, HomeController_0, Assets_1, "/")
 
@@ -49,6 +49,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """getInspired""", """controllers.HomeController.getInspired"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """myOutfits""", """controllers.HomeController.myOutfits"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """approach1""", """controllers.HomeController.approach1(s:String ?= "a")"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """approach2""", """controllers.HomeController.approach2(s:String ?= "a")"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """signUp""", """controllers.HomeController.signUp(name:String ?= "a", password:String ?= "b")"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """signIn""", """controllers.HomeController.signIn(name:String ?= "a", password:String ?= "b")"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addToOutfit""", """controllers.HomeController.addToOutfit(a:String ?= "a")"""),
@@ -225,10 +226,28 @@ class Routes(
   )
 
   // @LINE:15
-  private[this] lazy val controllers_HomeController_signUp9_route = Route("GET",
+  private[this] lazy val controllers_HomeController_approach29_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("approach2")))
+  )
+  private[this] lazy val controllers_HomeController_approach29_invoker = createInvoker(
+    HomeController_0.approach2(fakeValue[String]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "approach2",
+      Seq(classOf[String]),
+      "GET",
+      this.prefix + """approach2""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:16
+  private[this] lazy val controllers_HomeController_signUp10_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("signUp")))
   )
-  private[this] lazy val controllers_HomeController_signUp9_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_signUp10_invoker = createInvoker(
     HomeController_0.signUp(fakeValue[String], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -242,11 +261,11 @@ class Routes(
     )
   )
 
-  // @LINE:16
-  private[this] lazy val controllers_HomeController_signIn10_route = Route("GET",
+  // @LINE:17
+  private[this] lazy val controllers_HomeController_signIn11_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("signIn")))
   )
-  private[this] lazy val controllers_HomeController_signIn10_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_signIn11_invoker = createInvoker(
     HomeController_0.signIn(fakeValue[String], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -260,11 +279,11 @@ class Routes(
     )
   )
 
-  // @LINE:17
-  private[this] lazy val controllers_HomeController_addToOutfit11_route = Route("GET",
+  // @LINE:18
+  private[this] lazy val controllers_HomeController_addToOutfit12_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addToOutfit")))
   )
-  private[this] lazy val controllers_HomeController_addToOutfit11_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_addToOutfit12_invoker = createInvoker(
     HomeController_0.addToOutfit(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -278,11 +297,11 @@ class Routes(
     )
   )
 
-  // @LINE:18
-  private[this] lazy val controllers_HomeController_addToFavourite12_route = Route("GET",
+  // @LINE:19
+  private[this] lazy val controllers_HomeController_addToFavourite13_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addToFavourite")))
   )
-  private[this] lazy val controllers_HomeController_addToFavourite12_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_addToFavourite13_invoker = createInvoker(
     HomeController_0.addToFavourite(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -296,11 +315,11 @@ class Routes(
     )
   )
 
-  // @LINE:19
-  private[this] lazy val controllers_HomeController_details13_route = Route("GET",
+  // @LINE:20
+  private[this] lazy val controllers_HomeController_details14_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("details")))
   )
-  private[this] lazy val controllers_HomeController_details13_invoker = createInvoker(
+  private[this] lazy val controllers_HomeController_details14_invoker = createInvoker(
     HomeController_0.details(fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -314,11 +333,11 @@ class Routes(
     )
   )
 
-  // @LINE:22
-  private[this] lazy val controllers_Assets_versioned14_route = Route("GET",
+  // @LINE:23
+  private[this] lazy val controllers_Assets_versioned15_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned14_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned15_invoker = createInvoker(
     Assets_1.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -390,39 +409,45 @@ class Routes(
       }
   
     // @LINE:15
-    case controllers_HomeController_signUp9_route(params) =>
-      call(params.fromQuery[String]("name", Some("a")), params.fromQuery[String]("password", Some("b"))) { (name, password) =>
-        controllers_HomeController_signUp9_invoker.call(HomeController_0.signUp(name, password))
+    case controllers_HomeController_approach29_route(params) =>
+      call(params.fromQuery[String]("s", Some("a"))) { (s) =>
+        controllers_HomeController_approach29_invoker.call(HomeController_0.approach2(s))
       }
   
     // @LINE:16
-    case controllers_HomeController_signIn10_route(params) =>
+    case controllers_HomeController_signUp10_route(params) =>
       call(params.fromQuery[String]("name", Some("a")), params.fromQuery[String]("password", Some("b"))) { (name, password) =>
-        controllers_HomeController_signIn10_invoker.call(HomeController_0.signIn(name, password))
+        controllers_HomeController_signUp10_invoker.call(HomeController_0.signUp(name, password))
       }
   
     // @LINE:17
-    case controllers_HomeController_addToOutfit11_route(params) =>
-      call(params.fromQuery[String]("a", Some("a"))) { (a) =>
-        controllers_HomeController_addToOutfit11_invoker.call(HomeController_0.addToOutfit(a))
+    case controllers_HomeController_signIn11_route(params) =>
+      call(params.fromQuery[String]("name", Some("a")), params.fromQuery[String]("password", Some("b"))) { (name, password) =>
+        controllers_HomeController_signIn11_invoker.call(HomeController_0.signIn(name, password))
       }
   
     // @LINE:18
-    case controllers_HomeController_addToFavourite12_route(params) =>
+    case controllers_HomeController_addToOutfit12_route(params) =>
       call(params.fromQuery[String]("a", Some("a"))) { (a) =>
-        controllers_HomeController_addToFavourite12_invoker.call(HomeController_0.addToFavourite(a))
+        controllers_HomeController_addToOutfit12_invoker.call(HomeController_0.addToOutfit(a))
       }
   
     // @LINE:19
-    case controllers_HomeController_details13_route(params) =>
+    case controllers_HomeController_addToFavourite13_route(params) =>
       call(params.fromQuery[String]("a", Some("a"))) { (a) =>
-        controllers_HomeController_details13_invoker.call(HomeController_0.details(a))
+        controllers_HomeController_addToFavourite13_invoker.call(HomeController_0.addToFavourite(a))
       }
   
-    // @LINE:22
-    case controllers_Assets_versioned14_route(params) =>
+    // @LINE:20
+    case controllers_HomeController_details14_route(params) =>
+      call(params.fromQuery[String]("a", Some("a"))) { (a) =>
+        controllers_HomeController_details14_invoker.call(HomeController_0.details(a))
+      }
+  
+    // @LINE:23
+    case controllers_Assets_versioned15_route(params) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned14_invoker.call(Assets_1.versioned(path, file))
+        controllers_Assets_versioned15_invoker.call(Assets_1.versioned(path, file))
       }
   }
 }

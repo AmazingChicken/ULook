@@ -38,7 +38,7 @@ public class HomeController extends Controller {
      */
     public Result index() throws SQLException, IOException, URISyntaxException {
         DBUtil dbutil = new DBUtil();
-     //   dbutil.addDb();
+        dbutil.addDb();
         return ok(views.html.index.render());
     }
 
@@ -66,7 +66,7 @@ public class HomeController extends Controller {
     }
     public Result search()throws SQLException, URISyntaxException, IOException, Exception{
         DBUtil ok1 = new DBUtil();
-        return ok(views.html.search.render(ok1.getItemBy("category", "Shoes"),dummyOptions(),dummyType()));
+        return ok(views.html.search.render(ok1.getItemBy("category", "Hat"),dummyOptions(),dummyType()));
     }
     public Result getInspired()throws Exception, IOException{
     	DBUtil.addTwitter();
@@ -188,6 +188,45 @@ public class HomeController extends Controller {
 		   
         }
         return ok(views.html.search.render(items,dummyOptions(),dummyType()));
+    }
+    
+    public Result approach2(String s)throws Exception {
+        //  java.io.File yourFile = new java.io.File("app/controllers/test.txt");
+        // java.io.FileReader fr = new java.io.FileReader(yourFile);
+        if(s.equals(" ")){
+            return ok("Please enter a not empty string");
+        }
+        s = s.toLowerCase();
+        // if(s.equals("Nike")){
+        //  return ok(views.html.recommend.render());
+        // }
+        File file = new File("app/controllers/test.txt");
+        String regEx = s+".*";
+        Pattern pattern = Pattern.compile(regEx);
+        //System.out.println(pattern);
+        // String content = Files.toString(new File("test.txt"));
+        ArrayList<Item> items = DBUtil.getFavouriteBy(username);
+        Iterator<Item> it = items.iterator();
+        while (it.hasNext()){
+		//    String content = txt2String(file);
+        	
+        	Item check = it.next();
+		    String content = check.getName().toLowerCase();
+		    // return ok(content);
+		    //  System.out.println(content);
+		    Matcher matcher = pattern.matcher(content);
+		    boolean rs = matcher.find();
+		    //boolean isMatch = Pattern.matches(pattern, content);
+		    if(rs==true){
+		      //  return ok(content);
+		    }
+		    else{
+		        // return ok(content);
+		    	it.remove();
+		    }
+		   
+        }
+        return ok(views.html.myItems.render(items,dummyOptions(),dummyType()));
     }
 
     public static String txt2String(File file){

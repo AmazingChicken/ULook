@@ -64,22 +64,12 @@ Seq[Any](format.raw/*1.65*/("""
         </span>
       </div>
    </div>
-   <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>
-   
+
    <div class="card ml-3 mt-3 mr-2">
       <strong class="ml-3 mt-2">Category</strong>
       <select class="form-control mt-1 ml-3 category">
-         <option value=""""),_display_(/*49.26*/routes/*49.32*/.HomeController.myOutfits()),format.raw/*49.59*/("""">Hats</option>
-         <option value=""""),_display_(/*50.26*/routes/*50.32*/.HomeController.myOutfits()),format.raw/*50.59*/("""">Tops</option>
+         <option>Hats</option>
+         <option>Tops</option>
          <option>Bottoms</option>
          <option>Footwear</option>
       </select>
@@ -90,15 +80,15 @@ Seq[Any](format.raw/*1.65*/("""
         </div>
    <div class="card-deck mt-1 ml-2 mb-2 mr-1">
          <div class="card ml-3 mt-1 scrollbox">
-             """),_display_(/*61.15*/for(option <- brands) yield /*61.36*/{_display_(Seq[Any](format.raw/*61.37*/("""
-            """),format.raw/*62.13*/("""<div class="form-check form-inline mt-2 mb-2">
+             """),_display_(/*51.15*/for(option <- brands) yield /*51.36*/{_display_(Seq[Any](format.raw/*51.37*/("""
+            """),format.raw/*52.13*/("""<div class="form-check form-inline mt-2 mb-2">
                <label class="form-check-label">
                <input class="form-check-input" type="checkbox" value="">
-               """),_display_(/*65.17*/option),format.raw/*65.23*/("""
-               """),format.raw/*66.16*/("""</label>
+               """),_display_(/*55.17*/option),format.raw/*55.23*/("""
+               """),format.raw/*56.16*/("""</label>
             </div> 
-            """)))}),format.raw/*68.14*/("""
-         """),format.raw/*69.10*/("""</div>
+            """)))}),format.raw/*58.14*/("""
+         """),format.raw/*59.10*/("""</div>
          <div class="card ml-3 mt-1">
             <form class="form-inline-sm mt-4 text-center">
                <input type="text" class="form-control-sm" id="inlineFormInput" placeholder="Minimum Price">
@@ -108,15 +98,15 @@ Seq[Any](format.raw/*1.65*/("""
             </form>
          </div>
          <div class="card ml-3 mt-1 scrollbox">
-            """),_display_(/*79.14*/for(option <- types) yield /*79.34*/{_display_(Seq[Any](format.raw/*79.35*/("""
-            """),format.raw/*80.13*/("""<div class="form-check form-inline mt-2 mb-2">
+            """),_display_(/*69.14*/for(option <- types) yield /*69.34*/{_display_(Seq[Any](format.raw/*69.35*/("""
+            """),format.raw/*70.13*/("""<div class="form-check form-inline mt-2 mb-2">
                <label class="form-check-label">
                <input class="form-check-input" type="checkbox" value="">
-               """),_display_(/*83.17*/option),format.raw/*83.23*/("""
-               """),format.raw/*84.16*/("""</label>
+               """),_display_(/*73.17*/option),format.raw/*73.23*/("""
+               """),format.raw/*74.16*/("""</label>
             </div> 
-            """)))}),format.raw/*86.14*/("""
-         """),format.raw/*87.10*/("""</div>
+            """)))}),format.raw/*76.14*/("""
+         """),format.raw/*77.10*/("""</div>
       </div>
    </div>
    <select class="form-control mt-3 sort">
@@ -129,33 +119,29 @@ Seq[Any](format.raw/*1.65*/("""
    
    
       <div class="row mt-4 ml-5 mb-4 mr-1">
-      """),_display_(/*100.8*/for(item <- items) yield /*100.26*/{_display_(Seq[Any](format.raw/*100.27*/("""
-         """),format.raw/*101.10*/("""<div class="col-sm-4 mb-5">
+      """),_display_(/*90.8*/for(item <- items) yield /*90.26*/{_display_(Seq[Any](format.raw/*90.27*/("""
+         """),format.raw/*91.10*/("""<div class="col-sm-4 mb-5">
             <div class="card mr-5">
                <div class="text-center">
-                  <a href=""""),_display_(/*104.29*/routes/*104.35*/.HomeController.details(item.getName())),format.raw/*104.74*/(""""><img src=""""),_display_(/*104.87*/routes/*104.93*/.Assets.versioned(item.getPicture())),format.raw/*104.129*/("""" height="200" width="200"></a>
+                  <a href=""""),_display_(/*94.29*/routes/*94.35*/.HomeController.details(item.getName())),format.raw/*94.74*/(""""><img src=""""),_display_(/*94.87*/routes/*94.93*/.Assets.versioned(item.getPicture())),format.raw/*94.129*/("""" height="200" width="200"></a>
                </div> 
                <div class="card-block">
-                  <h4 class="card-title ml-2">"""),_display_(/*107.48*/item/*107.52*/.getName()),format.raw/*107.62*/("""</h4>
+                  <h4 class="card-title ml-2">"""),_display_(/*97.48*/item/*97.52*/.getName()),format.raw/*97.62*/("""</h4>
                   <div class="mb-2">
-                     <a href=""""),_display_(/*109.32*/routes/*109.38*/.HomeController.addToOutfit(item.getName())),format.raw/*109.81*/("""" class="btn btn-success float-right mr-2">Add to Outfit</a>
-                      <a href=""""),_display_(/*110.33*/routes/*110.39*/.HomeController.addToFavourite(item.getName())),format.raw/*110.85*/("""" class="btn btn-success float-right mr-2">Save</a>
+                     <a href=""""),_display_(/*99.32*/routes/*99.38*/.HomeController.addToOutfit(item.getName())),format.raw/*99.81*/("""" class="btn btn-success float-right mr-2">Add to Outfit</a>
+                      <a href=""""),_display_(/*100.33*/routes/*100.39*/.HomeController.addToFavourite(item.getName())),format.raw/*100.85*/("""" class="btn btn-success float-right mr-2">Save</a>
                      
                   </div>
                </div>
             </div>
          </div>
-         """)))}),format.raw/*116.11*/("""
+         """)))}),format.raw/*106.11*/("""
         
-      """),format.raw/*118.7*/("""</div>
+      """),format.raw/*108.7*/("""</div>
 
 
 </main>
-<script>
-$(document).ready(function() """),format.raw/*123.30*/("""{"""),format.raw/*123.31*/("""
-    """),format.raw/*124.5*/("""$(".dropdown-toggle").dropdown();
-"""),format.raw/*125.1*/("""}"""),format.raw/*125.2*/(""");
-</script>
+
 </body>
 
 </html>"""))
@@ -174,11 +160,11 @@ $(document).ready(function() """),format.raw/*123.30*/("""{"""),format.raw/*123.
 
               /*
                   -- GENERATED --
-                  DATE: Thu Oct 19 14:58:07 AEDT 2017
+                  DATE: Thu Oct 19 16:26:02 AEDT 2017
                   SOURCE: C:/Users/Daniel/ULook/app/views/search.scala.html
-                  HASH: 4bcf6b9e6cc37f8c58851ce2defcd1ce3e75de83
-                  MATRIX: 979->1|1137->64|1165->66|1307->182|1321->188|1390->236|1465->285|1479->291|1544->336|1619->385|1633->391|1699->437|1743->455|1757->461|1823->507|1904->562|1936->573|1965->575|2204->787|2219->793|2270->823|2615->1141|2630->1147|2689->1185|3461->1930|3476->1936|3524->1963|3593->2005|3608->2011|3656->2038|4143->2498|4180->2519|4219->2520|4261->2534|4475->2721|4502->2727|4547->2744|4622->2788|4661->2799|5255->3366|5291->3386|5330->3387|5372->3401|5586->3588|5613->3594|5658->3611|5733->3655|5772->3666|6140->4007|6175->4025|6215->4026|6255->4037|6419->4173|6435->4179|6496->4218|6537->4231|6553->4237|6612->4273|6785->4418|6799->4422|6831->4432|6935->4508|6951->4514|7016->4557|7138->4651|7154->4657|7222->4703|7426->4875|7472->4893|7561->4953|7591->4954|7625->4960|7688->4995|7717->4996
-                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|56->24|56->24|56->24|62->30|62->30|62->30|81->49|81->49|81->49|82->50|82->50|82->50|93->61|93->61|93->61|94->62|97->65|97->65|98->66|100->68|101->69|111->79|111->79|111->79|112->80|115->83|115->83|116->84|118->86|119->87|132->100|132->100|132->100|133->101|136->104|136->104|136->104|136->104|136->104|136->104|139->107|139->107|139->107|141->109|141->109|141->109|142->110|142->110|142->110|148->116|150->118|155->123|155->123|156->124|157->125|157->125
+                  HASH: fcb9f73e7b8bab89dde9277e5e49566b2fde2099
+                  MATRIX: 979->1|1137->64|1165->66|1307->182|1321->188|1390->236|1465->285|1479->291|1544->336|1619->385|1633->391|1699->437|1743->455|1757->461|1823->507|1904->562|1936->573|1965->575|2204->787|2219->793|2270->823|2615->1141|2630->1147|2689->1185|3464->1933|3501->1954|3540->1955|3582->1969|3796->2156|3823->2162|3868->2179|3943->2223|3982->2234|4576->2801|4612->2821|4651->2822|4693->2836|4907->3023|4934->3029|4979->3046|5054->3090|5093->3101|5460->3442|5494->3460|5533->3461|5572->3472|5735->3608|5750->3614|5810->3653|5850->3666|5865->3672|5923->3708|6095->3853|6108->3857|6139->3867|6242->3943|6257->3949|6321->3992|6443->4086|6459->4092|6527->4138|6731->4310|6777->4328
+                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|56->24|56->24|56->24|62->30|62->30|62->30|83->51|83->51|83->51|84->52|87->55|87->55|88->56|90->58|91->59|101->69|101->69|101->69|102->70|105->73|105->73|106->74|108->76|109->77|122->90|122->90|122->90|123->91|126->94|126->94|126->94|126->94|126->94|126->94|129->97|129->97|129->97|131->99|131->99|131->99|132->100|132->100|132->100|138->106|140->108
                   -- GENERATED --
               */
           
