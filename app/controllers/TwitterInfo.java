@@ -4,11 +4,13 @@ import twitter4j.conf.ConfigurationBuilder;
 
 import javax.print.attribute.standard.Media;
 import javax.security.auth.login.Configuration;
+
+import java.util.HashMap;
 import java.util.List;
 
 public class TwitterInfo {
 
-    public static void main(String[] args) throws TwitterException {
+    public HashMap<String,String> getTweets() throws TwitterException {
 
         ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
         configurationBuilder.setDebugEnabled(true)
@@ -23,22 +25,24 @@ public class TwitterInfo {
         query.setResultType(Query.RECENT);
         query.setCount(100);
         QueryResult results = twitter.search(query);
+        HashMap<String,String> pics = new HashMap<String,String>();
 
         List<twitter4j.Status> tweets = results.getTweets();
-
+        
         for(Status tweet : tweets) {
 
             MediaEntity[] picture = tweet.getMediaEntities();
-
+            
             for(MediaEntity url : picture) {
-
+            	
                 System.out.println(url.getMediaURL());
-
+                pics.put(url.getMediaURL(),tweet.getUser().getName());
+                
             }
 
         }
 
-
+        return pics;
     }
 
 }

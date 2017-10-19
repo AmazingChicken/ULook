@@ -13,9 +13,14 @@ import org.postgresql.util.PSQLException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
+
+import twitter4j.TwitterException;
+
 import java.util.UUID;
 
 public class DBUtil {
@@ -93,16 +98,16 @@ public class DBUtil {
             e.printStackTrace();
         }
 
-        try {
+     //   try {
            // ArrayList<Outfit> outfitList = getOutfitBy("3");
-            ArrayList<String> inspirationList= getInspirationList("1");
-            for(String picture: inspirationList){
-                System.out.println(picture);
-            }
+      //      ArrayList<String> inspirationList= getInspirationList("1");
+      //      for(String picture: inspirationList){
+      //          System.out.println(picture);
+    //        }
             //ßSystem.out.println(item.itemPrice);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+   //     } catch (Exception e) {
+     //       e.printStackTrace();
+     //   }
 
 
     }
@@ -403,32 +408,48 @@ public class DBUtil {
         }
     }
 
-    public static ArrayList<String> getInspirationList(String tusername) throws Exception {
+    public static ArrayList<TwitterPhoto> getInspirationList() throws Exception {
         DBUtil dbUtils = new DBUtil();
         Connection conn = dbUtils.getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
-        ArrayList<String> inspirationList= new ArrayList<String>();
+        ArrayList<TwitterPhoto> inspirationList= new ArrayList<TwitterPhoto>();
         String picture;
+        String username;
         try {
 
-            ps = conn.prepareStatement("SELECT * FROM \"Inspiration\" WHERE \"tusername\"=?");
-            ps.setString(1, tusername);
+        //    ps = conn.prepareStatement("*");
+           ps = conn.prepareStatement("SELECT * FROM \"Inspiration\"");
+       //     ps.setString(1, tusername);
             rs = ps.executeQuery();
 
             while (rs.next()) {
                 picture = rs.getString("picture");
-                inspirationList.add(picture);
+                username = rs.getString("tusername");
+              //  inspirationList.add(picture);
+                TwitterPhoto add = new TwitterPhoto();
+                add.setPicture(picture);
+                add.setUsername(username);
+                inspirationList.add(add);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
             dbUtils.close();
         }
+        TwitterPhoto add = new TwitterPhoto();
+
         return inspirationList;
     }
-
-
+    public static void addTwitter() throws TwitterException, IOException {
+    	TwitterInfo get = new TwitterInfo();
+    	HashMap<String,String> tweets = get.getTweets();
+    	for (Map.Entry<String, String> entry : tweets.entrySet()){
+    		
+    		DBUtil.addInspiration(entry.getValue(), DBUtil.tweetPic(entry.getKey(), entry.getValue()));
+    		
+    	}
+    }
 
 
     
@@ -441,7 +462,7 @@ public class DBUtil {
     
     public static void addShirts() throws SQLException, URISyntaxException, IOException{
 
-          Webhose webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Shirt");
+          Webhose webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:shirt OR name:top OR name:jacket OR name:hoodie OR name:vest)");
 
           webhoseData.pullData();
           JsonArray postArray = webhoseData.getData();
@@ -456,7 +477,7 @@ public class DBUtil {
      }
     public static void addHats() throws SQLException, URISyntaxException, IOException{
 
-         Webhose webhoseData  = new Webhose("(site:asos.com OR theiconic.com.au) Shirt");
+         Webhose webhoseData  = new Webhose("(site:asos.com OR theiconic.com.au)(name:cap OR name:hat OR name:beanie OR name:fedora)  ");
 
          webhoseData.pullData();
          JsonArray postArray = webhoseData.getData();
@@ -473,7 +494,7 @@ public class DBUtil {
     
   
        
-		 Webhose webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Shirt");
+		 Webhose webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:pants OR name:jeans OR name:sweats OR name:skirt OR name:chino OR name:leggings)  ");
          webhoseData.pullData();
          JsonArray postArray = webhoseData.getData();
 
@@ -489,7 +510,7 @@ public class DBUtil {
     public static void addShoes() throws SQLException, URISyntaxException, IOException{
 
 
-    	Webhose webhoseData = new Webhose("(site:asos.com OR theiconic.com.au) Shoe");
+    	Webhose webhoseData = new Webhose("(site:asos.com OR theiconic.com.au)(name:Shoe OR name:sneaker OR name:trainers OR name:sandals OR name:heels OR name:loafers)");
 
         webhoseData.pullData();
         JsonArray postArray = webhoseData.getData();
@@ -515,7 +536,8 @@ public class DBUtil {
     	 out.close();
     	 in.close();
     	 byte[] response = out.toByteArray();
-    	 name = name.replace("%", "");
+    	 name = name.replaceAll("[^A-Za-z0-9]", "");
+    	
     	 String path = "public/products/"+name+".jpg";
     	 FileOutputStream fos = new FileOutputStream(path);
     	 fos.write(response);
@@ -523,5 +545,27 @@ public class DBUtil {
     	 path = "products/"+name+".jpg";
     	 return path;
     }
+    public static String tweetPic(String source, String name) throws IOException{
+   	 URL url = new URL(source);
+   	 InputStream in = new BufferedInputStream(url.openStream());
+   	 ByteArrayOutputStream out = new ByteArrayOutputStream();
+   	 byte[] buf = new byte[1024];
+   	 int n = 0;
+   	 while (-1!=(n=in.read(buf)))
+   	 {
+   	    out.write(buf, 0, n);
+   	 }
+   	 out.close();
+   	 in.close();
+   	 byte[] response = out.toByteArray();
+   	 name = name.replaceAll("[^A-Za-z0-9]", "");
+   	
+   	 String path = "public/twitter/"+name+".jpg";
+   	 FileOutputStream fos = new FileOutputStream(path);
+   	 fos.write(response);
+   	 fos.close();
+   	 path = "twitter/"+name+".jpg";
+   	 return path;
+   }
     	
 }

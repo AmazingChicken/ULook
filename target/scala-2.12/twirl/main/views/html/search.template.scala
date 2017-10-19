@@ -53,16 +53,13 @@ Seq[Any](format.raw/*1.65*/("""
    </div>
    <div class="container-fluid">
    <div class="container">
-   
- 
-   
-      <form action=""""),_display_(/*27.22*/routes/*27.28*/.HomeController.approach1("a")),format.raw/*27.58*/("""">
+      <form action=""""),_display_(/*24.22*/routes/*24.28*/.HomeController.approach1("a")),format.raw/*24.58*/("""">
       <div class="input-group stylish-input-group mt-2">
         <input type="search" class="form-control"  placeholder="Search by Item Name" onkeyup="myFunction()" name = "s" required>
         <span class="input-group-addon">
             <button type="submit">
             </form>
-                <img src=""""),_display_(/*33.28*/routes/*33.34*/.Assets.versioned("images/search.png")),format.raw/*33.72*/("""" height="35" width="35">
+                <img src=""""),_display_(/*30.28*/routes/*30.34*/.Assets.versioned("images/search.png")),format.raw/*30.72*/("""" height="35" width="35">
             </button>  
         </span>
       </div>
@@ -71,9 +68,9 @@ Seq[Any](format.raw/*1.65*/("""
       <strong class="ml-3 mt-2">Category</strong>
       <select class="form-control mt-1 ml-3 category">
          <option>Hats</option>
-         <option>Shirts</option>
-         <option>Pants</option>
-         <option>Shoes</option>
+         <option>Tops</option>
+         <option>Bottoms</option>
+         <option>Footwear</option>
       </select>
         <div class="row mt-3 ml-3">
             <div class="col-md-4"><strong>Brand</strong></div>
@@ -82,15 +79,15 @@ Seq[Any](format.raw/*1.65*/("""
         </div>
    <div class="card-deck mt-1 ml-2 mb-2 mr-1">
          <div class="card ml-3 mt-1 scrollbox">
-             """),_display_(/*53.15*/for(option <- brands) yield /*53.36*/{_display_(Seq[Any](format.raw/*53.37*/("""
-            """),format.raw/*54.13*/("""<div class="form-check form-inline mt-2 mb-2">
+             """),_display_(/*50.15*/for(option <- brands) yield /*50.36*/{_display_(Seq[Any](format.raw/*50.37*/("""
+            """),format.raw/*51.13*/("""<div class="form-check form-inline mt-2 mb-2">
                <label class="form-check-label">
                <input class="form-check-input" type="checkbox" value="">
-               """),_display_(/*57.17*/option),format.raw/*57.23*/("""
-               """),format.raw/*58.16*/("""</label>
+               """),_display_(/*54.17*/option),format.raw/*54.23*/("""
+               """),format.raw/*55.16*/("""</label>
             </div> 
-            """)))}),format.raw/*60.14*/("""
-         """),format.raw/*61.10*/("""</div>
+            """)))}),format.raw/*57.14*/("""
+         """),format.raw/*58.10*/("""</div>
          <div class="card ml-3 mt-1">
             <form class="form-inline-sm mt-4 text-center">
                <input type="text" class="form-control-sm" id="inlineFormInput" placeholder="Minimum Price">
@@ -100,15 +97,15 @@ Seq[Any](format.raw/*1.65*/("""
             </form>
          </div>
          <div class="card ml-3 mt-1 scrollbox">
-            """),_display_(/*71.14*/for(option <- types) yield /*71.34*/{_display_(Seq[Any](format.raw/*71.35*/("""
-            """),format.raw/*72.13*/("""<div class="form-check form-inline mt-2 mb-2">
+            """),_display_(/*68.14*/for(option <- types) yield /*68.34*/{_display_(Seq[Any](format.raw/*68.35*/("""
+            """),format.raw/*69.13*/("""<div class="form-check form-inline mt-2 mb-2">
                <label class="form-check-label">
                <input class="form-check-input" type="checkbox" value="">
-               """),_display_(/*75.17*/option),format.raw/*75.23*/("""
-               """),format.raw/*76.16*/("""</label>
+               """),_display_(/*72.17*/option),format.raw/*72.23*/("""
+               """),format.raw/*73.16*/("""</label>
             </div> 
-            """)))}),format.raw/*78.14*/("""
-         """),format.raw/*79.10*/("""</div>
+            """)))}),format.raw/*75.14*/("""
+         """),format.raw/*76.10*/("""</div>
       </div>
    </div>
    <select class="form-control mt-3 sort">
@@ -121,25 +118,25 @@ Seq[Any](format.raw/*1.65*/("""
    
    
       <div class="row mt-4 ml-5 mb-4 mr-1">
-      """),_display_(/*92.8*/for(item <- items) yield /*92.26*/{_display_(Seq[Any](format.raw/*92.27*/("""
-         """),format.raw/*93.10*/("""<div class="col-sm-4 mb-5">
+      """),_display_(/*89.8*/for(item <- items) yield /*89.26*/{_display_(Seq[Any](format.raw/*89.27*/("""
+         """),format.raw/*90.10*/("""<div class="col-sm-4 mb-5">
             <div class="card mr-5">
                <div class="text-center">
-                  <a href=""""),_display_(/*96.29*/routes/*96.35*/.HomeController.details(item.getName())),format.raw/*96.74*/(""""><img src=""""),_display_(/*96.87*/routes/*96.93*/.Assets.versioned(item.getPicture())),format.raw/*96.129*/("""" height="200" width="200"></a>
+                  <a href=""""),_display_(/*93.29*/routes/*93.35*/.HomeController.details(item.getName())),format.raw/*93.74*/(""""><img src=""""),_display_(/*93.87*/routes/*93.93*/.Assets.versioned(item.getPicture())),format.raw/*93.129*/("""" height="200" width="200"></a>
                </div> 
                <div class="card-block">
-                  <h4 class="card-title ml-2">"""),_display_(/*99.48*/item/*99.52*/.getName()),format.raw/*99.62*/("""</h4>
+                  <h4 class="card-title ml-2">"""),_display_(/*96.48*/item/*96.52*/.getName()),format.raw/*96.62*/("""</h4>
                   <div class="mb-2">
-                     <a href=""""),_display_(/*101.32*/routes/*101.38*/.HomeController.addToOutfit(item.getName())),format.raw/*101.81*/("""" class="btn btn-success float-right mr-2">Add to Outfit</a>
-                      <a href=""""),_display_(/*102.33*/routes/*102.39*/.HomeController.addToFavourite(item.getName())),format.raw/*102.85*/("""" class="btn btn-success float-right mr-2">Save</a>
+                     <a href=""""),_display_(/*98.32*/routes/*98.38*/.HomeController.addToOutfit(item.getName())),format.raw/*98.81*/("""" class="btn btn-success float-right mr-2">Add to Outfit</a>
+                      <a href=""""),_display_(/*99.33*/routes/*99.39*/.HomeController.addToFavourite(item.getName())),format.raw/*99.85*/("""" class="btn btn-success float-right mr-2">Save</a>
                      
                   </div>
                </div>
             </div>
          </div>
-         """)))}),format.raw/*108.11*/("""
+         """)))}),format.raw/*105.11*/("""
         
-      """),format.raw/*110.7*/("""</div>
+      """),format.raw/*107.7*/("""</div>
 
 
 </main>
@@ -162,11 +159,11 @@ Seq[Any](format.raw/*1.65*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Thu Oct 19 12:03:26 AEDT 2017
+                  DATE: Thu Oct 19 13:01:04 AEDT 2017
                   SOURCE: C:/Users/Daniel/ULook/app/views/search.scala.html
-                  HASH: 7c9b7dd56ed90bcec0b51ff9984ec42ac3ebdb43
-                  MATRIX: 979->1|1137->64|1165->66|1307->182|1321->188|1390->236|1465->285|1479->291|1544->336|1619->385|1633->391|1699->437|1743->455|1757->461|1823->507|1904->562|1936->573|1965->575|2217->800|2232->806|2283->836|2628->1154|2643->1160|2702->1198|3472->1941|3509->1962|3548->1963|3590->1977|3804->2164|3831->2170|3876->2187|3951->2231|3990->2242|4584->2809|4620->2829|4659->2830|4701->2844|4915->3031|4942->3037|4987->3054|5062->3098|5101->3109|5468->3450|5502->3468|5541->3469|5580->3480|5743->3616|5758->3622|5818->3661|5858->3674|5873->3680|5931->3716|6103->3861|6116->3865|6147->3875|6251->3951|6267->3957|6332->4000|6454->4094|6470->4100|6538->4146|6742->4318|6788->4336
-                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|59->27|59->27|59->27|65->33|65->33|65->33|85->53|85->53|85->53|86->54|89->57|89->57|90->58|92->60|93->61|103->71|103->71|103->71|104->72|107->75|107->75|108->76|110->78|111->79|124->92|124->92|124->92|125->93|128->96|128->96|128->96|128->96|128->96|128->96|131->99|131->99|131->99|133->101|133->101|133->101|134->102|134->102|134->102|140->108|142->110
+                  HASH: 559b98af8af5c778dd2b7ac074493a813d648424
+                  MATRIX: 979->1|1137->64|1165->66|1307->182|1321->188|1390->236|1465->285|1479->291|1544->336|1619->385|1633->391|1699->437|1743->455|1757->461|1823->507|1904->562|1936->573|1965->575|2204->787|2219->793|2270->823|2615->1141|2630->1147|2689->1185|3462->1931|3499->1952|3538->1953|3580->1967|3794->2154|3821->2160|3866->2177|3941->2221|3980->2232|4574->2799|4610->2819|4649->2820|4691->2834|4905->3021|4932->3027|4977->3044|5052->3088|5091->3099|5458->3440|5492->3458|5531->3459|5570->3470|5733->3606|5748->3612|5808->3651|5848->3664|5863->3670|5921->3706|6093->3851|6106->3855|6137->3865|6240->3941|6255->3947|6319->3990|6440->4084|6455->4090|6522->4136|6726->4308|6772->4326
+                  LINES: 28->1|33->1|34->2|38->6|38->6|38->6|39->7|39->7|39->7|40->8|40->8|40->8|41->9|41->9|41->9|46->14|46->14|47->15|56->24|56->24|56->24|62->30|62->30|62->30|82->50|82->50|82->50|83->51|86->54|86->54|87->55|89->57|90->58|100->68|100->68|100->68|101->69|104->72|104->72|105->73|107->75|108->76|121->89|121->89|121->89|122->90|125->93|125->93|125->93|125->93|125->93|125->93|128->96|128->96|128->96|130->98|130->98|130->98|131->99|131->99|131->99|137->105|139->107
                   -- GENERATED --
               */
           

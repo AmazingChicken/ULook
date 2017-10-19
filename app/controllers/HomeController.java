@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -37,7 +38,7 @@ public class HomeController extends Controller {
      */
     public Result index() throws SQLException, IOException, URISyntaxException {
         DBUtil dbutil = new DBUtil();
-        dbutil.addDb();
+     //   dbutil.addDb();
         return ok(views.html.index.render());
     }
 
@@ -57,7 +58,6 @@ public class HomeController extends Controller {
     public Result myItems() throws SQLException, URISyntaxException, IOException, Exception{
         //DBUtil dbutil;
         //dbutil = new DBUtil();
-    	DBUtil.addFavourite(username, "cool", "itemBrand", "itemType", "itemCategory", "itemPrice", "itemPic");
         return ok(views.html.myItems.render(DBUtil.getFavouriteBy(username),dummyOptions(),dummyType()));
     }
     public Result recommend(){
@@ -68,8 +68,9 @@ public class HomeController extends Controller {
         DBUtil ok1 = new DBUtil();
         return ok(views.html.search.render(ok1.getItemBy("category", "Shoes"),dummyOptions(),dummyType()));
     }
-    public Result getInspired(){
-        return  ok(views.html.getInspired.render(dummyInspiree()));
+    public Result getInspired()throws Exception, IOException{
+    	DBUtil.addTwitter();
+        return  ok(views.html.getInspired.render(DBUtil.getInspirationList()));
     }
     public Result myOutfits() throws Exception {
         DBUtil dbutil = new DBUtil();
@@ -150,12 +151,13 @@ public class HomeController extends Controller {
 
         return ok("sorry, the UserName or the Password is Wrong");
     }
-    public Result approach1(String s) {
+    public Result approach1(String s)throws Exception {
         //  java.io.File yourFile = new java.io.File("app/controllers/test.txt");
         // java.io.FileReader fr = new java.io.FileReader(yourFile);
         if(s.equals(" ")){
             return ok("Please enter a not empty string");
         }
+        s = s.toLowerCase();
         // if(s.equals("Nike")){
         //  return ok(views.html.recommend.render());
         // }
@@ -164,22 +166,28 @@ public class HomeController extends Controller {
         Pattern pattern = Pattern.compile(regEx);
         //System.out.println(pattern);
         // String content = Files.toString(new File("test.txt"));
-        String content = txt2String(file);
-
-        // return ok(content);
-        //  System.out.println(content);
-        Matcher matcher = pattern.matcher(content);
-        boolean rs = matcher.find();
-        //boolean isMatch = Pattern.matches(pattern, content);
-        if(rs==true){
-            return ok(content);
+        ArrayList<Item> items = DBUtil.getItemBy("category", "Hat");
+        Iterator<Item> it = items.iterator();
+        while (it.hasNext()){
+		//    String content = txt2String(file);
+        	
+        	Item check = it.next();
+		    String content = check.getName().toLowerCase();
+		    // return ok(content);
+		    //  System.out.println(content);
+		    Matcher matcher = pattern.matcher(content);
+		    boolean rs = matcher.find();
+		    //boolean isMatch = Pattern.matches(pattern, content);
+		    if(rs==true){
+		      //  return ok(content);
+		    }
+		    else{
+		        // return ok(content);
+		    	it.remove();
+		    }
+		   
         }
-        else{
-            // return ok(content);
-        }
-
-        //if (s == 0) return badRequest("Wrong video ID");
-        return ok();
+        return ok(views.html.search.render(items,dummyOptions(),dummyType()));
     }
 
     public static String txt2String(File file){
