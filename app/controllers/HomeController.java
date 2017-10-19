@@ -6,9 +6,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.nio.charset.StandardCharsets;
@@ -126,11 +128,15 @@ public class HomeController extends Controller {
 	        		Item shoe = dbutil.getItemBy("name", out.getShoes()).get(0);
 	        		items.add(shoe);
 	        	}
-	        	break;
+	       
         	}
+        
         	
         }
-        
+        Set<Item> temp = new HashSet<Item>();
+    	temp.addAll(items);
+    	items.clear();
+    	items.addAll(temp);
         return ok(views.html.myOutfits.render(items));
     }
     public Result detailPage(String itemName)throws Exception{
@@ -175,6 +181,35 @@ public class HomeController extends Controller {
         dbutil.addOutfit(username, myoutfit.getHat(), myoutfit.getTop(), myoutfit.getBottom(), myoutfit.getShoes());
         return ok(views.html.search.render(dbutil.getItemBy("category", whatAdd),dummyOptions(),dummyType()));
     }
+    public Result addToOutfit2(String itemName)throws Exception	{
+        DBUtil dbutil = new DBUtil();
+        ArrayList<Outfit> outfitArrayList = dbutil.getOutfitBy(username);
+        Outfit myoutfit;
+        String whatAdd;
+        if(outfitArrayList.size()==0){
+            myoutfit = new Outfit();
+
+        }else {
+            myoutfit = outfitArrayList.get(0);
+        }
+        ArrayList<Item> itemList = dbutil.getItemBy("name",itemName);
+        Item myItem = itemList.get(0);
+        if(myItem.getCategory().equals("Shirt")){
+            myoutfit.setTop(myItem.itemName);
+            whatAdd = "Shirt";
+        }else if(myItem.getCategory().equals("Hat")){
+            myoutfit.setHat(myItem.itemName);
+            whatAdd = "Hat";
+        }else if(myItem.getCategory().equals("Pants")){
+            myoutfit.setBottom(myItem.itemName);
+            whatAdd = "Pants";
+        }else{
+            myoutfit.setShoes(myItem.itemName);
+            whatAdd = "Shoes";
+        }
+        dbutil.addOutfit(username, myoutfit.getHat(), myoutfit.getTop(), myoutfit.getBottom(), myoutfit.getShoes());
+        return ok(views.html.myItems.render(DBUtil.getFavouriteBy(username),dummyOptions(),dummyType()));
+    }
  public Result deleteFromOutfit()throws Exception  {
         DBUtil dbutil = new DBUtil();
 
@@ -204,9 +239,11 @@ public class HomeController extends Controller {
         	}
         	
         }
+        Set<Item> temp = new HashSet<Item>();
+    	temp.addAll(items);
+    	items.clear();
+    	items.addAll(temp);
         return ok(views.html.myOutfits.render(items));
-       
-
     }
     public Result addToFavourite(String itemName)throws SQLException, URISyntaxException, IOException, Exception{
         DBUtil dbutil = new DBUtil();
@@ -217,6 +254,7 @@ public class HomeController extends Controller {
         dbutil.addFavourite(username, itemName, itemName, itemName, itemName,itemName, myItem.getPicture());
         return ok(views.html.search.render(dbutil.getItemBy("category", whereIn),dummyOptions(),dummyType()));
     }
+    
     public Result removeFromFavourite(String itemName)throws SQLException, URISyntaxException, IOException, Exception{
         DBUtil dbutil = new DBUtil();
 
