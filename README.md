@@ -1,12 +1,14 @@
 # ULook
 
-This is our SENG2021 project; to build a web application that harvests API data! </br>
+## Design
+ULook is an online shopping website, which is developed for users to </br>
+1. Search item </br>
+2. Get inspiration and recommendation
+3. Build your own outfit </br> 
+4. Save item or outfit in favorite </br>
+6. Save item or outfit in shopping cart </br>
 
-ULook is a shooping website, where you can: </br>
-search clothing, </br>
-Save clothing </br>
-get inspiration from twitter: (by twitter API), </br>
-build your own outfit </br> 
-Save outfit </br>
-...
+
+## Implementation
+ULook is developed in Java, Scala and Play framework with postgresql as the database.
 
