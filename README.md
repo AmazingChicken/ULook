@@ -10,5 +10,5 @@ ULook is an online shopping website, which is developed for users to </br>
 
 
 ## Implementation
-ULook is developed in Java, Scala and Play framework with postgresql as the database.
+ULook is developed in Java, Scala and Play framework with postgresql as the database and Redis as cache.
 
